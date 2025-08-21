@@ -18,24 +18,23 @@ The structure of the JSON files is intuitive:
 -->
 <table>
 <tr>
-<td>G</td>
-<td>C</td>
-<td>F</td>
+<td><code>G</code></td>
+<td><code>C</code></td>
+<td><code>F</code></td>
 </tr>
 <tr>
-<td>B</td>
-<td>A</td>
-<td>D</td>
+<td><code>B</code></td>
+<td><code>A</code></td>
+<td><code>D</code></td>
 </tr>
 <tr>
-<td>H</td>
-<td>E</td>
-<td>I</td>
+<td><code>H</code></td>
+<td><code>E</code></td>
+<td><code>I</code></td>
 </tr>
 </table>
 <!--
 Some directions may be omitted using a " " (space).
-
 ## Screenshots
 ### Base
 <p align="center">
