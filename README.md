@@ -27,7 +27,7 @@ The structure of the JSON files is intuitive:
 
 <tr>
 <td><code>&#x21d0;</code></td>
-<td><code>&#x25ef;</code></td>
+<td><code>&#x2297;</code></td>
 <td><code>&#x21d2;</code></td>
 </tr>
 
