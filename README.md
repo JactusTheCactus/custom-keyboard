@@ -1,14 +1,11 @@
 <!--
 ## How to use
 ### Quickstart
-Cloning my setup is fairly simple:
-1. download [Multiling-o](https://play.google.com/store/apps/details?id=kl.ime.oh&hl=en&gl=US) from Google Play,
-2. go to `Layouts - DIY - (Space bar) Layouts... - [+ DIY]`,
-3. paste the content of `messagease-cs-base.json`,
-3. repeat the steps 2&3 with `messagease-cs-double.json`,
-4. go to `Settings - Misc. - Import | Export - Theme`,
-5. paste the content of `theme.cfg`.
--->
+1. go to `Layouts - DIY - (Space bar) Layouts... - [+ DIY]`,
+1. paste the content of `messagease-cs-base.json`,
+1. repeat the steps 2&3 with `messagease-cs-double.json`,
+1. go to `Settings - Misc. - Import | Export - Theme`,
+1. paste the content of `theme.cfg`.
 ### Customizing the layout
 If you wish to edit the layout, edit the JSON files externally and then paste it using the "Layouts..." button inside the app.
 
@@ -18,11 +15,29 @@ The structure of the JSON files is intuitive:
   - for `a` press the button,
   - for `b`, `c`, `d`, `e` swipe left, up, right, and down,
   - for `f`, `g`, `h`, `i` swipe NE, NW, SW, SE.
+-->
+<table>
+<tr>
+<td>G</td>
+<td>C</td>
+<td>F</td>
+</tr>
+<tr>
+<td>B</td>
+<td>A</td>
+<td>D</td>
+</tr>
+<tr>
+<td>H</td>
+<td>E</td>
+<td>I</td>
+</tr>
+</table>
 
-|G|_C_|F|
+|G|C|F|
 |-|-|-|
-|_B_|___A___|_D_|
-|H|_E_|I|
+|B|A|D|
+|H|E|I|
 
 <!--
 Some directions may be omitted using a " " (space).
