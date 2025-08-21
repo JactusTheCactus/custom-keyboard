@@ -1,9 +1,3 @@
-## Preview
-<p align="center">
-  <img src="img/base_full.png" width=200px />
-</p>
-
-
 ## How to use
 
 ### Quickstart
