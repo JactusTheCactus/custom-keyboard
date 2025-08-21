@@ -18,21 +18,21 @@ The structure of the JSON files is intuitive:
 <table>
 
 <tr>
-<td><code>G</code></td>
-<td><code>C</code></td>
-<td><code>F</code></td>
+<td><code>&#;</code></td>
+<td><code>&#21d1;</code></td>
+<td><code>&#;</code></td>
 </tr>
 
 <tr>
-<td><code>B</code></td>
-<td><code>A</code></td>
-<td><code>D</code></td>
+<td><code>&#;</code></td>
+<td><code>&#;</code></td>
+<td><code>&#;</code></td>
 </tr>
 
 <tr>
-<td><code>H</code></td>
-<td><code>E</code></td>
-<td><code>I</code></td>
+<td><code>&#;</code></td>
+<td><code>&#;</code></td>
+<td><code>&#;</code></td>
 </tr>
 
 </table>
@@ -42,3 +42,4 @@ Some directions may be omitted using a " " (space).
 ## Screenshots
 
 <div align="center"><h1>Base</h1><img src="img/base.png" width=400px /><h1>Double</h1><img src="img/double.png" width=400px /><h1>Symbols</h1><img src="img/sym.png" width=400px /><h1>Numpad</h1><img src="img/num.png" width=400px /><h1>AltGr</h1><img src="img/altgr.png" width=400px /><h1>Emoji</h1><img src="img/emoji.png" width=400px /></div>
+
