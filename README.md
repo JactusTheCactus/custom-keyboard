@@ -1,5 +1,5 @@
+<!--
 ## How to use
-
 ### Quickstart
 Cloning my setup is fairly simple:
 1. download [Multiling-o](https://play.google.com/store/apps/details?id=kl.ime.oh&hl=en&gl=US) from Google Play,
@@ -8,8 +8,7 @@ Cloning my setup is fairly simple:
 3. repeat the steps 2&3 with `messagease-cs-double.json`,
 4. go to `Settings - Misc. - Import | Export - Theme`,
 5. paste the content of `theme.cfg`.
-
-
+-->
 ### Customizing the layout
 If you wish to edit the layout, edit the JSON files externally and then paste it using the "Layouts..." button inside the app.
 
@@ -20,15 +19,15 @@ The structure of the JSON files is intuitive:
   - for `b`, `c`, `d`, `e` swipe left, up, right, and down,
   - for `f`, `g`, `h`, `i` swipe NE, NW, SW, SE.
 
-|G|C|F|
+|G|_C_|F|
 |-|-|-|
-|B|A|D|
-|H|E|I|
+|_B_|___A___|_D_|
+|H|_E_|I|
 
+<!--
 Some directions may be omitted using a " " (space).
 
 ## Screenshots
-
 ### Base
 <p align="center">
   <img src="img/base.png" width=400px />
@@ -45,13 +44,11 @@ Some directions may be omitted using a " " (space).
 </p>
 
 ### Numpad
-
 <p align="center">
   <img src="img/num.png" width=400px />
 </p>
 
 ### AltGr
-
 <p align="center">
   <img src="img/altgr.png" width=400px />
 </p>
@@ -60,3 +57,4 @@ Some directions may be omitted using a " " (space).
 <p align="center">
   <img src="img/emoji.png" width=400px />
 </p>
+-->
