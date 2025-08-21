@@ -16,51 +16,49 @@ The structure of the JSON files is intuitive:
   - for `f`, `g`, `h`, `i` swipe NE, NW, SW, SE.
 
 <table>
+
 <tr>
 <td><code>G</code></td>
 <td><code>C</code></td>
 <td><code>F</code></td>
 </tr>
+
 <tr>
 <td><code>B</code></td>
 <td><code>A</code></td>
 <td><code>D</code></td>
 </tr>
+
 <tr>
 <td><code>H</code></td>
 <td><code>E</code></td>
 <td><code>I</code></td>
 </tr>
+
 </table>
 
 Some directions may be omitted using a " " (space).
+
 ## Screenshots
-### Base
-<p align="center">
-  <img src="img/base.png" width=400px />
-</p>
 
-### Double
-<p align="center">
-  <img src="img/double.png" width=400px />
-</p>
+<div align="center">
 
-### Symbols
-<p align="center">
-  <img src="img/sym.png" width=400px />
-</p>
+<h1>Base</h1>
+<img src="img/base.png" width=400px />
 
-### Numpad
-<p align="center">
-  <img src="img/num.png" width=400px />
-</p>
+<h1>Double</h1>
+<img src="img/double.png" width=400px />
 
-### AltGr
-<p align="center">
-  <img src="img/altgr.png" width=400px />
-</p>
+<h1>Symbols</h1>
+<img src="img/sym.png" width=400px />
 
-### Emoji
-<p align="center">
-  <img src="img/emoji.png" width=400px />
-</p>
+<h1>Numpad</h1>
+<img src="img/num.png" width=400px />
+
+<h1>AltGr</h1>
+<img src="img/altgr.png" width=400px />
+
+<h1>Emoji</h1>
+<img src="img/emoji.png" width=400px />
+
+</div>
