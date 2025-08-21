@@ -17,7 +17,7 @@ The structure of the JSON files is intuitive:
   - for `f`, `g`, `h`, `i` swipe NE, NW, SW, SE.
 -->
 
-<table>
+<table style="text-align:center;">
 
 <tr>
 <td><code>&#x21d6;</code></td>
