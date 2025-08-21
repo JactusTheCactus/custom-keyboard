@@ -33,12 +33,6 @@ The structure of the JSON files is intuitive:
 <td>I</td>
 </tr>
 </table>
-
-|G|C|F|
-|-|-|-|
-|B|A|D|
-|H|E|I|
-
 <!--
 Some directions may be omitted using a " " (space).
 
