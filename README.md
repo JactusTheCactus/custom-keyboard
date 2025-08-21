@@ -20,6 +20,12 @@ The structure of the JSON files is intuitive:
 <table style="text-align:center;">
 
 <tr>
+<th colspan=3>
+test
+</th>
+</tr>
+
+<tr>
 <td><code>&#x21d6;</code></td>
 <td><code>&#x21d1;</code></td>
 <td><code>&#x21d7;</code></td>
