@@ -20,6 +20,11 @@ The structure of the JSON files is intuitive:
   - for `b`, `c`, `d`, `e` swipe left, up, right, and down,
   - for `f`, `g`, `h`, `i` swipe NE, NW, SW, SE.
 
+|G|C|F|
+|-|-|-|
+|B|A|D|
+|H|E|I|
+
 Some directions may be omitted using a " " (space).
 
 ## Screenshots
