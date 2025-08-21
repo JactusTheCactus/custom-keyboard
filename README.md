@@ -21,7 +21,15 @@ The structure of the JSON files is intuitive:
 
 <tr>
 <th colspan=3>
-head
+&#x2297;
+&#x21d0;
+&#x21d1;
+&#x21d2;
+&#x21d3;
+&#x21d7;
+&#x21d6;
+&#x21d9;
+&#x21d8;
 </th>
 </tr>
 
