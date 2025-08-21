@@ -15,7 +15,7 @@ The structure of the JSON files is intuitive:
   - for `b`, `c`, `d`, `e` swipe left, up, right, and down,
   - for `f`, `g`, `h`, `i` swipe NE, NW, SW, SE.
 
-<table style="text-align:center;"><tr><th colspan=3>&#x2297;&#x21d0;&#x21d1;&#x21d2;&#x21d3;&#x21d7;&#x21d6;&#x21d9;&#x21d8;</th></tr><tr><td><code>7</code></td><td><code>3</code></td><td><code>6</code></td></tr><tr><td><code>2</code></td><td><code>1</code></td><td><code>4</code></td></tr><tr><td><code>8</code></td><td><code>5</code></td><td><code>9</code></td></tr></table>
+<table style="text-align:center;"><tr><th colspan=3><code>[4D:&#x2297;&#x21d0;&#x21d1;&#x21d2;&#x21d3;&#x21d7;&#x21d6;&#x21d9;&#x21d8;]</code></th></tr><tr><td><code>7</code></td><td><code>3</code></td><td><code>6</code></td></tr><tr><td><code>2</code></td><td><code>1</code></td><td><code>4</code></td></tr><tr><td><code>8</code></td><td><code>5</code></td><td><code>9</code></td></tr></table>
 Some directions may be omitted using a " " (space).
 
 ## Screenshots
