@@ -1,4 +1,3 @@
-<!--
 ## How to use
 ### Quickstart
 1. go to `Layouts - DIY - (Space bar) Layouts... - [+ DIY]`,
@@ -15,48 +14,10 @@ The structure of the JSON files is intuitive:
   - for `a` press the button,
   - for `b`, `c`, `d`, `e` swipe left, up, right, and down,
   - for `f`, `g`, `h`, `i` swipe NE, NW, SW, SE.
--->
 
-<table style="text-align:center;">
-
-<tr>
-<th colspan=3>
-&#x2297;
-&#x21d0;
-&#x21d1;
-&#x21d2;
-&#x21d3;
-&#x21d7;
-&#x21d6;
-&#x21d9;
-&#x21d8;
-</th>
-</tr>
-
-<tr>
-<td><code>7&#x21d6;</code></td>
-<td><code>3&#x21d1;</code></td>
-<td><code>6&#x21d7;</code></td>
-</tr>
-
-<tr>
-<td><code>2&#x21d0;</code></td>
-<td><code>1&#x2297;</code></td>
-<td><code>4&#x21d2;</code></td>
-</tr>
-
-<tr>
-<td><code>8&#x21d9;</code></td>
-<td><code>5&#x21d3;</code></td>
-<td><code>9&#x21d8;</code></td>
-</tr>
-
-</table>
-
-<!--
+<table style="text-align:center;"><tr><th colspan=3>&#x2297;&#x21d0;&#x21d1;&#x21d2;&#x21d3;&#x21d7;&#x21d6;&#x21d9;&#x21d8;</th></tr><tr><td><code>7&#x21d6;</code></td><td><code>3&#x21d1;</code></td><td><code>6&#x21d7;</code></td></tr><tr><td><code>2&#x21d0;</code></td><td><code>1&#x2297;</code></td><td><code>4&#x21d2;</code></td></tr><tr><td><code>8&#x21d9;</code></td><td><code>5&#x21d3;</code></td><td><code>9&#x21d8;</code></td></tr></table>
 Some directions may be omitted using a " " (space).
 
 ## Screenshots
 
 <div align="center"><h1>Base</h1><img src="img/base.png" width=400px /><h1>Double</h1><img src="img/double.png" width=400px /><h1>Symbols</h1><img src="img/sym.png" width=400px /><h1>Numpad</h1><img src="img/num.png" width=400px /><h1>AltGr</h1><img src="img/altgr.png" width=400px /><h1>Emoji</h1><img src="img/emoji.png" width=400px /></div>
--->
