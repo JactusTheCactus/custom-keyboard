@@ -1,4 +1,3 @@
-<!--
 ## How to use
 ### Quickstart
 1. go to `Layouts - DIY - (Space bar) Layouts... - [+ DIY]`,
@@ -15,7 +14,7 @@ The structure of the JSON files is intuitive:
   - for `a` press the button,
   - for `b`, `c`, `d`, `e` swipe left, up, right, and down,
   - for `f`, `g`, `h`, `i` swipe NE, NW, SW, SE.
--->
+
 <table>
 <tr>
 <td><code>G</code></td>
@@ -33,7 +32,7 @@ The structure of the JSON files is intuitive:
 <td><code>I</code></td>
 </tr>
 </table>
-<!--
+
 Some directions may be omitted using a " " (space).
 ## Screenshots
 ### Base
@@ -65,4 +64,3 @@ Some directions may be omitted using a " " (space).
 <p align="center">
   <img src="img/emoji.png" width=400px />
 </p>
--->
