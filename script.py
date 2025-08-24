@@ -151,5 +151,6 @@ row([
 	key("[SPACE]",3),
 	key("[ENTER]",2)
 ])
-with open("test.json","w",encoding="utf-8") as f:
+with open("layout.json","w") as f:
 	json.dump(layout,f,indent="\t")
+	print(json.dumps(layout,indent=4))
