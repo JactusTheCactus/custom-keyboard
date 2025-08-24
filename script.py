@@ -68,11 +68,80 @@ key(swipe({
 })),
 key("'")
 ])
-row([key(swipe({"C":"c","N":"j"})),key(swipe({"C":"f","N":"v"})),key("h"),key(swipe({"C":"k","N":"g"})),key("l"),key("m"),key("n")])
-row([key(uni("n;")),key(swipe({"C":"p","N":"b"})),key("r"),key(swipe({"C":"s","N":"z"})),key(swipe({"C":uni("s;"),"N":uni("z;")})),key(swipe({"C":"t","N":"d"})),key(swipe({"C":uni("t;"),"N":uni("d;")}))])
-row([key("[SHIFT]",3),key("w"),key("y"),key("[DEL]",2)])
-row([key(swipe({"N":"[UP]","S":"[DOWN]","W":"[LEFT]","E":"[RIGHT]"}),2),key(swipe({"C":".","N":multi(". . .".split())}),2),key("-"),key(","),key("?")])
-row([key(swipe({"C":"[ALL]","N":"[COPY]","S":"[PASTE]","E":"[UNDO]","W":"[CUT]"}),2),key("[SPACE]",3),key("[ENTER]",2)])
+row([
+key(swipe({
+"C": "c",
+"N": "j"
+})),
+key(swipe({
+"C": "f",
+"N": "v"
+})),
+key("h"),
+key(swipe({
+"C": "k",
+"N": "g"
+})),
+key("l"),
+key("m"),
+key("n")
+])
+row([
+key(uni("n;")),
+key(swipe({
+"C": "p",
+"N": "b"
+})),
+key("r"),
+key(swipe({
+"C": "s",
+"N": "z"
+})),
+key(swipe({
+"C": uni("s;"),
+"N": uni("z;")
+})),
+key(swipe({
+"C": "t",
+"N": "d"
+})),
+key(swipe({
+"C": uni("t;"),
+"N": uni("d;")
+}))
+])
+row([
+key("[SHIFT]",3),
+key("w"),
+key("y"),
+key("[DEL]",2)
+])
+row([
+key(swipe({
+"N": "[UP]",
+"S": "[DOWN]",
+"W": "[LEFT]",
+"E": "[RIGHT]"
+}),2),
+key(swipe({
+"C": ".",
+"N": multi(". . .".split())
+}),2),
+key("-"),
+key(","),
+key("?")
+])
+row([
+key(swipe({
+"C": "[ALL]",
+"N": "[COPY]",
+"S": "[PASTE]",
+"E": "[UNDO]",
+"W": "[CUT]"
+}),2),
+key("[SPACE]",3),
+key("[ENTER]",2)
+])
 with open("layout.json","w") as f:
 	json.dump(layout,f,indent="\t")
 	print(json.dumps(layout,indent=4))
