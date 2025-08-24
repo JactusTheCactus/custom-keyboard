@@ -2,8 +2,7 @@
     "title": "messagease-cs-base",
     "onScreen": {
         "main": [
-            "[DEL]",
-            "[4D:[ALL][CUT][COPY][UNDO][PASTE]]",
+            "[4D:[ALL][CUT][COPY][UNDO][PASTE]][DEL]",
             "[4D: [LEFT][UP][RIGHT][DOWN]][SHIFT]",
             "[SPACE][ENTER]",
             ""
