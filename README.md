@@ -1,7 +1,5 @@
 # Quickstart
 1. Go to
-	1. `Layouts`
-	1. `DIY`
 	1. <kbd>[SPACE]</kbd>
 	1. `Layouts`
 	1. `[+ DIY]`
