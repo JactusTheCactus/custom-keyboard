@@ -4,8 +4,13 @@
         "main": [
             "[DEL]",
             "[4D:[ALL][CUT][COPY][UNDO][PASTE]]",
-            "[END][SHIFT]",
-            "[4D: [LEFT][UP][RIGHT][DOWN]][][SPACE][][][ENTER]"
+            "[SHIFT]",
+            "[4D: [LEFT][UP][RIGHT][DOWN]]",
+            "[]",
+            "[SPACE]",
+            "[]",
+            "[]",
+            "[ENTER]"
         ],
         "prediction": {
             "T9": false
