@@ -138,16 +138,7 @@ row([
 	key("?")
 ])
 row([
-	key(
-		swipe({
-			"C":"[ALL]",
-			"N":"[COPY]",
-			"S":"[PASTE]",
-			"E":"[UNDO]",
-			"W":"[CUT]"
-		}),
-		2
-	),
+	key(swipe({"C":"[ALL]","N":"[COPY]","S":"[PASTE]","E":"[UNDO]","W":"[CUT]"}),2),
 	key("[SPACE]",3),
 	key("[ENTER]",2)
 ])
