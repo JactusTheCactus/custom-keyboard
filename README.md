@@ -3,7 +3,7 @@
 	1. `Layouts`
 	1. `DIY`
 	1. <kbd>[SPACE]</kbd>
-	1. </code>Layouts</code>
+	1. `Layouts`
 	1. `[+ DIY]`
 1. Paste the content of `layout.json`
 1. Go to
