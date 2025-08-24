@@ -79,13 +79,7 @@ row([
 	key("y"),
 	key("[DEL]",2)
 ])
-row([
-	key(swipe({"N":"[UP]","S":"[DOWN]","W":"[LEFT]","E":"[RIGHT]"}),2),
-	key(swipe({"C":".","N":multi(". . .".split())}),2),
-	key("-"),
-	key(","),
-	key("?")
-])
+row([key(swipe({"N":"[UP]","S":"[DOWN]","W":"[LEFT]","E":"[RIGHT]"}),2),key(swipe({"C":".","N":multi(". . .".split())}),2),key("-"),key(","),key("?")])
 row([key(swipe({"C":"[ALL]","N":"[COPY]","S":"[PASTE]","E":"[UNDO]","W":"[CUT]"}),2),key("[SPACE]",3),key("[ENTER]",2)])
 with open("layout.json","w") as f:
 	json.dump(layout,f,indent="\t")
