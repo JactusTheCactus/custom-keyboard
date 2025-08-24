@@ -59,7 +59,7 @@ row([
 	})),
 	key(swipe({
 		"C":"o",
-		"N":"o;"
+		"N":uni("o;")
 	})),
 	key(swipe({
 		"C":"u",
@@ -151,9 +151,5 @@ row([
 	key("[SPACE]",3),
 	key("[ENTER]",2)
 ])
-data = json.dumps(layout,ensure_ascii=True)
 with open("test.json","w",encoding="utf-8") as f:
-	f.write(data)
-print()
-print("\n".join(layout["onScreen"]["main"]))
-print()
+	json.dump(layout,f,indent="\t")
