@@ -22,4 +22,4 @@ To edit the layout, edit the `JSON` files externally and then paste it using the
 - For multiple characters as one input;
 	- `[MC:123...]`
 
-Some directions may be omitted using a <code>[SPACE]</kbd>
+Some directions may be omitted using a <kbd>[SPACE]</kbd>
