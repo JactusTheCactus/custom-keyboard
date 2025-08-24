@@ -78,37 +78,19 @@ row([
 		"N":"v"
 	})),
 	key("h"),
-	key(swipe({
-		"C":"k",
-		"N":"g"
-	})),
+	key(swipe({"C":"k","N":"g"})),
 	key("l"),
 	key("m"),
 	key("n")
 ])
 row([
 	key(uni("n;")),
-	key(swipe({
-		"C":"p",
-		"N":"b"
-	})),
+	key(swipe({"C":"p","N":"b"})),
 	key("r"),
-	key(swipe({
-		"C":"s",
-		"N":"z"
-	})),
-	key(swipe({
-		"C":uni("s;"),
-		"N":uni("z;")
-	})),
-	key(swipe({
-		"C":"t",
-		"N":"d"
-	})),
-	key(swipe({
-		"C":uni("t;"),
-		"N":uni("d;")
-	}))
+	key(swipe({"C":"s","N":"z"})),
+	key(swipe({"C":uni("s;"),"N":uni("z;")})),
+	key(swipe({"C":"t","N":"d"})),
+	key(swipe({"C":uni("t;"),"N":uni("d;")}))
 ])
 row([
 	key("[SHIFT]",3),
