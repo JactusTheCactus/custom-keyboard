@@ -1,0 +1,24 @@
+{
+	"title": "Conscript Keyboard",
+	"onScreen": {
+		"main": [
+			"pyfgcrl",
+			"aoeuidhtns",
+			"qjkxbmwvz",
+			"",
+			"",
+			"",
+			"",
+			"",
+			/*
+			"[DEL]",
+			"[4D: [LEFT][UP][RIGHT][DOWN]][SHIFT]",
+			"[4D:[ALL][CUT][COPY][UNDO][PASTE]][SPACE][ENTER]",
+			*/
+			"" //Bottom line sits to low, so this displaces it
+		],
+		"prediction": {
+			"T9": false
+		}
+	}
+}

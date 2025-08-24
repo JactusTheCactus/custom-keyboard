@@ -1,1 +1,23 @@
-<h2>How to use</h2><h3>Quickstart</h3><ol><li>go to <code>Layouts</code> => <code>DIY</code>=> <code>(Space bar) Layouts...</code> => <code>[+ DIY]</code>, </li><li> paste the content of <code>messagease-cs-base.json</code>, </li><li> repeat the steps 2 & 3 with <code>messagease-cs-double.json</code>, </li><li> go to <code>Settings</code> => <code>Misc.</code> => <code>Import | Export</code> => <code>Theme</code>, </li><li> paste the content of <code>theme.cfg</code>. </li></ol><h3>Customizing the layout</h3><p> If you wish to edit the layout, edit the <code>JSON</code> files externally and then paste it using the "Layouts..." button inside the app.</p><p>The structure of the JSON files is intuitive:</p><ul><li> for a simple pressable button just use the character itself, </li><li> for a swipable button, use this format: <ul><table style="text-align:center;font-family: monospace;"><tr><th colspan=3><code>[4D:&#x2297;&#x21d0;&#x21d1;&#x21d2;&#x21d3;&#x21d7;&#x21d6;&#x21d9;&#x21d8;]</code></th></tr><tr><td>7</td><td>3</td><td>6</td></tr><tr><td>2</td><td>1</td><td>4</td></tr><tr><td>8</td><td>5</td><td>9</td></tr></table></ul></ul></ul><p>Some directions may be omitted using a " " (space).</p><h2>Screenshots</h2><h3>Base</h3><img src="img/base.png" width=400px /><h3>Double</h3><img src="img/double.png" width=400px /><h3>Symbols</h3><img src="img/sym.png" width=400px /><h3>Numpad</h3><img src="img/num.png" width=400px /><h3>AltGr</h3><img src="img/altgr.png" width=400px /><h3>Emoji</h3><img src="img/emoji.png" width=400px />
+# Quickstart
+1. Go to
+	1. Layouts
+	2. DIY
+	3. `[SPACE]` Layouts
+	4. [+ DIY]
+2. Paste the content of `layout.json`
+3. Go to
+	1. Settings
+	2. Misc.
+	3. Import | Export
+	4. Theme
+4. Paste the content of `theme.cfg`
+# Customization
+To edit the layout, edit the `JSON` files externally and then paste it using the `Layouts` button inside the app. The structure of the `JSON` files is intuitive:
+- For a simple pressable button, just use the character itself
+- For a swipable button, use this format:
+	- ||[4D:&#x2299;&#x21d0;&#x21d1;&#x21d2;&#x21d3;&#x21d7;&#x21d6;&#x21d9;&#x21d8;]||
+		|-:|:-:|:-|
+		|7|3|6|
+		|2|1|4|
+		|8|5|9|
+Some directions may be omitted using a `[SPACE]`
