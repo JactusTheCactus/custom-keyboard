@@ -3,7 +3,7 @@
     "onScreen": {
         "main": [
             "[DEL]",
-            "[4D: [HOME]][4D:[ALL][CUT][COPY][UNDO][PASTE]]",
+            "[4D:[ALL][CUT][COPY][UNDO][PASTE]]",
             "[END][SHIFT]",
             "[4D: [LEFT][UP][RIGHT][DOWN]][][SPACE][][][ENTER]"
         ],
