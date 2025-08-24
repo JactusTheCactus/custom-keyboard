@@ -2,9 +2,9 @@
     "title": "messagease-cs-base",
     "onScreen": {
         "main": [
-            "[4D:[ALL][CUT][COPY][UNDO][PASTE]][DEL]",
+            "[DEL]",
             "[4D: [LEFT][UP][RIGHT][DOWN]][SHIFT]",
-            "[SPACE][ENTER]",
+            "[4D:[ALL][CUT][COPY][UNDO][PASTE]][SPACE][ENTER]",
             ""
         ],
         "prediction": {
