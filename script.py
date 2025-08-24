@@ -1,22 +1,22 @@
 import json
 layout = {
-	"title":"Conscript Keyboard",
+	"title": "Conscript Keyboard",
 	"onScreen": {
-		"main":[]
+		"main": []
 	}
 }
 def uni(stringInput):
 	uniDict = {
-		"d;":"ð",
-		"e;":"é",
-		"i;":"í",
-		"n;":"ŋ",
-		"o;":"ó",
-		"s;":"ś",
-		"t;":"þ",
-		"u;":"ú",
-		"u;;":"ű",
-		"z;":"ź"
+		"d;": "ð",
+		"e;": "é",
+		"i;": "í",
+		"n;": "ŋ",
+		"o;": "ó",
+		"s;": "ś",
+		"t;": "þ",
+		"u;": "ú",
+		"u;;": "ű",
+		"z;": "ź"
 	}
 	stringInput = stringInput.lower()
 	stringOutput = ""
@@ -40,13 +40,13 @@ def multi(arrayInput):
 	stringOutput = "".join(arrayInput)
 	return f"[MC:{stringOutput}]"
 def key(stringInput, width = 0):
-	stringOutput = f"{stringInput}{'[]'*(width-1)}"
+	stringOutput = f"{stringInput}{'[]' * (width - 1)}"
 	return stringOutput
 def row(arrayInput):
 	stringOutput = "".join(arrayInput)
 	layout["onScreen"]["main"].append(stringOutput)
 	return
-row([key("x"),key("a"),key(swipe({"C":"e","N":uni("e;")})),key(swipe({"C":"i","N":uni("i;")})),key(swipe({"C":"o","N":uni("o;")})),key(swipe({"C":"u","N":uni("u;"),"S":uni("u;;")})),key("'")])
+row([ key("x"), key("a"), key(swipe({ "C": "e", "N": uni("e;") })), key(swipe({ "C": "i", "N": uni("i;") })), key(swipe({ "C": "o", "N": uni("o;") })), key(swipe({ "C": "u", "N": uni("u;"), "S": uni("u;;") })), key("'") ])
 row([key(swipe({"C":"c","N":"j"})),key(swipe({"C":"f","N":"v"})),key("h"),key(swipe({"C":"k","N":"g"})),key("l"),key("m"),key("n")])
 row([key(uni("n;")),key(swipe({"C":"p","N":"b"})),key("r"),key(swipe({"C":"s","N":"z"})),key(swipe({"C":uni("s;"),"N":uni("z;")})),key(swipe({"C":"t","N":"d"})),key(swipe({"C":uni("t;"),"N":uni("d;")}))])
 row([key("[SHIFT]",3),key("w"),key("y"),key("[DEL]",2)])
