@@ -49,14 +49,8 @@ def row(arrayInput):
 row([
 	key("x"),
 	key("a"),
-	key(swipe({
-		"C":"e",
-		"N":uni("e;")
-	})),
-	key(swipe({
-		"C":"i",
-		"N":uni("i;")
-	})),
+	key(swipe({"C":"e","N":uni("e;")})),
+	key(swipe({"C":"i","N":uni("i;")})),
 	key(swipe({"C":"o","N":uni("o;")})),
 	key(swipe({"C":"u","N":uni("u;"),"S":uni("u;;")})),
 	key("'")
