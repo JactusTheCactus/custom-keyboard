@@ -6,8 +6,7 @@
             "[4D:[ALL][CUT][COPY][UNDO][PASTE]]",
             "[SHIFT]",
             "[4D: [LEFT][UP][RIGHT][DOWN]]",
-            "[SPACE]",
-            "[ENTER]"
+            "[SPACE][ENTER]"
         ],
         "prediction": {
             "T9": false
