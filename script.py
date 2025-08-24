@@ -118,21 +118,8 @@ row([
 ])
 row([
 	key(
-		swipe({
-			"N":"[UP]",
-			"S":"[DOWN]",
-			"W":"[LEFT]",
-			"E":"[RIGHT]"
-		}),
-		2
-	),
-	key(
-		swipe({
-			"C":".",
-			"N":multi(". . .".split())
-		}),
-		2
-	),
+swipe({"N":"[UP]","S":"[DOWN]","W":"[LEFT]","E":"[RIGHT]"}),2),
+	key(swipe({"C":".","N":multi(". . .".split())}),2),
 	key("-"),
 	key(","),
 	key("?")
