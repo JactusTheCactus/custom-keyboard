@@ -2,9 +2,9 @@
 	"title": "Conscript Keyboard",
 	"onScreen": {
 		"main": [
-			"a[4D:e é][4D:i í][4D:o ó][4D:u ú ű]",
-			"bc[4D:d ð]fghjklm",
-			"[4D:n ŋ]pr[4D:s ś][4D:t þ]vwxy[4D:z ź]",
+			"xa[4D:e é][4D:i í][4D:o ó][4D:u ú ű]",
+			"bcdðfghjklmnŋprsśtþvwyzź",
+			"",
 			"[DEL]",
 			"[4D: [LEFT][UP][RIGHT][DOWN]][SHIFT]",
 			"[4D:[ALL][CUT][COPY][UNDO][PASTE]][SPACE][ENTER]",
