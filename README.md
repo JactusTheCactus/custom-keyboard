@@ -14,8 +14,11 @@
 # Customization
 To edit the layout, edit the `JSON` files externally and then paste it using the `Layouts` button inside the app. The structure of the `JSON` files is intuitive:
 - For a simple pressable button, just use the character itself
-- For a swipable button, use <code>[4D:&#x2299;&#x21d0;&#x21d1;&#x21d2;&#x21d3;&#x21d7;&#x21d6;&#x21d9;&#x21d8;]</code>
-- For a menu, use `[XC:123...]`
-- For multiple characters as one input, use `[MC:123...]`
+- For a swipable button;
+	- <code>[4D:&#x2299;&#x21d0;&#x21d1;&#x21d2;&#x21d3;&#x21d7;&#x21d6;&#x21d9;&#x21d8;]</code>
+- For a menu;
+	- `[XC:123...]`
+- For multiple characters as one input;
+	- `[MC:123...]`
 
 Some directions may be omitted using a `[SPACE]`
