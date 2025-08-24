@@ -5,8 +5,8 @@
 			"xa[4D:e é][4D:i í][4D:o ó][4D:u ú ű]",
 			"[4D:c j][4D:f v]h[4D:k g]lm",
 			"nŋ[4D:p b]r[4D:s z][4D:ś ź]",
-			"[4D:t d][4D:þ ð]wy[DEL]",
-			"[4D: [LEFT][UP][RIGHT][DOWN]][SHIFT]",
+			"[SHIFT][4D:t d][4D:þ ð]wy[DEL]",
+			"[4D: [LEFT][UP][RIGHT][DOWN]]",
 			"[4D:[ALL][CUT][COPY][UNDO][PASTE]][SPACE][ENTER]",
 			""
 		],
