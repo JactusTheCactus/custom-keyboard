@@ -1,8 +1,8 @@
 # Quickstart
 1. Go to
-	1. Layouts
-	2. DIY
-	3. `[SPACE]` Layouts
+	1. `Layouts`
+	2. `DIY`
+	3. <code><kbd>[SPACE]</kbd> Layouts</code>
 	4. [+ DIY]
 2. Paste the content of `layout.json`
 3. Go to
