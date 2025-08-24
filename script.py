@@ -86,11 +86,7 @@ row([
 	key(","),
 	key("?")
 ])
-row([
-	key(swipe({"C":"[ALL]","N":"[COPY]","S":"[PASTE]","E":"[UNDO]","W":"[CUT]"}),2),
-	key("[SPACE]",3),
-	key("[ENTER]",2)
-])
+row([key(swipe({"C":"[ALL]","N":"[COPY]","S":"[PASTE]","E":"[UNDO]","W":"[CUT]"}),2),key("[SPACE]",3),key("[ENTER]",2)])
 with open("layout.json","w") as f:
 	json.dump(layout,f,indent="\t")
 	print(json.dumps(layout,indent=4))
