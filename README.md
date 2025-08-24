@@ -1,16 +1,17 @@
 # Quickstart
 1. Go to
 	1. `Layouts`
-	2. `DIY`
-	3. <kbd>[SPACE]</kbd> </code>Layouts</code>
-	4. `[+ DIY]`
-2. Paste the content of `layout.json`
-3. Go to
+	1. `DIY`
+	1. <kbd>[SPACE]</kbd>
+	1. </code>Layouts</code>
+	1. `[+ DIY]`
+1. Paste the content of `layout.json`
+1. Go to
 	1. `Settings`
-	2. `Misc.`
-	3. `Import | Export`
-	4. `Theme`
-4. Paste the content of `theme.cfg`
+	1. `Misc.`
+	1. `Import | Export`
+	1. `Theme`
+1. Paste the content of `theme.cfg`
 # Customization
 To edit the layout, edit the `JSON` files externally and then paste it using the `Layouts` button inside the app. The structure of the `JSON` files is intuitive:
 - For a simple pressable button, just use the character itself
