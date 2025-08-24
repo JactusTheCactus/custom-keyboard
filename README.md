@@ -6,10 +6,10 @@
 	4. `[+ DIY]`
 2. Paste the content of `layout.json`
 3. Go to
-	1. Settings
-	2. Misc.
-	3. Import | Export
-	4. Theme
+	1. `Settings`
+	2. `Misc.`
+	3. `Import | Export`
+	4. `Theme`
 4. Paste the content of `theme.cfg`
 # Customization
 To edit the layout, edit the `JSON` files externally and then paste it using the `Layouts` button inside the app. The structure of the `JSON` files is intuitive:
