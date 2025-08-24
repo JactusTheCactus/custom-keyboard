@@ -2,8 +2,7 @@
 	"title": "Conscript Keyboard",
 	"onScreen": {
 		"main": [
-			"bcdfghjklmnprstvwxyz",
-			""
+			"bcdfghjklmnprstvwxyz"
 		],
 		"prediction": {
 			"T9": false
