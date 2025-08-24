@@ -16,7 +16,7 @@ To edit the layout, edit the `JSON` files externally and then paste it using the
 - For a simple pressable button, just use the character itself
 - For multiple characters;
 	- As separate inputs
-		- As a swipable button, use `[4D:&#x2299;&#x21d0;&#x21d1;&#x21d2;&#x21d3;&#x21d7;&#x21d6;&#x21d9;&#x21d8;]`
+		- As a swipable button, use <code>[4D:&#x2299;&#x21d0;&#x21d1;&#x21d2;&#x21d3;&#x21d7;&#x21d6;&#x21d9;&#x21d8;]</code>
 		- As a menu, use `[XC:123...]`
 	- As one input, use `[MC:123...]`
 
