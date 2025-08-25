@@ -116,13 +116,13 @@ def row(arrayInput):
 	layout["onScreen"]["main"].append(stringOutput)
 	return
 row([
-	key([3,"x"]),
+	key([2,"x"]),
 	key([1,"a"]),
 	key([1,"e","e;"]),
 	key([1,"i","i;"]),
 	key([1,"o","o;"]),
 	key([1,"u","u;","u;;"]),
-	key([3,"'"])
+	key([2,"'"])
 ])
 row([
 	key([1,"c","j"]),
