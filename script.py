@@ -5,8 +5,8 @@ layout = {
 		"main": []
 	}
 }
-def uni(stringInput):
-	uniDict = {
+def char(stringInput):
+	uni = {
 		"d;": "ð",
 		"e;": "é",
 		"i;": "í",
@@ -16,12 +16,26 @@ def uni(stringInput):
 		"t;": "þ",
 		"u;": "ú",
 		"u;;": "ű",
-		"z;": "ź"
+		"z;": "ź",
+		"shift":"[SHIFT]",
+		"del":"[DEL]",
+		"up":"[UP]",
+		"down":"[DOWN]",
+		"left":"[LEFT]",
+		"right":"[RIGHT]",
+		"_A":"[ALL]",
+		"_C":"[COPY]",
+		"_V":"[PASTE]",
+		"_Z":"[UNDO]",
+		"_X":"[CUT]",
+		"space":"[SPACE]",
+		"enter":"[ENTER]"
 	}
-	stringInput = stringInput.lower()
-	stringOutput = uniDict[stringInput] if stringInput in uniDict else stringInput
+	stringOutput = uni[stringInput] if stringInput in uni else stringInput
 	return stringOutput
 def menu(arrayInput):
+	for i in range(len(arrayInput)):
+		arrayInput[i] = char(arrayInput[i])
 	stringOutput = "".join(arrayInput)
 	return f"[XC:{stringOutput}]"
 def swipe(hashInput):
@@ -29,42 +43,41 @@ def swipe(hashInput):
 	for i in "C W N E S NE NW SW SE".split():
 		if i not in hashInput:
 			hashInput[i] = " "
-		arrayOutput.append(hashInput[i])
+		arrayOutput.append(char(hashInput[i]))
 	stringOutput = "".join(arrayOutput).rstrip()
 	return f"[4D:{stringOutput}]"
-def multi(arrayInput):
-	stringOutput = "".join(arrayInput)
-	return f"[MC:{stringOutput}]"
+def multi(stringInput):
+	return f"[MC:{char(stringInput)}]"
 def key(stringInput, width = 1):
-	stringOutput = f"{stringInput}{'[]' * (width - 1)}"
+	stringOutput = f"{char(stringInput)}{'[]' * (width - 1)}"
 	return stringOutput
-def row(arrayInput):
+def row(*arrayInput):
 	stringOutput = "".join(arrayInput)
 	layout["onScreen"]["main"].append(stringOutput)
 	return
-row([
+row(
 	key("x"),
 	key("a"),
 	key(swipe({
 		"C": "e",
-		"N": uni("e;")
+		"N": "e;"
 	})),
 	key(swipe({
 		"C": "i",
-		"N": uni("i;")
+		"N": "i;"
 	})),
 	key(swipe({
 		"C": "o",
-		"N": uni("o;")
+		"N": "o;"
 	})),
 	key(swipe({
 		"C": "u",
-		"N": uni("u;"),
-		"S": uni("u;;")
+		"N": "u;",
+		"S": "u;;"
 	})),
 	key("'")
-])
-row([
+)
+row(
 	key(swipe({
 		"C": "c",
 		"N": "j"
@@ -81,9 +94,9 @@ row([
 	key("l"),
 	key("m"),
 	key("n")
-])
-row([
-	key(uni("n;")),
+)
+row(
+	key("n;"),
 	key(swipe({
 		"C": "p",
 		"N": "b"
@@ -94,50 +107,50 @@ row([
 		"N": "z"
 	})),
 	key(swipe({
-		"C": uni("s;"),
-		"N": uni("z;")
+		"C": "s;",
+		"N": "z;"
 	})),
 	key(swipe({
 		"C": "t",
 		"N": "d"
 	})),
 	key(swipe({
-		"C": uni("t;"),
-		"N": uni("d;")
+		"C": "t;",
+		"N": "d;"
 	}))
-])
-row([
-	key("[SHIFT]",3),
+)
+row(
+	key("shift",3),
 	key("w"),
 	key("y"),
-	key("[DEL]",2)
-])
-row([
+	key("del",2)
+)
+row(
 	key(swipe({
-		"N": "[UP]",
-		"S": "[DOWN]",
-		"W": "[LEFT]",
-		"E": "[RIGHT]"
+		"N": "up",
+		"S": "down",
+		"W": "left",
+		"E": "right"
 	}),2),
 	key(swipe({
 		"C": ".",
-		"N": multi(". . .".split())
+		"N": multi("...")
 	}),2),
 	key("-"),
 	key(","),
 	key("?")
-])
-row([
+)
+row(
 	key(swipe({
-		"C": "[ALL]",
-		"N": "[COPY]",
-		"S": "[PASTE]",
-		"E": "[UNDO]",
-		"W": "[CUT]"
+		"C": "_A",
+		"N": "_C",
+		"S": "_V",
+		"E": "_Z",
+		"W": "_X"
 	}),2),
-	key("[SPACE]",3),
-	key("[ENTER]",2)
-])
+	key("space",3),
+	key("enter",2)
+)
 with open("layout.json","w") as f:
 	json.dump(layout,f,indent="\t")
 	print(json.dumps(layout,indent=4))
