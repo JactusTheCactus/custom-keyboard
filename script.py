@@ -143,22 +143,22 @@ row([
 	key([1,"t;","d;"])
 ])
 row([
-	key([1+1,"shift"]),
+	key([2,"shift"]),
 	key([1,"w"]),
 	key([1,"y"]),
 	key([1,".","..."]),
-	key([1+1,"del"])
+	key([2,"del"])
 ])
 row([
-	key([1+1+1+1,"tab","up","down","right","left"]),
+	key([4,"tab","up","down","right","left"]),
 	key([1,","]),
 	key([1,"?"]),
 	key([1,"-"])
 ])
 row([
-	key([1+1,"_A","_C","_X","_V","_Z"]),
-	key([1+1+1,"space"]),
-	key([1+1,"enter"])
+	key([2,"_A","_C","_X","_V","_Z"]),
+	key([3,"space"]),
+	key([2,"enter"])
 ])
 with open("layout.json","w") as f:
 	print("\n".join(layout["onScreen"]["main"]))
