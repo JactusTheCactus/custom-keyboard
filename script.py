@@ -40,7 +40,7 @@ def menu(arrayInput):
 	return f"[XC:{stringOutput}]"
 def swipe(hashInput):
 	arrayOutput = []
-	for i in "C W N E S NE NW SW SE".split():
+	for i in "C W N E S NW NE SW SE".split():
 		if i not in hashInput:
 			hashInput[i] = " "
 		arrayOutput.append(char(hashInput[i]))
@@ -55,6 +55,19 @@ def row(*arrayInput):
 	stringOutput = "".join(arrayInput)
 	layout["onScreen"]["main"].append(stringOutput)
 	return
+row(
+	swipe({
+		"C":"C",
+		"N":"N",
+		"S":"S",
+		"E":"E",
+		"W":"W",
+		"NW":multi("NW"),
+		"NE":multi("NE"),
+		"SW":multi("SW"),
+		"SE":multi("SE")
+	})
+)
 row(
 	key("x"),
 	key("a"),
