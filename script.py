@@ -1,4 +1,4 @@
-import json
+import json, re
 layout = {
 	"title": "Conscript Keyboard",
 	"onScreen": {
@@ -44,7 +44,11 @@ def menu(arrayInput):
 	return f"[XC:{stringOutput}]"
 def swipeVerbose(hashInput):
 	for k, v in hashInput.items():
-		if type(hashInput[k]) == str:
+		if all([
+			type(hashInput[k]) == str,
+			len(v) > 1,
+#			not bool(re.search(r"^\\u\d+",v))
+		]):
 			hashInput[k] = multi(hashInput[k])
 	arrayOutput = []
 	for i in "C W N E S NW NE SE SW".split():

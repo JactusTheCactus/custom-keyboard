@@ -1,5 +1,5 @@
 #!/bin/bash
-clear -x
+clear
 echo
 python3 script.py
 echo
