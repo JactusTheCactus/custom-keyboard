@@ -6,8 +6,9 @@ layout = {
 	}
 }
 class Key:
-	def __init__(self,value):
+	def __init__(self,value="",length=1):
 		self.value = value
+		self.length = length
 def char(stringInput):
 	uni = {
 		"d;": "\u00f0",
@@ -90,9 +91,10 @@ def multi(stringInput):
 def key(stringInput, width = 1):
 	stringOutput = f"{char(stringInput)}{'[]' * (width - 1)}"
 	key = swipe(stringOutput) if type(stringOutput) == Key else stringOutput
-	return Key(key)
+	return Key(key,width)
 def row(*arrayInput):
 	map(lambda i: key(i),arrayInput)
+	print(sum([i.length for i in arrayInput]))
 	stringOutput = "".join(map(lambda i: i.value,arrayInput))
 	layout["onScreen"]["main"].append(stringOutput)
 	return
@@ -131,7 +133,7 @@ row(
 	key("del",2)
 )
 row(
-	key(swipe("tab","up","down","right","left"),2),
+	key(swipe("tab","up","down","right","left"),4),
 	key("-"),
 	key(","),
 	key("?")
