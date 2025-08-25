@@ -19,11 +19,7 @@ def uni(stringInput):
 		"z;": "ź"
 	}
 	stringInput = stringInput.lower()
-	stringOutput = ""
-	if stringInput in uniDict:
-		stringOutput = uniDict[stringInput]
-	else:
-		stringOutput = stringInput
+	stringOutput = uniDict[stringInput] if stringInput in uniDict else stringInput
 	return stringOutput
 def menu(arrayInput):
 	stringOutput = "".join(arrayInput)
