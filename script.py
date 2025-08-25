@@ -111,7 +111,7 @@ def key(arrayInput):
 	return Key(stringOutput,width)
 def row(arrayInput):
 	map(lambda i: key([i]),arrayInput)
-	#print(sum([i.length for i in arrayInput]))
+	print(sum([i.length for i in arrayInput]))
 	stringOutput = "".join(map(lambda i: i.value,arrayInput))
 	layout["onScreen"]["main"].append(stringOutput)
 	return
