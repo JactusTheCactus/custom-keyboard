@@ -1,10 +1,4 @@
-import json, re
-layout = {
-	"title": "Conscript Keyboard",
-	"onScreen": {
-		"main": []
-	}
-}
+import json, re, glob, os
 class Key:
 	def __init__(self,value="",length=1):
 		self.value = value
@@ -109,61 +103,25 @@ def key(arrayInput):
 		)[0]
 	}{'[]' * (width - 1)}"
 	return Key(stringOutput,width)
-def row(arrayInput):
-	for i in range(len(arrayInput)):
-		arrayInput[i] = key(arrayInput[i])
-	print(sum([i.length for i in arrayInput]))
-	stringOutput = "".join(map(lambda i: i.value,arrayInput))
-	layout["onScreen"]["main"].append(stringOutput)
-	return
-for i in [
-	[
-		[1,"x"],
-		[1,"a"],
-		[1,"e","e;"],
-		[1,"i","i;"],
-		[1,"o","o;"],
-		[1,"u","u;","u;;"],
-		[1,"'"]
-	],
-	[
-		[1,"c","j"],
-		[1,"f","v"],
-		[1,"h"],
-		[1,"k","g"],
-		[1,"l"],
-		[1,"m"],
-		[1,"n"]
-	],
-	[
-		[1,"n;"],
-		[1,"p","b"],
-		[1,"r"],
-		[1,"s","z"],
-		[1,"s;","z;"],
-		[1,"t","d"],
-		[1,"t;","d;"]
-	],
-	[
-		[2,"tab","up","down","right","left"],
-		[1,"w"],
-		[1,"y"],
-		[1,".","..."],
-		[2,"del"]
-	],
-	[
-		[4,"shift"],
-		[1,","],
-		[1,"?"],
-		[1,"-"]
-	],
-	[
-		[2,"_A","_C","_X","_V","_Z"],
-		[3,"space"],
-		[2,"enter"]
-	]
-]:
-	row(i)
-with open("layout.json","w") as f:
-	print("\n".join(layout["onScreen"]["main"]))
-	json.dump(layout,f,indent="\t")
+def keyboard(hashInput):
+	title = hashInput["title"]
+	arrayInput = hashInput["layout"]
+	layout = {
+		"title": title,
+		"onScreen": {
+			"main": []
+		}
+	}
+	def row(arrayInput):
+		for i in range(len(arrayInput)):
+			arrayInput[i] = key(arrayInput[i])
+		stringOutput = "".join(map(lambda i: i.value,arrayInput))
+		layout["onScreen"]["main"].append(stringOutput)
+		return
+	for r in arrayInput:
+		row(r)
+	with open(os.path.join("layouts",f"{title}.json"),"w") as f:
+		json.dump(layout,f,indent="\t")
+for i in glob.glob(os.path.join("data","*.json")):
+	with open(i, "r") as f:
+		keyboard(json.load(f))
