@@ -56,19 +56,6 @@ def row(*arrayInput):
 	layout["onScreen"]["main"].append(stringOutput)
 	return
 row(
-	swipe({
-		"C":"C",
-		"N":"N",
-		"S":"S",
-		"E":"E",
-		"W":"W",
-		"NW":multi("NW"),
-		"NE":multi("NE"),
-		"SW":multi("SW"),
-		"SE":multi("SE")
-	})
-)
-row(
 	key("x"),
 	key("a"),
 	key(swipe({
