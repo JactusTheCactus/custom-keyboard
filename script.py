@@ -44,10 +44,11 @@ def menu(arrayInput):
 	return f"[XC:{stringOutput}]"
 def swipeVerbose(hashInput):
 	for k, v in hashInput.items():
+		print(f"<{bool(re.search(r"\[\w+\]",char(v)))}\t{char(v)}>")
 		if all([
 			type(hashInput[k]) == str,
 			len(v) > 1,
-			re.search(r"^\\u\d+",v)
+			not bool(re.search(r"\[\w+\]",char(v)))
 		]):
 			hashInput[k] = multi(hashInput[k])
 	arrayOutput = []
@@ -145,7 +146,7 @@ row(
 		"W":"left",
 		"E":"right"
 	}).value,2),
-	key(swipe(".",multi("...")),2),
+	key(swipe(".","..."),2),
 	key("-"),
 	key(","),
 	key("?")
