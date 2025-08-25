@@ -35,7 +35,7 @@ def swipe(hashInput):
 def multi(arrayInput):
 	stringOutput = "".join(arrayInput)
 	return f"[MC:{stringOutput}]"
-def key(stringInput, width = 0):
+def key(stringInput, width = 1):
 	stringOutput = f"{stringInput}{'[]' * (width - 1)}"
 	return stringOutput
 def row(arrayInput):
