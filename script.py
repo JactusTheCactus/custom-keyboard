@@ -39,7 +39,7 @@ def menu(arrayInput):
 		arrayInput[i] = char(arrayInput[i])
 	stringOutput = "".join(arrayInput)
 	return f"[XC:{stringOutput}]"
-def swipeConfig(hashInput):
+def swipeVerbose(hashInput):
 	arrayOutput = []
 	for i in "C W N E S NW NE SE SW".split():
 		if i not in hashInput:
@@ -50,29 +50,29 @@ def swipeConfig(hashInput):
 def swipe(arrayInput):
 	match len(arrayInput):
 		case 1:
-			return swipeConfig({
+			return swipeVerbose({
 				"C": arrayInput[0]
 			})
 		case 2:
-			return swipeConfig({
+			return swipeVerbose({
 				"C": arrayInput[0],
 				"N": arrayInput[1]
 			})
 		case 3:
-			return swipeConfig({
+			return swipeVerbose({
 				"C": arrayInput[0],
 				"NW": arrayInput[1],
 				"NE": arrayInput[2]
 			})
 		case 4:
-			return swipeConfig({
+			return swipeVerbose({
 				"C": arrayInput[0],
 				"NW": arrayInput[1],
 				"NE": arrayInput[2],
 				"S": arrayInput[3]
 			})
 		case 5:
-			return swipeConfig({
+			return swipeVerbose({
 				"C": arrayInput[0],
 				"NW": arrayInput[1],
 				"NE": arrayInput[2],
@@ -126,7 +126,7 @@ row(
 	key("del",2)
 )
 row(
-	key(swipe(["tab","up","down","left","right"]),2),
+	key(swipeVerbose({"C":"tab","N":"up","S":"down","W":"left","E":"right"}),2),
 	key(swipe([".",multi("...")]),2),
 	key("-"),
 	key(","),
