@@ -1,10 +1,13 @@
-import json, re
+import json
 layout = {
 	"title": "Conscript Keyboard",
 	"onScreen": {
 		"main": []
 	}
 }
+class Key:
+	def __init__(self,value):
+		self.value = value
 def char(stringInput):
 	uni = {
 		"d;": "\u00f0",
@@ -46,31 +49,31 @@ def swipeVerbose(hashInput):
 			hashInput[i] = " "
 		arrayOutput.append(char(hashInput[i]))
 	stringOutput = "".join(arrayOutput).rstrip()
-	return f"[4D:{stringOutput}]"
+	return Key(f"[4D:{stringOutput}]")
 def swipe(*arrayInput):
 	match len(arrayInput):
 		case 1:
 			return swipeVerbose({
 				"C": arrayInput[0]
-			})
+			}).value
 		case 2:
 			return swipeVerbose({
 				"C": arrayInput[0],
 				"N": arrayInput[1]
-			})
+			}).value
 		case 3:
 			return swipeVerbose({
 				"C": arrayInput[0],
 				"NW": arrayInput[1],
 				"NE": arrayInput[2]
-			})
+			}).value
 		case 4:
 			return swipeVerbose({
 				"C": arrayInput[0],
 				"NW": arrayInput[1],
 				"NE": arrayInput[2],
 				"S": arrayInput[3]
-			})
+			}).value
 		case 5:
 			return swipeVerbose({
 				"C": arrayInput[0],
@@ -78,7 +81,7 @@ def swipe(*arrayInput):
 				"NE": arrayInput[2],
 				"SE": arrayInput[3],
 				"SW": arrayInput[4]
-			})
+			}).value
 		case _:
 			print(len(arrayInput))
 			return f"<{len(arrayInput)}>"
@@ -87,9 +90,11 @@ def multi(stringInput):
 	return f"[MC:{char(stringInput)}]"
 def key(stringInput, width = 1):
 	stringOutput = f"{char(stringInput)}{'[]' * (width - 1)}"
-	return stringOutput
+	key = swipe(stringOutput) if type(stringOutput) == Key else stringOutput
+	return Key(key)
 def row(*arrayInput):
-	stringOutput = "".join(arrayInput)
+	map(lambda i: key(i),arrayInput)
+	stringOutput = "".join(map(lambda i: i.value,arrayInput))
 	layout["onScreen"]["main"].append(stringOutput)
 	return
 row(
@@ -132,7 +137,7 @@ row(
 		"S":"down",
 		"W":"left",
 		"E":"right"
-	}),2),
+	}).value,2),
 	key(swipe(".",multi("...")),2),
 	key("-"),
 	key(","),
