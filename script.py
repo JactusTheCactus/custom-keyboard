@@ -43,68 +43,68 @@ def row(arrayInput):
 	layout["onScreen"]["main"].append(stringOutput)
 	return
 row([
-key("x"),
-key("a"),
-key(swipe({
-"C": "e",
-"N": uni("e;")
-})),
-key(swipe({
-"C": "i",
-"N": uni("i;")
-})),
-key(swipe({
-"C": "o",
-"N": uni("o;")
-})),
-key(swipe({
-"C": "u",
-"N": uni("u;"),
-"S": uni("u;;")
-})),
-key("'")
+	key("x"),
+	key("a"),
+	key(swipe({
+		"C": "e",
+		"N": uni("e;")
+	})),
+	key(swipe({
+		"C": "i",
+		"N": uni("i;")
+	})),
+	key(swipe({
+		"C": "o",
+		"N": uni("o;")
+	})),
+	key(swipe({
+		"C": "u",
+		"N": uni("u;"),
+		"S": uni("u;;")
+	})),
+	key("'")
 ])
 row([
-key(swipe({
-"C": "c",
-"N": "j"
-})),
-key(swipe({
-"C": "f",
-"N": "v"
-})),
-key("h"),
-key(swipe({
-"C": "k",
-"N": "g"
-})),
-key("l"),
-key("m"),
-key("n")
+	key(swipe({
+		"C": "c",
+		"N": "j"
+	})),
+	key(swipe({
+		"C": "f",
+		"N": "v"
+	})),
+	key("h"),
+	key(swipe({
+		"C": "k",
+		"N": "g"
+	})),
+	key("l"),
+	key("m"),
+	key("n")
 ])
 row([
-key(uni("n;")),
-key(swipe({
-"C": "p",
-"N": "b"
-})),
-key("r"),
-key(swipe({
-"C": "s",
-"N": "z"
-})),
-key(swipe({
-"C": uni("s;"),
-"N": uni("z;")
-})),
-key(swipe({
-"C": "t",
-"N": "d"
-})),
-key(swipe({
-"C": uni("t;"),
-"N": uni("d;")
-}))
+	key(uni("n;")),
+	key(swipe({
+		"C": "p",
+		"N": "b"
+	})),
+	key("r"),
+	key(swipe({
+		"C": "s",
+		"N": "z"
+	})),
+	key(swipe({
+		"C": uni("s;"),
+		"N": uni("z;")
+	})),
+	key(swipe({
+		"C": "t",
+		"N": "d"
+	})),
+	key(swipe({
+		"C": uni("t;"),
+		"N": uni("d;")
+	}))
 ])
 row([
 key("[SHIFT]",3),
