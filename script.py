@@ -116,13 +116,13 @@ def row(arrayInput):
 	layout["onScreen"]["main"].append(stringOutput)
 	return
 row([
-	key([2,"x"]),
+	key([1,"x"]),
 	key([1,"a"]),
 	key([1,"e","e;"]),
 	key([1,"i","i;"]),
 	key([1,"o","o;"]),
 	key([1,"u","u;","u;;"]),
-	key([2,"'"])
+	key([1,"'"])
 ])
 row([
 	key([1,"c","j"]),
@@ -143,22 +143,22 @@ row([
 	key([1,"t;","d;"])
 ])
 row([
-	key([2,"shift"]),
+	key([1,"shift"]),
 	key([1,"w"]),
 	key([1,"y"]),
 	key([1,".","..."]),
-	key([2,"del"])
+	key([1,"del"])
 ])
 row([
-	key([2,"tab","up","down","right","left"]),
-	key([2,","]),
-	key([2,"?"]),
+	key([1,"tab","up","down","right","left"]),
+	key([1,","]),
+	key([1,"?"]),
 	key([1,"-"])
 ])
 row([
-	key([2,"_A","_C","_X","_V","_Z"]),
-	key([3,"space"]),
-	key([2,"enter"])
+	key([1,"_A","_C","_X","_V","_Z"]),
+	key([1,"space"]),
+	key([1,"enter"])
 ])
 with open("layout.json","w") as f:
 	print("\n".join(layout["onScreen"]["main"]))
