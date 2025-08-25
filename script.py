@@ -63,6 +63,10 @@ def swipeVerbose(hashInput):
 	return Key(f"[4D:{stringOutput}]")
 def swipe(*arrayInput):
 	match len(arrayInput):
+		case 1:
+			return swipeVerbose({
+				"C": arrayInput[0]
+			}).value
 		case 2:
 			return swipeVerbose({
 				"C": arrayInput[0],
@@ -99,13 +103,13 @@ def row(*arrayInput):
 	layout["onScreen"]["main"].append(stringOutput)
 	return
 row(
-	key("x",2),
+	key(swipe("x"),2),
 	key("a"),
 	key(swipe("e","e;")),
 	key(swipe("i","i;")),
 	key(swipe("o","o;")),
 	key(swipe("u","u;","u;;")),
-	key("'",3)
+	key(swipe("'"),3)
 )
 row(
 	key(swipe("c","j")),
