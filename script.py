@@ -43,6 +43,9 @@ def menu(arrayInput):
 	stringOutput = "".join(arrayInput)
 	return f"[XC:{stringOutput}]"
 def swipeVerbose(hashInput):
+	for k, v in hashInput.items():
+		if type(hashInput[k]) == str:
+			hashInput[k] = multi(hashInput[k])
 	arrayOutput = []
 	for i in "C W N E S NW NE SE SW".split():
 		if i not in hashInput:
