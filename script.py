@@ -137,7 +137,6 @@ row(
 	key("?")
 )
 row(
-	key(swipe("_A","_C","_V","_Z","_X"),2),
 	key(swipe("_A","_C","_X","_V","_Z"),2),
 	key("space",3),
 	key("enter",2)
