@@ -50,7 +50,7 @@ def multi(stringInput):
 	return f"[MC:{char(stringInput)}]"
 def key(stringInput, width = 1):
 	stringOutput = f"{char(stringInput)}{'[]' * (width - 1)}"
-	return stringOutput
+	return multi(stringOutput)
 def row(*arrayInput):
 	stringOutput = "".join(arrayInput)
 	layout["onScreen"]["main"].append(stringOutput)
