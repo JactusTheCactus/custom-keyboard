@@ -164,4 +164,4 @@ with open("layout.json","w") as f:
 			log,
 			flags = re.MULTILINE
 		)
-	print(f"\n{log}")
+	print(log)
