@@ -7,16 +7,16 @@ layout = {
 }
 def char(stringInput):
 	uni = {
-		"d;": "ð",
-		"e;": "é",
-		"i;": "í",
-		"n;": "ŋ",
-		"o;": "ó",
-		"s;": "ś",
-		"t;": "þ",
-		"u;": "ú",
-		"u;;": "ű",
-		"z;": "ź",
+		"d;": "\u00f0",
+		"e;": "\u00e9",
+		"i;": "\u00ed",
+		"n;": "\u014b",
+		"o;": "\u00f3",
+		"s;": "\u015b",
+		"t;": "\u00fe",
+		"u;": "\u00fa",
+		"u;;": "\u0171",
+		"z;": "\u017a",
 		"shift":"[SHIFT]",
 		"del":"[DEL]",
 		"up":"[UP]",
@@ -32,7 +32,7 @@ def char(stringInput):
 		"enter":"[ENTER]"
 	}
 	stringOutput = uni[stringInput] if stringInput in uni else stringInput
-	return stringOutput
+	return f"[MC:{stringOutput}]"
 def menu(arrayInput):
 	for i in range(len(arrayInput)):
 		arrayInput[i] = char(arrayInput[i])
@@ -152,16 +152,5 @@ row(
 	key("enter",2)
 )
 with open("layout.json","w") as f:
+	print("\n".join(layout["onScreen"]["main"]))
 	json.dump(layout,f,indent="\t")
-	log = json.dumps(layout["onScreen"]["main"],indent="\t")
-	for i in [
-		[r"^\n?[\[\]]\n?", r""],
-		[r"^\t*\"(.*)\",?", r"\1"]
-	]:
-		log = re.sub(
-			i[0],
-			i[1],
-			log,
-			flags = re.MULTILINE
-		)
-	print(log)
