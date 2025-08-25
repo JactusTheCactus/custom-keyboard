@@ -107,25 +107,25 @@ row([
 	}))
 ])
 row([
-key("[SHIFT]",3),
-key("w"),
-key("y"),
-key("[DEL]",2)
+	key("[SHIFT]",3),
+	key("w"),
+	key("y"),
+	key("[DEL]",2)
 ])
 row([
-key(swipe({
-"N": "[UP]",
-"S": "[DOWN]",
-"W": "[LEFT]",
-"E": "[RIGHT]"
-}),2),
-key(swipe({
-"C": ".",
-"N": multi(". . .".split())
-}),2),
-key("-"),
-key(","),
-key("?")
+	key(swipe({
+		"N": "[UP]",
+		"S": "[DOWN]",
+		"W": "[LEFT]",
+		"E": "[RIGHT]"
+	}),2),
+	key(swipe({
+		"C": ".",
+		"N": multi(". . .".split())
+	}),2),
+	key("-"),
+	key(","),
+	key("?")
 ])
 row([
 key(swipe({
