@@ -19,6 +19,7 @@ def char(stringInput):
 		"z;": "\u017a",
 		"shift":"[SHIFT]",
 		"del":"[DEL]",
+		"tab":"[TAB]",
 		"up":"[UP]",
 		"down":"[DOWN]",
 		"left":"[LEFT]",
@@ -38,7 +39,7 @@ def menu(arrayInput):
 		arrayInput[i] = char(arrayInput[i])
 	stringOutput = "".join(arrayInput)
 	return f"[XC:{stringOutput}]"
-def swipe(hashInput):
+def swipeConfig(hashInput):
 	arrayOutput = []
 	for i in "C W N E S NW NE SE SW".split():
 		if i not in hashInput:
@@ -46,6 +47,42 @@ def swipe(hashInput):
 		arrayOutput.append(char(hashInput[i]))
 	stringOutput = "".join(arrayOutput).rstrip()
 	return f"[4D:{stringOutput}]"
+def swipe(arrayInput):
+	match len(arrayInput):
+		case 1:
+			return swipeConfig({
+				"C": arrayInput[0]
+			})
+		case 2:
+			return swipeConfig({
+				"C": arrayInput[0],
+				"N": arrayInput[1]
+			})
+		case 3:
+			return swipeConfig({
+				"C": arrayInput[0],
+				"NW": arrayInput[1],
+				"NE": arrayInput[2]
+			})
+		case 4:
+			return swipeConfig({
+				"C": arrayInput[0],
+				"NW": arrayInput[1],
+				"NE": arrayInput[2],
+				"S": arrayInput[3]
+			})
+		case 5:
+			return swipeConfig({
+				"C": arrayInput[0],
+				"NW": arrayInput[1],
+				"NE": arrayInput[2],
+				"SE": arrayInput[3],
+				"SW": arrayInput[4]
+			})
+		case _:
+			print(len(arrayInput))
+			return f"<{len(arrayInput)}>"
+	return
 def multi(stringInput):
 	return f"[MC:{char(stringInput)}]"
 def key(stringInput, width = 1):
@@ -58,66 +95,29 @@ def row(*arrayInput):
 row(
 	key("x"),
 	key("a"),
-	key(swipe({
-		"C": "e",
-		"N": "e;"
-	})),
-	key(swipe({
-		"C": "i",
-		"N": "i;"
-	})),
-	key(swipe({
-		"C": "o",
-		"N": "o;"
-	})),
-	key(swipe({
-		"C": "u",
-		"NW": "u;",
-		"NE": "u;;"
-	})),
+	key(swipe(["e","e;"])),
+	key(swipe(["i","i;"])),
+	key(swipe(["o","o;"])),
+	key(swipe(["u","u;","u;;"])),
 	key("'")
 )
 row(
-	key(swipe({
-		"C": "c",
-		"N": "j"
-	})),
-	key(swipe({
-		"C": "f",
-		"N": "v"
-	})),
+	key(swipe(["c","j"])),
+	key(swipe(["f","v"])),
 	key("h"),
-	key(swipe({
-		"C": "k",
-		"N": "g"
-	})),
+	key(swipe(["k","g"])),
 	key("l"),
 	key("m"),
 	key("n")
 )
 row(
 	key("n;"),
-	key(swipe({
-		"C": "p",
-		"N": "b"
-	})),
+	key(swipe(["p","b"])),
 	key("r"),
-	key(swipe({
-		"C": "s",
-		"N": "z"
-	})),
-	key(swipe({
-		"C": "s;",
-		"N": "z;"
-	})),
-	key(swipe({
-		"C": "t",
-		"N": "d"
-	})),
-	key(swipe({
-		"C": "t;",
-		"N": "d;"
-	}))
+	key(swipe(["s","z"])),
+	key(swipe(["s;","z;"])),
+	key(swipe(["t","d"])),
+	key(swipe(["t;","d;"]))
 )
 row(
 	key("shift",3),
@@ -126,28 +126,20 @@ row(
 	key("del",2)
 )
 row(
-	key(swipe({
-		"N": "up",
-		"S": "down",
-		"W": "left",
-		"E": "right"
-	}),2),
-	key(swipe({
-		"C": ".",
-		"N": multi("...")
-	}),2),
+	key(swipe(["tab","up","down","left","right"]),2),
+	key(swipe([".",multi("...")]),2),
 	key("-"),
 	key(","),
 	key("?")
 )
 row(
-	key(swipe({
-		"C": "_A",
-		"N": "_C",
-		"S": "_V",
-		"E": "_Z",
-		"W": "_X"
-	}),2),
+	key(swipe([
+		"_A",#C
+		"_C",#N
+		"_V",#S
+		"_Z",#E
+		"_X"#W
+	]),2),
 	key("space",3),
 	key("enter",2)
 )
