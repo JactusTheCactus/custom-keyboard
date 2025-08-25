@@ -32,7 +32,7 @@ def char(stringInput):
 		"enter":"[ENTER]"
 	}
 	stringOutput = uni[stringInput] if stringInput in uni else stringInput
-	return f"[MC:{stringOutput}]"
+	return stringOutput
 def menu(arrayInput):
 	for i in range(len(arrayInput)):
 		arrayInput[i] = char(arrayInput[i])

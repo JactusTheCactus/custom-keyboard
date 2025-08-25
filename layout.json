@@ -2,12 +2,12 @@
 	"title": "Conscript Keyboard",
 	"onScreen": {
 		"main": [
-			"[MC:x][MC:a][MC:[4D:[MC:e][MC: ][MC:\u00e9][MC: ][MC: ][MC: ][MC: ][MC: ][MC: ]]][MC:[4D:[MC:i][MC: ][MC:\u00ed][MC: ][MC: ][MC: ][MC: ][MC: ][MC: ]]][MC:[4D:[MC:o][MC: ][MC:\u00f3][MC: ][MC: ][MC: ][MC: ][MC: ][MC: ]]][MC:[4D:[MC:u][MC: ][MC:\u00fa][MC: ][MC:\u0171][MC: ][MC: ][MC: ][MC: ]]][MC:']",
-			"[MC:[4D:[MC:c][MC: ][MC:j][MC: ][MC: ][MC: ][MC: ][MC: ][MC: ]]][MC:[4D:[MC:f][MC: ][MC:v][MC: ][MC: ][MC: ][MC: ][MC: ][MC: ]]][MC:h][MC:[4D:[MC:k][MC: ][MC:g][MC: ][MC: ][MC: ][MC: ][MC: ][MC: ]]][MC:l][MC:m][MC:n]",
-			"[MC:\u014b][MC:[4D:[MC:p][MC: ][MC:b][MC: ][MC: ][MC: ][MC: ][MC: ][MC: ]]][MC:r][MC:[4D:[MC:s][MC: ][MC:z][MC: ][MC: ][MC: ][MC: ][MC: ][MC: ]]][MC:[4D:[MC:\u015b][MC: ][MC:\u017a][MC: ][MC: ][MC: ][MC: ][MC: ][MC: ]]][MC:[4D:[MC:t][MC: ][MC:d][MC: ][MC: ][MC: ][MC: ][MC: ][MC: ]]][MC:[4D:[MC:\u00fe][MC: ][MC:\u00f0][MC: ][MC: ][MC: ][MC: ][MC: ][MC: ]]]",
-			"[MC:[SHIFT]][][][MC:w][MC:y][MC:[DEL]][]",
-			"[MC:[4D:[MC: ][MC:[LEFT]][MC:[UP]][MC:[RIGHT]][MC:[DOWN]][MC: ][MC: ][MC: ][MC: ]]][][MC:[4D:[MC:.][MC: ][MC:[MC:[MC:...]]][MC: ][MC: ][MC: ][MC: ][MC: ][MC: ]]][][MC:-][MC:,][MC:?]",
-			"[MC:[4D:[MC:[ALL]][MC:[CUT]][MC:[COPY]][MC:[UNDO]][MC:[PASTE]][MC: ][MC: ][MC: ][MC: ]]][][MC:[SPACE]][][][MC:[ENTER]][]"
+			"xa[4D:e \u00e9][4D:i \u00ed][4D:o \u00f3][4D:u \u00fa \u0171]'",
+			"[4D:c j][4D:f v]h[4D:k g]lmn",
+			"\u014b[4D:p b]r[4D:s z][4D:\u015b \u017a][4D:t d][4D:\u00fe \u00f0]",
+			"[SHIFT][][]wy[DEL][]",
+			"[4D: [LEFT][UP][RIGHT][DOWN]][][4D:. [MC:...]][]-,?",
+			"[4D:[ALL][CUT][COPY][UNDO][PASTE]][][SPACE][][][ENTER][]"
 		]
 	}
 }
