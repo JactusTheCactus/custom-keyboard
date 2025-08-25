@@ -2,12 +2,12 @@
 	"title": "Conscript Keyboard",
 	"onScreen": {
 		"main": [
-			"xa[4D:e [MC:\u00e9]][4D:i [MC:\u00ed]][4D:o [MC:\u00f3]][4D:u    [MC:\u00fa][MC:\u0171]]'",
+			"xa[4D:e \u00e9][4D:i \u00ed][4D:o \u00f3][4D:u    \u00fa\u0171]'",
 			"[4D:c j][4D:f v]h[4D:k g]lmn",
-			"\u014b[4D:p b]r[4D:s z][4D:[MC:\u015b] [MC:\u017a]][4D:t d][4D:[MC:\u00fe] [MC:\u00f0]]",
+			"\u014b[4D:p b]r[4D:s z][4D:\u015b \u017a][4D:t d][4D:\u00fe \u00f0]",
 			"[SHIFT][][]wy[DEL][]",
-			"[4D:[MC:[TAB]][MC:[LEFT]][MC:[UP]][MC:[RIGHT]][MC:[DOWN]]][][4D:. [MC:[MC:...]]][]-,?",
-			"[4D:[MC:[ALL]]    [MC:[COPY]][MC:[PASTE]][MC:[UNDO]][MC:[CUT]]][][SPACE][][][ENTER][]"
+			"[4D:[TAB][LEFT][UP][RIGHT][DOWN]][][4D:. [MC:...]][]-,?",
+			"[4D:[ALL]    [COPY][PASTE][UNDO][CUT]][][SPACE][][][ENTER][]"
 		]
 	}
 }

@@ -47,7 +47,7 @@ def swipeVerbose(hashInput):
 		if all([
 			type(hashInput[k]) == str,
 			len(v) > 1,
-#			not bool(re.search(r"^\\u\d+",v))
+			re.search(r"^\\u\d+",v)
 		]):
 			hashInput[k] = multi(hashInput[k])
 	arrayOutput = []
