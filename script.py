@@ -69,7 +69,7 @@ def swipe(arrayInput):
 	length = len(newArray)
 	match length:
 		case 1:
-			stringOutput = newArray[0]
+			stringOutput = f"[4D:{newArray[0]}]"
 		case 2:
 			stringOutput = swipeVerbose({
 				"C": newArray[0],
