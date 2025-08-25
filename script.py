@@ -40,7 +40,7 @@ def menu(arrayInput):
 	return f"[XC:{stringOutput}]"
 def swipe(hashInput):
 	arrayOutput = []
-	for i in "C W N E S NW NE SW SE".split():
+	for i in "C W N E S NW NE SE SW".split():
 		if i not in hashInput:
 			hashInput[i] = " "
 		arrayOutput.append(char(hashInput[i]))
