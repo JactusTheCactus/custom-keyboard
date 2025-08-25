@@ -158,7 +158,8 @@ row([
 row([
 	key([1+1+1+1+1,"_A","_C","_X","_V","_Z"]),
 	key([1,"space"]),
-	key([1,"enter"])
+	key([1,"enter"]),
+	key([1,"[SELECT]"])
 ])
 with open("layout.json","w") as f:
 	print("\n".join(layout["onScreen"]["main"]))
