@@ -1,4 +1,4 @@
-import json
+import json, re
 layout = {
 	"title": "Conscript Keyboard",
 	"onScreen": {
@@ -153,4 +153,15 @@ row(
 )
 with open("layout.json","w") as f:
 	json.dump(layout,f,indent="\t")
-	print(json.dumps(layout,indent=4))
+	log = json.dumps(layout["onScreen"]["main"],indent="\t")
+	for i in [
+		[r"^\n?[\[\]]\n?", r""],
+		[r"^\t*\"(.*)\",?", r"\1"]
+	]:
+		log = re.sub(
+			i[0],
+			i[1],
+			log,
+			flags = re.MULTILINE
+		)
+	print(f"\n{log}")
