@@ -30,7 +30,7 @@
 			[1,"del"]
 		],
 		[
-			[1,"tab","up","down","right","left"],
+			[2,"tab","up","down","right","left"],
 			[1,"w"],
 			[1,"y"],
 			[1,".","..."]
