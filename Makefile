@@ -1,4 +1,4 @@
-.PHONY build AbugidaR AlphabetD
+.PHONY build
 
-build: AbugidaR AlphabetD script.py
+build: data/AbugidaR.json data/AlphabetD.json script.py
 	python3 script.py
