@@ -1,8 +1,3 @@
 #!/bin/bash
-SCROLL=false
-if $SCROLL; then
-	clear -x
-else
-	clear
-fi
+clear -x
 python3 script.py
