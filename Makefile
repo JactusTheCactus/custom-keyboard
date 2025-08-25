@@ -1,4 +1,7 @@
 .PHONY: build
 DATA := $(wildcard data/*.json)
-build: $(DATA) script.py
-	python3 script.py
+LAYOUTS := $(patsubst data/%.json,layouts/%.json,$(DATA))
+build: $(LAYOUTS)
+
+layouts/%.json: data/%.json script.py
+	python3 script.py $< $@
