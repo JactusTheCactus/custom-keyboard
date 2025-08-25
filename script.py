@@ -47,7 +47,7 @@ def swipeVerbose(hashInput):
 		arrayOutput.append(char(hashInput[i]))
 	stringOutput = "".join(arrayOutput).rstrip()
 	return f"[4D:{stringOutput}]"
-def swipe(arrayInput):
+def swipe(*arrayInput):
 	match len(arrayInput):
 		case 1:
 			return swipeVerbose({
@@ -95,29 +95,29 @@ def row(*arrayInput):
 row(
 	key("x"),
 	key("a"),
-	key(swipe(["e","e;"])),
-	key(swipe(["i","i;"])),
-	key(swipe(["o","o;"])),
-	key(swipe(["u","u;","u;;"])),
+	key(swipe("e","e;")),
+	key(swipe("i","i;")),
+	key(swipe("o","o;")),
+	key(swipe("u","u;","u;;")),
 	key("'")
 )
 row(
-	key(swipe(["c","j"])),
-	key(swipe(["f","v"])),
+	key(swipe("c","j")),
+	key(swipe("f","v")),
 	key("h"),
-	key(swipe(["k","g"])),
+	key(swipe("k","g")),
 	key("l"),
 	key("m"),
 	key("n")
 )
 row(
 	key("n;"),
-	key(swipe(["p","b"])),
+	key(swipe("p","b")),
 	key("r"),
-	key(swipe(["s","z"])),
-	key(swipe(["s;","z;"])),
-	key(swipe(["t","d"])),
-	key(swipe(["t;","d;"]))
+	key(swipe("s","z")),
+	key(swipe("s;","z;")),
+	key(swipe("t","d")),
+	key(swipe("t;","d;"))
 )
 row(
 	key("shift",3),
@@ -126,20 +126,20 @@ row(
 	key("del",2)
 )
 row(
-	key(swipeVerbose({"C":"tab","N":"up","S":"down","W":"left","E":"right"}),2),
-	key(swipe([".",multi("...")]),2),
+	key(swipeVerbose({
+		"C":"tab",
+		"N":"up",
+		"S":"down",
+		"W":"left",
+		"E":"right"
+	}),2),
+	key(swipe(".",multi("...")),2),
 	key("-"),
 	key(","),
 	key("?")
 )
 row(
-	key(swipe([
-		"_A",#C
-		"_C",#N
-		"_V",#S
-		"_Z",#E
-		"_X"#W
-	]),2),
+	key(swipe("_A","_C","_V","_Z","_X"),2),
 	key("space",3),
 	key("enter",2)
 )
