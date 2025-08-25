@@ -99,13 +99,13 @@ def row(*arrayInput):
 	layout["onScreen"]["main"].append(stringOutput)
 	return
 row(
-	key("x"),
+	key("x",2),
 	key("a"),
 	key(swipe("e","e;")),
 	key(swipe("i","i;")),
 	key(swipe("o","o;")),
 	key(swipe("u","u;","u;;")),
-	key("'")
+	key("'",3)
 )
 row(
 	key(swipe("c","j")),
@@ -133,10 +133,10 @@ row(
 	key("del",2)
 )
 row(
-	key(swipe("tab","up","down","right","left"),4),
-	key("-"),
-	key(","),
-	key("?")
+	key(swipe("tab","up","down","right","left"),2),
+	key(",",2),
+	key("?",2),
+	key("-")
 )
 row(
 	key(swipe("_A","_C","_X","_V","_Z"),2),
