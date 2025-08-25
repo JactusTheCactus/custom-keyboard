@@ -127,7 +127,7 @@ row(
 	key("shift",2),
 	key("w"),
 	key("y"),
-	key(swipe(".","..."),2),
+	key(swipe(".","...")),
 	key("del",2)
 )
 row(
