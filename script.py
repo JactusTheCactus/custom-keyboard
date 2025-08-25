@@ -143,20 +143,20 @@ row([
 	key([1,"t;","d;"])
 ])
 row([
-	key([2,"shift"]),
+	key([1+1,"shift"]),
 	key([1,"w"]),
 	key([1,"y"]),
 	key([1,".","..."]),
-	key([2,"del"])
+	key([1+1,"del"])
 ])
 row([
-	key([1,"tab","up","down","right","left"]),
+	key([1+1+1+1,"tab","up","down","right","left"]),
 	key([1,","]),
 	key([1,"?"]),
 	key([1,"-"])
 ])
 row([
-	key([1,"_A","_C","_X","_V","_Z"]),
+	key([1+1+1+1+1,"_A","_C","_X","_V","_Z"]),
 	key([1,"space"]),
 	key([1,"enter"])
 ])
