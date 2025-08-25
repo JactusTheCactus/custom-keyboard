@@ -110,56 +110,60 @@ def key(arrayInput):
 	}{'[]' * (width - 1)}"
 	return Key(stringOutput,width)
 def row(arrayInput):
-	map(lambda i: key([i]),arrayInput)
+	for i in range(len(arrayInput)):
+		arrayInput[i] = key(arrayInput[i])
 	print(sum([i.length for i in arrayInput]))
 	stringOutput = "".join(map(lambda i: i.value,arrayInput))
 	layout["onScreen"]["main"].append(stringOutput)
 	return
-row([
-	key([1,"x"]),
-	key([1,"a"]),
-	key([1,"e","e;"]),
-	key([1,"i","i;"]),
-	key([1,"o","o;"]),
-	key([1,"u","u;","u;;"]),
-	key([1,"'"])
-])
-row([
-	key([1,"c","j"]),
-	key([1,"f","v"]),
-	key([1,"h"]),
-	key([1,"k","g"]),
-	key([1,"l"]),
-	key([1,"m"]),
-	key([1,"n"])
-])
-row([
-	key([1,"n;"]),
-	key([1,"p","b"]),
-	key([1,"r"]),
-	key([1,"s","z"]),
-	key([1,"s;","z;"]),
-	key([1,"t","d"]),
-	key([1,"t;","d;"])
-])
-row([
-	key([2,"tab","up","down","right","left"]),
-	key([1,"w"]),
-	key([1,"y"]),
-	key([1,".","..."]),
-	key([2,"del"])
-])
-row([
-	key([4,"shift"]),
-	key([1,","]),
-	key([1,"?"]),
-	key([1,"-"])
-])
-row([
-	key([2,"_A","_C","_X","_V","_Z"]),
-	key([3,"space"]),
-	key([2,"enter"])
-])
+for i in [
+	[
+		[1,"x"],
+		[1,"a"],
+		[1,"e","e;"],
+		[1,"i","i;"],
+		[1,"o","o;"],
+		[1,"u","u;","u;;"],
+		[1,"'"]
+	],
+	[
+		[1,"c","j"],
+		[1,"f","v"],
+		[1,"h"],
+		[1,"k","g"],
+		[1,"l"],
+		[1,"m"],
+		[1,"n"]
+	],
+	[
+		[1,"n;"],
+		[1,"p","b"],
+		[1,"r"],
+		[1,"s","z"],
+		[1,"s;","z;"],
+		[1,"t","d"],
+		[1,"t;","d;"]
+	],
+	[
+		[2,"tab","up","down","right","left"],
+		[1,"w"],
+		[1,"y"],
+		[1,".","..."],
+		[2,"del"]
+	],
+	[
+		[4,"shift"],
+		[1,","],
+		[1,"?"],
+		[1,"-"]
+	],
+	[
+		[2,"_A","_C","_X","_V","_Z"],
+		[3,"space"],
+		[2,"enter"]
+	]
+]:
+	row(i)
 with open("layout.json","w") as f:
 	print("\n".join(layout["onScreen"]["main"]))
 	json.dump(layout,f,indent="\t")
