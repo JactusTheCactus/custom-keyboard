@@ -2,12 +2,12 @@
 	"title": "Conscript Keyboard",
 	"onScreen": {
 		"main": [
-			"[MC:x][][][MC:a][4D:e \u00e9][4D:i \u00ed][4D:o \u00f3][4D:u    \u00fa\u0171][MC:'][][]",
-			"[4D:c j][4D:f v][MC:h][4D:k g][MC:l][MC:m][MC:n]",
-			"[MC:\u014b][4D:p b][MC:r][4D:s z][4D:\u015b \u017a][4D:t d][4D:\u00fe \u00f0]",
-			"[MC:[SHIFT]][][MC:w][MC:y][4D:. [MC:...]][MC:[DEL]][]",
-			"[4D:[TAB][LEFT][UP][RIGHT][DOWN]][][MC:,][][MC:?][][MC:-]",
-			"[4D:[ALL][UNDO][COPY][PASTE][CUT]][][MC:[SPACE]][][][MC:[ENTER]][]"
+			"x[][]a[4D:e \u00e9][4D:i \u00ed][4D:o \u00f3][4D:u    \u00fa\u0171]'[][]",
+			"[4D:c j][4D:f v]h[4D:k g]lmn",
+			"\u014b[4D:p b]r[4D:s z][4D:\u015b \u017a][4D:t d][4D:\u00fe \u00f0]",
+			"[SHIFT][]wy[4D:. [MC:...]][DEL][]",
+			"[4D:[TAB][LEFT][UP][RIGHT][DOWN]][],[]?[]-",
+			"[4D:[ALL][UNDO][COPY][PASTE][CUT]][][SPACE][][][ENTER][]"
 		]
 	}
 }
