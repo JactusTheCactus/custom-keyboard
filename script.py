@@ -62,10 +62,6 @@ def swipeVerbose(hashInput):
 	return Key(f"[4D:{stringOutput}]")
 def swipe(*arrayInput):
 	match len(arrayInput):
-		case 1:
-			return swipeVerbose({
-				"C": arrayInput[0]
-			}).value
 		case 2:
 			return swipeVerbose({
 				"C": arrayInput[0],
@@ -77,20 +73,13 @@ def swipe(*arrayInput):
 				"NW": arrayInput[1],
 				"NE": arrayInput[2]
 			}).value
-		case 4:
-			return swipeVerbose({
-				"C": arrayInput[0],
-				"NW": arrayInput[1],
-				"NE": arrayInput[2],
-				"S": arrayInput[3]
-			}).value
 		case 5:
 			return swipeVerbose({
 				"C": arrayInput[0],
-				"NW": arrayInput[1],
-				"NE": arrayInput[2],
-				"SE": arrayInput[3],
-				"SW": arrayInput[4]
+				"N": arrayInput[1],
+				"S": arrayInput[2],
+				"E": arrayInput[3],
+				"W": arrayInput[4]
 			}).value
 		case _:
 			print(len(arrayInput))
@@ -141,13 +130,7 @@ row(
 	key("del",2)
 )
 row(
-	key(swipeVerbose({
-		"C":"tab",
-		"N":"up",
-		"S":"down",
-		"W":"left",
-		"E":"right"
-	}).value,2),
+	key(swipe("tab","up","down","left","right"),2),
 	key(swipe(".","..."),2),
 	key("-"),
 	key(","),
