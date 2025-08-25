@@ -1,4 +1,4 @@
 .PHONY build
 
-build: data/AbugidaR.json data/AlphabetD.json script.py
+build: $(wildcards data/*.json) script.py
 	python3 script.py
