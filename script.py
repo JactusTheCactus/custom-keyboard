@@ -130,7 +130,7 @@ row(
 	key("del",2)
 )
 row(
-	key(swipe("tab","up","down","left","right"),2),
+	key(swipe("tab","up","down","right","left"),2),
 	key(swipe(".","..."),2),
 	key("-"),
 	key(","),
