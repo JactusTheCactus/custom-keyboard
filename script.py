@@ -16,7 +16,8 @@ def char(stringInput):
 		uni = json.load(f)
 	diacritics = {
 		"acute": "\u0301",
-		"hacek": "\u030c"
+		"hacek": "\u030c",
+		"grave": "\u0300"
 	}
 	for i in f"a b c d edh e f g h i j k l m n o p q r s t thorn u v w x y z".split():
 		for k,v in diacritics.items():
