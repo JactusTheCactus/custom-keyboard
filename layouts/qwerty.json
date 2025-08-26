@@ -3,9 +3,9 @@
 	"onScreen": {
 		"main": [
 			"[4D:` ~][4D:1 !][4D:2 @][4D:3 #][4D:4 $][4D:5 %][4D:6 ^][4D:7 &][4D:8 *][4D:9 (][4D:0 )][4D:- _][4D:= +][DEL]",
-			"[TAB]qwer[4D:t \u00fe]yuiop[4D:[LB] {][4D:[RB] }][4D:\\ |]",
-			"as[4D:d \u00f0]fghjkl[4D:; :][4D:' \"]",
-			"[SHIFT]zxcvbnm[4D:, <][4D:. >][4D:/ ?]",
+			"[TAB]qw[4D:e \u00e9]r[4D:t \u00fe]y[4D:u    \u00fa\u0171][4D:i \u00ed][4D:o \u00f3]p[4D:[LB] {][4D:[RB] }][4D:\\ |]",
+			"a[4D:s \u015b][4D:d \u00f0]fghjkl[4D:; :][4D:' \"]",
+			"[SHIFT][4D:z \u017a]xcvb[4D:n \u014b]m[4D:, <][4D:. >][4D:/ ?]",
 			"[SPACE]"
 		]
 	}
