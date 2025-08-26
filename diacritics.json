@@ -1,5 +1,6 @@
 {
+	"grave": "\u0300",
 	"acute": "\u0301",
-	"hacek": "\u030c",
-	"grave": "\u0300"
+	"overdot": "\u0307",
+	"hacek": "\u030c"
 }

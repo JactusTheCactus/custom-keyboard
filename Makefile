@@ -5,6 +5,6 @@ all:
 	clear -x
 	make build
 build: $(LAYOUTS)
-layouts/%.json: data/%.json script.py uni.json
+layouts/%.json: data/%.json script.py $(wildcard *.json)
 	mkdir -p layouts
 	python3 script.py $< $@
