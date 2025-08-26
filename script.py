@@ -1,4 +1,7 @@
-import json, re, glob, os
+import json, re, glob, os, sys
+args = sys.argv[1:] if len(sys.argv) > 1 else ["",""]
+inputData = args[0]
+outputData = args[1]
 class Key:
 	def __init__(self,value="",length=1):
 		self.value = value
@@ -120,8 +123,9 @@ def keyboard(hashInput):
 		return
 	for r in arrayInput:
 		row(r)
-	with open(os.path.join("layouts",f"{title}.json"),"w") as f:
-		json.dump(layout,f,indent="\t")
-for i in glob.glob(os.path.join("data","*.json")):
-	with open(i, "r") as f:
+	if outputData:
+		with open(outputData,"w") as f:
+			json.dump(layout,f,indent="\t")
+if inputData:
+	with open(inputData, "r") as f:
 		keyboard(json.load(f))
