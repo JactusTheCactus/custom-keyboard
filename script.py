@@ -14,6 +14,14 @@ class Key:
 def char(stringInput):
 	with open("uni.json","r") as f:
 		uni = json.load(f)
+	diacritics = {
+		"acute": "\u0301",
+		"hacek": "\u030c"
+	}
+	for i in f"a b c d edh e f g h i j k l m n o p q r s t thorn u v w x y z".split():
+		for k,v in diacritics.items():
+			c = uni[i] if i in uni else i
+			uni[f"{i}_{k}"] = f"[MC:{c}{v}]"
 	stringOutput = uni[stringInput] if stringInput in uni else stringInput
 	return stringOutput
 def multi(stringInput):
