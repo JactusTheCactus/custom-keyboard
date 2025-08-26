@@ -23,7 +23,7 @@
 			[1,"w"],
 			[1,"e","e_acute","e_hacek"],
 			[1,"r"],
-			[1,"t","thorn"],
+			[1,"t","thorn","t_acute","t_hacek"],
 			[1,"y"],
 			[1,"u","u_acute","u_hacek"],
 			[1,"i","i_acute","i_hacek"],
@@ -35,8 +35,8 @@
 		],
 		[
 			[1,"a","a_acute","a_hacek"],
-			[1,"s","s_acute"],
-			[1,"d","edh"],
+			[1,"s","s_acute","s_hacek"],
+			[1,"d","edh","d_acute","d_hacek"],
 			[1,"f"],
 			[1,"g"],
 			[1,"h"],
@@ -48,7 +48,7 @@
 		],
 		[
 			[1,"shift"],
-			[1,"z","z_acute"],
+			[1,"z","z_acute","z_hacek"],
 			[1,"x"],
 			[1,"c"],
 			[1,"v"],
