@@ -2,7 +2,8 @@
 	"title": "QWERTY",
 	"onScreen": {
 		"main": [
-			"[TAB]qwertyuiop[4D:[ {][4D:] }][4D:\\ |]"
+			"qwertyuiop",
+			"[SPACE]"
 		]
 	}
 }
