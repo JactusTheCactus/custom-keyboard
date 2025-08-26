@@ -1,0 +1,30 @@
+name: Run Python Script on Commit
+on:
+  push:
+    branches:
+      - main
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '*/lts'
+    - name: Install Python dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Run Makefile
+      run: make
+    - name: Configure Git
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+    - name: Commit changes
+      run: |
+        git add .
+        git commit -m "Auto-commit: update from make" || echo "No changes to commit"
+        git push
