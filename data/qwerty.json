@@ -25,7 +25,7 @@
 			[1,"r"],
 			[1,"t","thorn","t_commaBelow"],
 			[1,"y"],
-			[1,"u","u_acute","u_hacek"],
+			[1,"u","u_acute","u_hacek","u_umlaut"],
 			[1,"i","i_acute","i_circumflex"],
 			[1,"o","o_acute","o_umlaut"],
 			[1,"p"],
@@ -34,7 +34,7 @@
 			[1,"\\","|"]
 		],
 		[
-			[1,"a","a_acute","a_circumflex"],
+			[1,"a","a_acute","a_circumflex","a_umlaut"],
 			[1,"s","s_acute","s_hacek","s_commaBelow"],
 			[1,"d","edh"],
 			[1,"f"],

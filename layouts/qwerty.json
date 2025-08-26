@@ -3,8 +3,8 @@
 	"onScreen": {
 		"main": [
 			"[4D:` ~][4D:1 !][4D:2 @][4D:3 #][4D:4 $][4D:5 %][4D:6 ^][4D:7 &][4D:8 *][4D:9 (][4D:0 )][4D:- _][4D:= +][DEL]",
-			"[TAB]qw[4D:e [MC:e\u0301]]r[4D:t    \u00fe[MC:t\u0326]]y[4D:u    [MC:u\u0301][MC:u\u030c]][4D:i    [MC:i\u0301][MC:i\u0302]][4D:o    [MC:o\u0301][MC:o\u0308]]p[4D:[LB] {][4D:[RB] }][4D:\\ |]",
-			"[4D:a    [MC:a\u0301][MC:a\u0302]][4D:s [MC:s\u0301]    [MC:s\u030c][MC:s\u0326]][4D:d \u00f0]fghjkl[4D:; :][4D:' \"][ENTER]",
+			"[TAB]qw[4D:e [MC:e\u0301]]r[4D:t    \u00fe[MC:t\u0326]]y[4D:u [MC:u\u0301]    [MC:u\u030c][MC:u\u0308]][4D:i    [MC:i\u0301][MC:i\u0302]][4D:o    [MC:o\u0301][MC:o\u0308]]p[4D:[LB] {][4D:[RB] }][4D:\\ |]",
+			"[4D:a [MC:a\u0301]    [MC:a\u0302][MC:a\u0308]][4D:s [MC:s\u0301]    [MC:s\u030c][MC:s\u0326]][4D:d \u00f0]fghjkl[4D:; :][4D:' \"][ENTER]",
 			"[SHIFT][4D:z    [MC:z\u0301][MC:z\u030c]]x[4D:c    [MC:c\u0301][MC:c\u030c]]vb[4D:n    \u014b[MC:n\u0303]]m[4D:, <][4D:. >][4D:/ ?]",
 			"[SPACE]"
 		]
