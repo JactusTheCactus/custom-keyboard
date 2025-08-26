@@ -1,7 +1,12 @@
 import json, re, sys
-args = sys.argv[1:] if len(sys.argv) > 1 else ["",""]
-inputData = args[0]
-outputData = args[1]
+args = [
+	sys.argv[i]
+	if len(sys.argv) > i
+	else ""
+	for i
+	in (1, 2)
+]
+[inputData,outputData] = args
 class Key:
 	def __init__(self,value="",length=1):
 		self.value = value
