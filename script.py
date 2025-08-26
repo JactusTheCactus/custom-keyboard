@@ -20,7 +20,7 @@ def char(stringInput):
 		for k1, v1 in diacritics.items():
 			c = uni[i] if i in uni else i
 			for k2, v2 in diacritics.items():
-				uni[f"{i}_{k1}_{k2}"] = multi(c+v1+v2,nested=True)
+				uni["_".join([i,k1,k2])] = multi("".join([c,v1,v2]),nested=True)
 			uni[f"{i}_{k1}"] = multi(c+v1,nested=True)
 	stringOutput = uni[stringInput] if stringInput in uni else stringInput
 	return stringOutput
