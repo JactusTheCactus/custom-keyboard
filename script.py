@@ -46,6 +46,8 @@ def swipeVerbose(hashInput):
 				])
 			]):
 				hashInput[k] = multi(hashInput[k])
+			else:
+				hashInput[k] = f"[SYM:{hashInput[k]}]"
 	arrayOutput = []
 	for i in "C W N E S NW NE SE SW".split():
 		if i not in hashInput:
