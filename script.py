@@ -31,7 +31,8 @@ def swipeVerbose(hashInput):
 				len(v) > 1,
 				not any([
 					bool(re.search(r"\[\w+\]",char(v))),
-					bool(re.search(r"[^\u0000-\u007f]",char(v)))
+					bool(re.search(r"[^\u0000-\u007f]",char(v))),
+					bool(re.search(r"U\+[0-9A-F]{4}",char(v)))
 				])
 			]):
 				hashInput[k] = multi(hashInput[k])
