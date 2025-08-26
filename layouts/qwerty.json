@@ -3,8 +3,8 @@
 	"onScreen": {
 		"main": [
 			"[4D:` ~][4D:1 !][4D:2 @][4D:3 #][4D:4 $][4D:5 %][4D:6 ^][4D:7 &][4D:8 *][4D:9 (][4D:0 )][4D:- _][4D:= +][DEL]",
-			"[TAB]qwertyuiop[4D:[LB] {][4D:[RB] }][4D:\\ |]",
-			"asdfghjkl[4D:; :][4D:' \"]",
+			"[TAB]qwer[4D:t \u00fe]yuiop[4D:[LB] {][4D:[RB] }][4D:\\ |]",
+			"as[4D:d \u00f0]fghjkl[4D:; :][4D:' \"]",
 			"[SHIFT]zxcvbnm[4D:, <][4D:. >][4D:/ ?]",
 			"[SPACE]"
 		]
