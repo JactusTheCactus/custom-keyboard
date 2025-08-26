@@ -1,4 +1,8 @@
 import json, re, sys
+with open("uni.json","r") as f:
+	uni = json.load(f)
+with open("diacritics.json","r") as f:
+	diacritics = json.load(f)
 args = [
 	sys.argv[i]
 	if len(sys.argv) > i
@@ -12,21 +16,18 @@ class Key:
 		self.value = value
 		self.length = length
 def char(stringInput):
-	with open("uni.json","r") as f:
-		uni = json.load(f)
-	diacritics = {
-		"acute": "\u0301",
-		"hacek": "\u030c",
-		"grave": "\u0300"
-	}
-	for i in f"a b c d edh e f g h i j k l m n o p q r s t thorn u v w x y z".split():
+	for i in f"a b c d edh e f g h i j k l m n eng o p q r s t thorn u v w x y z".split():
 		for k,v in diacritics.items():
 			c = uni[i] if i in uni else i
-			uni[f"{i}_{k}"] = f"[MC:{c}{v}]"
+			#uni[f"{i}_{k}"] = f"[MC:{c}{v}]"
+			uni[f"{i}_{k}"] = multi(c+v,nested=True)
 	stringOutput = uni[stringInput] if stringInput in uni else stringInput
 	return stringOutput
-def multi(stringInput):
-	return f"[MC:{char(stringInput)}]"
+def multi(stringInput, nested=False):
+	if nested:
+		return f"[MC:{stringInput}]"
+	else:
+		return f"[MC:{char(stringInput)}]"
 def menu(arrayInput):
 	for i in range(len(arrayInput)):
 		arrayInput[i] = char(arrayInput[i])
