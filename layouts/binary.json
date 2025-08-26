@@ -1,0 +1,9 @@
+{
+	"title": "binary",
+	"onScreen": {
+		"main": [
+			"0[]1[][DEL]",
+			"[SPACE][][][ENTER][]"
+		]
+	}
+}
