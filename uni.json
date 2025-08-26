@@ -1,7 +1,8 @@
 {
+	"middleDot": "\u00b7",
 	"edh": "\u00f0",
-	"eng": "\u014b",
 	"thorn": "\u00fe",
+	"eng": "\u014b",
 	"shift": "[SHIFT]",
 	"del": "[DEL]",
 	"tab": "[TAB]",
