@@ -7,32 +7,8 @@ class Key:
 		self.value = value
 		self.length = length
 def char(stringInput):
-	uni = {
-		"d;": "\u00f0",
-		"e;": "\u00e9",
-		"i;": "\u00ed",
-		"n;": "\u014b",
-		"o;": "\u00f3",
-		"s;": "\u015b",
-		"t;": "\u00fe",
-		"u;": "\u00fa",
-		"u;;": "\u0171",
-		"z;": "\u017a",
-		"shift":"[SHIFT]",
-		"del":"[DEL]",
-		"tab":"[TAB]",
-		"up":"[UP]",
-		"down":"[DOWN]",
-		"left":"[LEFT]",
-		"right":"[RIGHT]",
-		"_A":"[ALL]",
-		"_C":"[COPY]",
-		"_V":"[PASTE]",
-		"_Z":"[UNDO]",
-		"_X":"[CUT]",
-		"space":"[SPACE]",
-		"enter":"[ENTER]"
-	}
+	with open("uni.json","r") as f:
+		uni = json.load(f)
 	stringOutput = uni[stringInput] if stringInput in uni else stringInput
 	return stringOutput
 def multi(stringInput):
