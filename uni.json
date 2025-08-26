@@ -1,5 +1,7 @@
 {
 	"edh": "\u00f0",
+	"d_acute": "[MC:d\u0301]",
+	"d_hacek": "[MC:d\u030c]",
 	"a_acute": "[MC:a\u0301]",
 	"a_hacek": "[MC:a\u030c]",
 	"e_acute": "[MC:e\u0301]",
