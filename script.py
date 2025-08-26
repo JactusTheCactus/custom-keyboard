@@ -3,6 +3,7 @@ with open("uni.json","r") as f:
 	uni = json.load(f)
 with open("diacritics.json","r") as f:
 	diacritics = json.load(f)
+print("\n".join([" ".join([f"{b}{a}" for b in "A E I O U".split()]) for a in diacritics.values()]))
 args = [
 	sys.argv[i]
 	if len(sys.argv) > i

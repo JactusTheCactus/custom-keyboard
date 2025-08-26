@@ -1,6 +1,21 @@
 {
-	"grave": "\u0300",
-	"acute": "\u0301",
-	"overdot": "\u0307",
-	"hacek": "\u030c"
+	"grave":			"\u0300",
+	"acute":			"\u0301",
+	"circumflex":		"\u0302",
+	"tilde":			"\u0303",
+	"overbar":			"\u0304",
+	"breve":			"\u0306",
+	"overdot":			"\u0307",
+	"umlaut":			"\u0308",
+	"overring":			"\u030a",
+	"acute_double":		"\u030b",
+	"hacek":			"\u030c",
+	"grave_double":		"\u030f",
+	"breve_inverted":	"\u0311",
+	"underdot":			"\u0323",
+	"underring":		"\u0325",
+	"commabelow":		"\u0326",
+	"cedilla":			"\u0327",
+	"ogonek":			"\u0328",
+	"underbar":			"\u0332"
 }
