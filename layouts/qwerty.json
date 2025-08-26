@@ -4,7 +4,7 @@
 		"main": [
 			"[4D:` ~][4D:1 !][4D:2 @][4D:3 #][4D:4 $][4D:5 %][4D:6 ^][4D:7 &][4D:8 *][4D:9 (][4D:0 )][4D:- _][4D:= +][DEL]",
 			"[TAB]qw[4D:e [MC:e\u0301]  [MC:e\u030c][MC:e\u0300]]r[4D:t \u00fe  [MC:t\u0301][MC:t\u0300]]y[4D:u [MC:u\u0301]  [MC:u\u030c][MC:u\u0300]][4D:i [MC:i\u0301]  [MC:i\u030c][MC:i\u0300]][4D:o [MC:o\u0301]  [MC:o\u030c][MC:o\u0300]]p[4D:[LB] {][4D:[RB] }][4D:\\ |]",
-			"[4D:[MC:a\u030b\u0300][MC:a\u0300]a[MC:a\u030c][MC:a\u0301]][4D:s [MC:s\u0301]  [MC:s\u030c][MC:s\u0300]][4D:d \u00f0  [MC:d\u0301][MC:d\u0300]]fghjkl[4D:; :][4D:' \"][ENTER]",
+			"[4D:a [MC:a\u0301]  [MC:a\u030c][MC:a\u0300]][4D:s [MC:s\u0301]  [MC:s\u030c][MC:s\u0300]][4D:d \u00f0  [MC:d\u0301][MC:d\u0300]]fghjkl[4D:; :][4D:' \"][ENTER]",
 			"[SHIFT][4D:z [MC:z\u0301]  [MC:z\u030c][MC:z\u0300]]xcvb[4D:n \u014b]m[4D:, <][4D:. >][4D:/ ?]",
 			"[SPACE]"
 		]
