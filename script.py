@@ -3,7 +3,6 @@ with open("uni.json","r") as f:
 	uni = json.load(f)
 with open("diacritics.json","r") as f:
 	diacritics = json.load(f)
-print("\n".join([" ".join([f"{b}{a}" for b in "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z".split()]) for a in diacritics.values()]))
 args = [
 	sys.argv[i]
 	if len(sys.argv) > i
@@ -18,10 +17,11 @@ class Key:
 		self.length = length
 def char(stringInput):
 	for i in f"a b c d edh e f g h i j k l m n eng o p q r s t thorn u v w x y z".split():
-		for k,v in diacritics.items():
+		for k1, v1 in diacritics.items():
 			c = uni[i] if i in uni else i
-			#uni[f"{i}_{k}"] = f"[MC:{c}{v}]"
-			uni[f"{i}_{k}"] = multi(c+v,nested=True)
+			for k2, v2 in diacritics.items():
+				uni[f"{i}_{k1}_{k2}"] = multi(c+v1+v2,nested=True)
+			uni[f"{i}_{k1}"] = multi(c+v1,nested=True)
 	stringOutput = uni[stringInput] if stringInput in uni else stringInput
 	return stringOutput
 def multi(stringInput, nested=False):
