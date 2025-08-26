@@ -2,10 +2,10 @@
 	"title": "qwerty",
 	"onScreen": {
 		"main": [
-			"`1234567890-=[DEL]",
-			"[TAB]qwertyuiop[]\\",
-			"asdfghjkl;'",
-			"[SHIFT]zxcvbnm,./",
+			"[4D:` ~][4D:1 !][4D:2 @][4D:3 #][4D:4 $][4D:5 %][4D:6 ^][4D:7 &][4D:8 *][4D:9 (][4D:0 )][4D:- _][4D:= +][DEL]",
+			"[TAB]qwertyuiop[4D:[ {][4D:] }][4D:\\ |]",
+			"asdfghjkl[4D:; :][4D:' \"]",
+			"[SHIFT]zxcvbnm[4D:, <][4D:. >][4D:/ ?]",
 			"[SPACE]"
 		]
 	}
