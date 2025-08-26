@@ -169,6 +169,6 @@ def keyboard(hashInput):
 			json.dump(layout,f,indent="\t")
 if inputData:
 	with open(inputData, "r") as f:
-		print(f)
+		print(f.read())
 		data = json.load(f)
 		keyboard(data)
