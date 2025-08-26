@@ -14,7 +14,8 @@ class Key:
 def char(stringInput):
 	with open("uni.json","r") as f:
 		uni = json.load(f)
-	stringOutput = uni[stringInput] if stringInput in uni else stringInput
+	stringOutput = f"< {uni[stringInput]} >" if stringInput in uni else stringInput
+	print(f"{stringInput} => {stringOutput}")
 	return stringOutput
 def multi(stringInput):
 	return f"[MC:{char(stringInput)}]"

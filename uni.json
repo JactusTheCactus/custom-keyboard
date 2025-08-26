@@ -22,5 +22,9 @@
 	"_Z": "[UNDO]",
 	"_X": "[CUT]",
 	"space": "[SPACE]",
-	"enter": "[ENTER]"
+	"enter": "[ENTER]",
+	"[":"U+005B",
+	"]":"U+005D",
+	"{":"U+007B",
+	"}":"U+007D"
 }
