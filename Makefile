@@ -2,7 +2,7 @@
 DATA := $(wildcard data/*.json)
 LAYOUTS := $(patsubst data/%.json,layouts/%.json,$(DATA))
 all:
-	clear
+	-clear
 	make build
 build: $(LAYOUTS)
 layouts/%.json: data/%.json script.py $(wildcard *.json)
