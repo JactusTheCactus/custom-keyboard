@@ -80,10 +80,52 @@ def swipe(arrayInput):
 		case 5:
 			stringOutput = swipeVerbose({
 				"C": newArray[0],
+				"NW": newArray[1],
+				"NE": newArray[2],
+				"SE": newArray[3],
+				"SW": newArray[4]
+			}).value
+		case 6:
+			stringOutput = swipeVerbose({
+				"C": newArray[0],
 				"N": newArray[1],
-				"S": newArray[2],
+				"NE": newArray[2],
+				"SE": newArray[3],
+				"SW": newArray[4],
+				"NW": newArray[5]
+			}).value
+		case 7:
+			stringOutput = swipeVerbose({
+				"C": newArray[0],
+				"NE": newArray[1],
+				"E": newArray[2],
+				"SE": newArray[3],
+				"SW": newArray[4],
+				"W": newArray[5],
+				"NW": newArray[6]
+			}).value
+		case 8:
+			stringOutput = swipeVerbose({
+				"C": newArray[0],
+				"N": newArray[1],
+				"NE": newArray[2],
 				"E": newArray[3],
-				"W": newArray[4]
+				"SE": newArray[4],
+				"SW": newArray[5],
+				"W": newArray[6],
+				"NW": newArray[7]
+			}).value
+		case 9:
+			stringOutput = swipeVerbose({
+				"C": newArray[0],
+				"N": newArray[1],
+				"NE": newArray[2],
+				"E": newArray[3],
+				"SE": newArray[4],
+				"S": newArray[5],
+				"SW": newArray[6],
+				"W": newArray[7],
+				"NW": newArray[8]
 			}).value
 		case _:
 			stringOutput = f"<{newArray}>"
