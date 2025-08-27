@@ -3,7 +3,7 @@
 	"onScreen": {
 		"main": [
 			"[4D:` ~][4D:1 !][4D:2 @][4D:3 #][4D:4 $][4D:5 %][4D:6 ^][4D:7 &][4D:8 *][4D:9 (][4D:0 )][4D:- _][4D:= +]",
-			"qw[4D:e [MC:e\u0301]]r[4D:t \u00fe]y[4D:u [MC:u\u0301]    [MC:u\u030c][MC:u\u030b]][4D:i [MC:i\u0301]][4D:o [MC:o\u0301]]p[4D:[LB] {][4D:[RB] }][4D:\\ |]",
+			"qw[4D:e [MC:e\u0301]]r[4D:t \u00fe]y[4D:u    [MC:u\u0301][MC:u\u030c]][4D:i [MC:i\u0301]][4D:o [MC:o\u0301]]p[4D:[LB] {][4D:[RB] }][4D:\\ |]",
 			"[TAB]a[4D:s [MC:s\u0301]][4D:d \u00f0]fghjkl[4D:; :][4D:' \"][DEL]",
 			"[4D:z [MC:z\u0301]]xcvb[4D:n \u014b]m[4D:, <][4D:. >][4D:/ ?]",
 			"[SHIFT][SPACE][][][ENTER]"
