@@ -4,7 +4,7 @@
 		"main": [
 			"[4D:1 !][4D:2 @][4D:3 #][4D:4 $][4D:5 %][4D:6 ^][4D:7 &][4D:8 *][4D:9 (][4D:0 )]",
 			"[4D:q ` ~][4D:w |][4D:e [MC:e\u0301]][4D:r \\][4D:t \u00fe][4D:y [LB] [RB]][4D:u [MC:u\u0301] [MC:u\u030c]][4D:i [MC:i\u0301]][4D:o [MC:o\u0301]][4D:p { }]",
-			"a[4D:s [MC:s\u0301]][4D:d \u00f0]fg[4D:h ?][4D:j_-=+][4D:k ; :][4D:l ' \"]",
+			"a[4D:s [MC:s\u0301]][4D:d \u00f0]f[4D:g[LEFT][UP][RIGHT][DOWN]][4D:h ?][4D:j_-=+][4D:k ; :][4D:l ' \"]",
 			"[TAB][4D:z [MC:z\u0301]][4D:x < >]cv[4D:b /][4D:n \u014b][4D:m , .][DEL]",
 			"[SHIFT][SPACE][][][ENTER]"
 		]
