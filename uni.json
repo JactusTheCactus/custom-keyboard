@@ -10,7 +10,7 @@
 	"down": "[DOWN]",
 	"left": "[LEFT]",
 	"right": "[RIGHT]",
-	"select": "[SEL]",
+	"select": "[xXx]",
 	"ctrl_a": "[ALL]",
 	"ctrl_c": "[COPY]",
 	"ctrl_v": "[PASTE]",
