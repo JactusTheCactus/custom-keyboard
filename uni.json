@@ -19,5 +19,6 @@
 	"space": "[SPACE]",
 	"enter": "[ENTER]",
 	"[": "[LB]",
-	"]": "[RB]"
+	"]": "[RB]",
+	"interrobang": "\u203d"
 }
