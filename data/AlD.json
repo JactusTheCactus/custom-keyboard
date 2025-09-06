@@ -2,38 +2,14 @@
 	"title": "AlphabetD",
 	"layout": [
 		[
-			[
-				1,
-				"a"
-			],
-			[
-				1,
-				"e",
-				"e_acute"
-			],
-			[
-				1,
-				"i",
-				"i_acute"
-			],
-			[
-				1,
-				"o",
-				"o_acute"
-			],
-			[
-				1,
-				"u",
-				"u_acute",
-				"u_hacek"
-			]
+			[1,"a"],
+			[1,"e","e_acute"],
+			[1,"i","i_acute"],
+			[1,"o","o_acute"],
+			[1,"u","u_acute","u_hacek"]
 		],
 		[
-			[
-				1,
-				"c",
-				"j"
-			],
+			[1,"c","j"],
 			[
 				1,
 				"f",
