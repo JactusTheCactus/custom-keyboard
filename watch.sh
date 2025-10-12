@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 WATCH=( \
 	*.json
 	script.py
