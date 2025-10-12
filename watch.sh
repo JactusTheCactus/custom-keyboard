@@ -1,5 +1,9 @@
 #!/bin/bash
+WATCH=( \
+	*.json
+	script.py
+)
 make
-while inotifywait -e close_write data/*.json script.py *.json; do
+while inotifywait -e close_write "$WATCH"; do
 	make
 done
