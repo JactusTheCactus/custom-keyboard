@@ -4,6 +4,6 @@ WATCH=( \
 	script.py
 )
 make
-while inotifywait -e close_write "$WATCH"; do
+while inotifywait -e close_write "${WATCH[@]}"; do
 	make
 done
