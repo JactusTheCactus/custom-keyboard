@@ -20,5 +20,6 @@
 	"enter": "[ENTER]",
 	"[": "[LB]",
 	"]": "[RB]",
-	"interrobang": "\u203d"
+	"interrobang": "\u203d",
+	"...": "…"
 }
