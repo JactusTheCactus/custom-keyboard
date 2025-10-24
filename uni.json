@@ -15,6 +15,7 @@
 	"ctrl_c": "[COPY]",
 	"ctrl_v": "[PASTE]",
 	"ctrl_z": "[UNDO]",
+	"ctrl_y": "[REDO]",
 	"ctrl_x": "[CUT]",
 	"space": "[SPACE]",
 	"enter": "[ENTER]",
