@@ -1,9 +1,0 @@
-{
-	"title": "Binary",
-	"onScreen": {
-		"main": [
-			"01[DEL]",
-			"[SPACE][][ENTER]"
-		]
-	}
-}
