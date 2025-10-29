@@ -6,7 +6,7 @@
 			"[4D:c j][4D:f v]h[4D:k g]lmn",
 			"\u014b[4D:p b]r[4D:s z][4D:[MC:s\u0301] [MC:z\u0301]][4D:t d][4D:\u00fe \u00f0]",
 			"[4D:[TAB][LEFT][UP][DOWN][RIGHT]][]wy[4D:. \u2026][DEL][]",
-			"[SHIFT][][][] ?-[ENTER]",
+			"[SHIFT][][] ?-[ENTER][]",
 			"[4D:[ALL][UNDO][COPY][CUT][PASTE]][][SPACE][][][]"
 		]
 	}
