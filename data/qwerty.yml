@@ -61,7 +61,6 @@ layout:
       - dotBelow
       - umlaut
       - commaBelow
-      - cedilla
     - - 1
       - p
       - " "
@@ -116,6 +115,7 @@ layout:
     - - 1
       - c
       - ctrl_c
+      - c_cedilla
     - - 1
       - v
       - ctrl_v
