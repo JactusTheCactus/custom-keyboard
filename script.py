@@ -3,14 +3,16 @@ with open("uni.yml","r") as f:
 	uni = yaml.safe_load(f)
 with open("diacritics.yml","r") as f:
 	diacritics = yaml.safe_load(f)
-args = [
+[
+	inputData,
+	outputData
+] = [
 	sys.argv[i]
 	if len(sys.argv) > i
 	else ""
 	for i
 	in (1, 2)
 ]
-[inputData,outputData] = args
 class Key:
 	def __init__(self,value="",length=1):
 		self.value = value
