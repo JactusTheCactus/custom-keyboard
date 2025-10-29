@@ -27,6 +27,7 @@ build() {
 		out=layouts${out#data}
 		python script.py $in $out
 	done
+	./index.sh
 }
 WATCH=(
 	*.yml
@@ -34,7 +35,6 @@ WATCH=(
 	script.py
 )
 build
-./index.sh
 if flag local; then
 	while inotifywait -e close_write "${WATCH[@]}"; do
 		build
