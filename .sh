@@ -35,10 +35,12 @@ if ! flag cloudflare; then
 		script.py
 	)
 	build
+fi
+./index.sh
+if ! flag cloudflare; then
 	if flag local; then
 		while inotifywait -e close_write "${WATCH[@]}"; do
 			build
 		done
 	fi
 fi
-./index.sh
