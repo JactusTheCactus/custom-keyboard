@@ -34,8 +34,8 @@ WATCH=(
 	script.py
 )
 build
-./index.sh
 if flag local; then
+	./index.sh
 	while inotifywait -e close_write "${WATCH[@]}"; do
 		build
 	done
