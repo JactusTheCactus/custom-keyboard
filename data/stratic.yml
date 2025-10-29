@@ -17,7 +17,7 @@ layout:
       - u
       - u_acute
     - - 1
-      - "'"
+      - dotBelow
   - - - 1
       - c
       - j
@@ -57,8 +57,8 @@ layout:
   - - - 2
       - tab
       - up
-      - down
       - right
+      - down
       - left
     - - 1
       - w
@@ -71,7 +71,6 @@ layout:
       - del
   - - - 2
       - shift
-      - dotBelow
     - - 1
       - ","
     - - 1
