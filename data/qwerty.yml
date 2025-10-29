@@ -60,6 +60,7 @@ layout:
       - hacek
       - dotBelow
       - umlaut
+      - commaBelow
     - - 1
       - p
       - " "
