@@ -23,7 +23,7 @@ def char(stringInput):
 				uni["_".join([i,k1,k2])] = multi("".join([c,v1,v2]),nested=True)
 			uni[f"{i}_{k1}"] = multi(c+v1,nested=True)
 	for k, v in diacritics.items():
-		uni[f"_{k}"] = v
+		uni[k] = v
 	stringOutput = uni[stringInput] if stringInput in uni else stringInput
 	return stringOutput
 def multi(stringInput, nested=False):
