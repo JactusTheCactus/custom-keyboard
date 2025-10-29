@@ -1,8 +1,8 @@
-import json, re, sys
-with open("uni.json","r") as f:
-	uni = json.load(f)
-with open("diacritics.json","r") as f:
-	diacritics = json.load(f)
+import json, re, sys, yaml
+with open("uni.yml","r") as f:
+	uni = yaml.safe_load(f)
+with open("diacritics.yml","r") as f:
+	diacritics = yaml.safe_load(f)
 args = [
 	sys.argv[i]
 	if len(sys.argv) > i
@@ -53,7 +53,19 @@ def swipeVerbose(hashInput):
 		if i not in hashInput:
 			hashInput[i] = " "
 		arrayOutput.append(char(hashInput[i]))
-	stringOutput = "".join(filter(bool,list(map(lambda i: i if type(i) != int else "",arrayOutput)))).rstrip()
+	stringOutput = "".join(
+		filter(
+			bool,
+			list(
+				map(
+					lambda i: i
+					if type(i) != int
+					else "",
+					arrayOutput
+				)
+			)
+		)
+	).rstrip()
 	return Key(f"[4D:{stringOutput}]")
 def swipe(arrayInput):
 	newArray = arrayInput[1:]
@@ -171,4 +183,4 @@ def keyboard(hashInput):
 			json.dump(layout,f,indent="\t")
 if inputData:
 	with open(inputData, "r") as f:
-		keyboard(json.load(f))
+		keyboard(yaml.safe_load(f))

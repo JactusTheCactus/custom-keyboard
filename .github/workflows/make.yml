@@ -1,4 +1,4 @@
-name: Run Python Script on Commit
+name: Run
 on:
   push:
     branches:
@@ -7,20 +7,20 @@ jobs:
   run-script:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.12'
-    - name: Run Makefile
-      run: make -B
-    - name: Configure Git
-      run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "github-actions[bot]@users.noreply.github.com"
-    - name: Commit changes
-      run: |
-        git add .
-        git commit -m "Auto-commit: update from make" || echo "No changes to commit"
-        git push
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build Keyboards
+        run: ./.sh
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+      - name: Commit changes
+        run: |
+          git add .
+          git commit -m "Auto-commit: update from make" || :
+          git push

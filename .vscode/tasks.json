@@ -12,7 +12,7 @@
 		{
 			"label": "Build",
 			"type": "shell",
-			"command": "make",
+			"command": "./.sh",
 			"group": {
 				"kind": "build",
 				"isDefault": true
