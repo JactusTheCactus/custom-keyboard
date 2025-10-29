@@ -1,7 +1,7 @@
 HTML=""
 STYLE=(
 	"body {font: 20px \"Inter\"}"
-	"code {font: 1em \"Fira Code\"}"
+	"pre,code {font: 1em \"Fira Code\"}"
 )
 HTML+="<style>"
 HTML+="@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');"
