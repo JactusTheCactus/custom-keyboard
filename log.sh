@@ -1,19 +1,21 @@
-exec > index.html
+HTML=""
 STYLE=(
 	"body {font: 20px \"Inter\"}"
 	"code {font: 1em \"Fira Code\"}"
 )
-echo "<style>"
+HTML+="<style>"
 for i in "${STYLE[@]}"; do
-	echo "$i"
+	HTML+="$i"
 done
-echo "</style>"
+HTML+="</style>"
 for FILE in layouts/*.json; do
-	echo "<h1>$(jq -r .title $FILE)</h1>"
-	echo "<ul>"
+	HTML+="<h1>$(jq -r .title $FILE)</h1>"
+	HTML+="<pre><code>"
 	mapfile -t ROWS < <(jq -r .onScreen.main[] $FILE)
 	for ROW in "${ROWS[@]}"; do
-		echo "<li><code>$ROW</code></li>"
+		HTML+="$ROW<br>"
 	done
-	echo "</ul>"
+	HTML=${HTML%"<br>"}
+	HTML+="</code></pre>"
 done
+echo "$HTML" > index.html
