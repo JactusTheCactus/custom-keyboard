@@ -1,6 +1,6 @@
 HTML=""
 STYLE=(
-	"body {font: 20px \"Inter\"}"
+	"body {font: 20pt \"Inter\"}"
 	"pre,code {font: 1em \"Fira Code\"}"
 )
 HTML+="<style>"
