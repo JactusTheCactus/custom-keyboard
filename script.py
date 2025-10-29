@@ -16,7 +16,7 @@ class Key:
 		self.value = value
 		self.length = length
 def char(stringInput):
-	for i in f"a b c d edh e f g h i j k l m n eng o p q r s t thorn u v w x y z".split():
+	for i in f"a ash b c d edh e f g h i j k l m n eng o p q r s t thorn u v w x y z".split():
 		for k1, v1 in diacritics.items():
 			c = uni[i] if i in uni else i
 			for k2, v2 in diacritics.items():
