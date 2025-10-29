@@ -32,4 +32,4 @@ layout:
     - [1, "-"]
     - [2, enter]
   - - [2, ctrl_a, ctrl_c, ctrl_x, ctrl_v, ctrl_z]
-    - [4, space]
+    - [5, space]
