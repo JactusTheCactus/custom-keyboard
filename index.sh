@@ -4,6 +4,7 @@ STYLE=(
 	"code {font: 1em \"Fira Code\"}"
 )
 HTML+="<style>"
+HTML+="@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');"
 for i in "${STYLE[@]}"; do
 	HTML+="$i"
 done
