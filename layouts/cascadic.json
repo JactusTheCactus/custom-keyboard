@@ -2,7 +2,7 @@
 	"title": "Cascadic",
 	"onScreen": {
 		"main": [
-			"a[4D:e [MC:e\u0301]][4D:i [MC:i\u0301]][4D:o [MC:o\u0301]][4D:u [MC:u\u0301] [MC:u\u030c]]",
+			"[4D:a \u00e6][4D:e [MC:e\u0301]][4D:i [MC:i\u0301]][4D:o [MC:o\u0301]][4D:u [MC:u\u0301] [MC:u\u030c]]",
 			"[4D:c j][4D:f v]h[4D:k g]l",
 			"mn\u014b[4D:p b]r",
 			"[4D:s z][4D:[MC:s\u0301] [MC:z\u0301]][4D:t d][4D:\u00fe \u00f0][DEL]",
