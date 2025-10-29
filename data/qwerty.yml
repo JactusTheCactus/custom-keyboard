@@ -61,6 +61,7 @@ layout:
       - dotBelow
       - umlaut
       - commaBelow
+      - cecilla
     - - 1
       - p
       - " "
