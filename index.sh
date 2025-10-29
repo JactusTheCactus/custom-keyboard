@@ -4,7 +4,7 @@ HTML+="@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght
 HTML+="body{font:20pt\"Noto Sans\",sans-serif}"
 HTML+="li{white-space:pre}"
 HTML+="</style>"
-for FILE in layouts/*.json; do
+for FILE in layouts/*; do
 	HTML+="<h1>$(jq -r .title $FILE)</h1>"
 	HTML+="<ul>"
 	mapfile -t ROWS < <(jq -r .onScreen.main[] $FILE)

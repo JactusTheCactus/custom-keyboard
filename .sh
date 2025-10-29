@@ -21,9 +21,9 @@ for i in "${dependencies[@]}"; do
 	pip install $i
 done
 build() {
-	for in in data/*.yml; do
+	for in in data/*; do
 		out=$in
-		out=${out%.yml}.json
+		out=${out%yml}json
 		out=layouts${out#data}
 		python script.py $in $out
 	done
