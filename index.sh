@@ -10,7 +10,7 @@ for FILE in layouts/*; do
 	mapfile -t ROWS < <(jq -r .onScreen.main[] $FILE)
 	for ROW in "${ROWS[@]}"; do
 		if [ "$FILE" = "layouts/qwerty.json" ]; then
-			ROW="$(echo "$ROW" | perl -CS -pe 's/(\x{0301}|\x{0308}|\x{030c})/\x{25cc}$1/g')"
+			ROW="$(echo "$ROW" | perl -CS -pe 's/([\x{0301}\x{0308}\x{030c}\x{0326}])/\x{25cc}$1/g')"
 		fi
 		ROW="$(echo "$ROW" | perl -CS -pe 's/(\x{0323})/\x{25cc}$1/g')"
 		RE=(

@@ -1,0 +1,24 @@
+{
+  "name": "custom-keyboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type":"module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JactusTheCactus/custom-keyboard.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JactusTheCactus/custom-keyboard/issues"
+  },
+  "homepage": "https://github.com/JactusTheCactus/custom-keyboard#readme",
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  }
+}
