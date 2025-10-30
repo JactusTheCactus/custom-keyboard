@@ -74,7 +74,7 @@ function swipeVerbose(hashInput) {
 				}
 			}
 		})
-	"C W N E S NW NE SE SW"
+	"C N NE E SE S SW W NW"
 		.split(/\s+/)
 		.forEach(i => {
 			if (
