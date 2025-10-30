@@ -14,7 +14,7 @@ input.layout = input
 	.map(row => {
 		return row
 			.map(key => {
-				return "["
+				return "[4D:"
 					+ key
 						.map(char => {
 							return typeof char === "string"

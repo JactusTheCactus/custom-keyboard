@@ -2,11 +2,11 @@
 	"title": "QWERTY (NodeJS)",
 	"onScreen": {
 		"main": [
-			"[1!][2@][3#][4$][5%][6^][7&][8*][9(][0)]",
-			"[q`~][w|][e][r\\][tþ][y[REDO][RB][LB]][u][i][ọ̦́̌̈][p}{]",
-			"[a[ALL]æ][s][dðDevin][f][g[UP][RIGHT][DOWN][LEFT]][h?‽][j-=+_][k;:][l'\"]",
-			"[[TAB]][z[UNDO]][x[CUT]><][c[COPY]ç][v[PASTE]][b/Basaraba][nŋ][m,.…][[DEL]]",
-			"[[SHIFT]][[SPACE]][][][[ENTER]]"
+			"[4D:1!][4D:2@][4D:3#][4D:4$][4D:5%][4D:6^][4D:7&][4D:8*][4D:9(][4D:0)]",
+			"[4D:q`~][4D:w|][4D:e][4D:r\\][4D:tþ][4D:y[REDO][RB][LB]][4D:u][4D:i][4D:ọ̦́̌̈][4D:p}{]",
+			"[4D:a[ALL]æ][4D:s][4D:dðDevin][4D:f][4D:g[UP][RIGHT][DOWN][LEFT]][4D:h?‽][4D:j-=+_][4D:k;:][4D:l'\"]",
+			"[4D:[TAB]][4D:z[UNDO]][4D:x[CUT]><][4D:c[COPY]ç][4D:v[PASTE]][4D:b/Basaraba][4D:nŋ][4D:m,.…][4D:[DEL]]",
+			"[4D:[SHIFT]][4D:[SPACE]][][][4D:[ENTER]]"
 		]
 	}
 }
