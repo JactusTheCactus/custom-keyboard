@@ -1,10 +1,12 @@
 {
 	"title": "QWERTY (NodeJS)",
-	"layout": [
-		"[1!][2@][3#][4$][5%][6^][7&][8*][9(][0)]",
-		"[q`~][w|][e][r\\][tþ][y[REDO][RB][LB]][u][i][ọ̦́̌̈][p}{]",
-		"[a[ALL]æ][s][dðDevin][f][g[UP][RIGHT][DOWN][LEFT]][h?‽][j-=+_][k;:][l'\"]",
-		"[[TAB]][z[UNDO]][x[CUT]><][c[COPY]ç][v[PASTE]][b/Basaraba][nŋ][m,.…][[DEL]]",
-		"[[SHIFT]][[SPACE]][][][[ENTER]]"
-	]
+	"onScreen": {
+		"main": [
+			"[1!][2@][3#][4$][5%][6^][7&][8*][9(][0)]",
+			"[q`~][w|][e][r\\][tþ][y[REDO][RB][LB]][u][i][ọ̦́̌̈][p}{]",
+			"[a[ALL]æ][s][dðDevin][f][g[UP][RIGHT][DOWN][LEFT]][h?‽][j-=+_][k;:][l'\"]",
+			"[[TAB]][z[UNDO]][x[CUT]><][c[COPY]ç][v[PASTE]][b/Basaraba][nŋ][m,.…][[DEL]]",
+			"[[SHIFT]][[SPACE]][][][[ENTER]]"
+		]
+	}
 }

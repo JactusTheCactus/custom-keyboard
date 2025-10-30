@@ -42,5 +42,5 @@ for data in WIP/data/*; do
 	./.js "$i"
 	o="${data#WIP/data/}"
 	o="${i%.yml}"
-	jq -r ".layout[]" "WIP/layouts/$o.json"
+	jq -r ".onScreen.main[]" "WIP/layouts/$o.json"
 done

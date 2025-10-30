@@ -51,5 +51,12 @@ input.layout = input
 			.join("")
 	})
 fs.writeFileSync(outputFile, JSON.stringify(
-	input,
-	null, "\t"))
+	{
+		title: input.title,
+		onScreen: {
+			main: input.layout
+		}
+	},
+	null,
+	"\t"
+))
