@@ -1,27 +1,13 @@
 #!/usr/bin/env node
 import fs from "fs"
 import YAML from "js-yaml"
-function pathJoin(...path) {
-	return path.join("/")
-}
-function fileExt(file, ext) {
-	return [file, ext].join(".")
-}
 const uni = YAML.load(fs.readFileSync("uni.yml"))
 const diacritics = YAML.load(fs.readFileSync("diacritics.yml"))
 const args = process
 	.argv
 	.filter(i => !/node|\.js$/.test(i))
-const inputData = pathJoin(
-	"node",
-	"data",
-	fileExt(args[0], "yml")
-)
-const outputData = pathJoin(
-	"node",
-	"layouts",
-	fileExt(args[0], "json")
-)
+const inputData = ["node", "data", [args[0], "yml"].join(".")].join("/")
+const outputData = ["node", "layouts", [args[0], "json"].join(".")].join("/")
 "a ash b c d edh e f g h i j k l m n eng o p q r s t thorn u v w x y z"
 	.split(/\s+/)
 	.forEach(i => {
@@ -50,9 +36,11 @@ function multi(stringInput) {
 	return `[MC:${stringInput}]`
 }
 function char(stringInput) {
-	Object.entries(diacritics).forEach(([k, v]) => {
-		uni[k] = v
-	})
+	Object
+		.entries(diacritics)
+		.forEach(([k, v]) => {
+			uni[k] = v
+		})
 	return stringInput in uni
 		? uni[stringInput]
 		: stringInput
@@ -83,8 +71,8 @@ function swipeVerbose(hashInput) {
 					.includes(i)
 			) hashInput[i] = " "
 		})
-	const arrayInput = Object.values(hashInput)
-	const stringOutput = arrayInput
+	const stringOutput = Object
+		.values(hashInput)
 		.join("")
 		.replace(/\s*$/, "")
 	console.log(stringOutput)
