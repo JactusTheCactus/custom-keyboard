@@ -13,6 +13,7 @@ const args = process
 	.argv
 	.filter(i => !/node|\.js$/.test(i))
 const inputData = pathJoin(
+	"node",
 	"data",
 	fileExt(args[0], "yml")
 )
@@ -21,110 +22,105 @@ const outputData = pathJoin(
 	"layouts",
 	fileExt(args[0], "json")
 )
+"a ash b c d edh e f g h i j k l m n eng o p q r s t thorn u v w x y z"
+	.split(/\s+/)
+	.forEach(i => {
+		Object
+			.entries(diacritics)
+			.forEach(([k1, v1]) => {
+				const c = i in uni
+					? uni[i]
+					: i
+				Object
+					.entries(diacritics)
+					.forEach(([k2, v2]) => {
+						uni[[i, k1, k2]
+							.join("_")] = multi(char([c, v1, v2].join("")))
+					})
+				uni[[i, k1].join("_")] = multi(char(c + v1))
+			})
+	})
 class Key {
 	constructor(value = "", length = 1) {
 		this.value = value
 		this.length = length
 	}
 }
+function multi(stringInput) {
+	return `[MC:${stringInput}]`
+}
 function char(stringInput) {
-	"a ash b c d edh e f g h i j k l m n eng o p q r s t thorn u v w x y z"
-		.split(/\s+/)
-		.forEach(i => {
-			Object.entries(diacritics).forEach(([k1, v1]) => {
-				const c = uni.includes(i)
-					? uni[i]
-					: i
-				Object.entries(diacritics).forEach(([k2, v2]) => {
-					uni[[i, k1, k2].join("_")] = multi(
-						[c, v1, v2].join(""),
-						true
-					)
-				})
-				uni[[i, k1].join("_")] = multi(c + v1, nested = True)
-			})
-		})
 	Object.entries(diacritics).forEach(([k, v]) => {
 		uni[k] = v
 	})
-	return uni.includes(stringInput)
+	return stringInput in uni
 		? uni[stringInput]
 		: stringInput
 }
-function multi(stringInput, nested = false) {
-	if (nested) {
-		return `[MC:${stringInput}]`
-	} else {
-		return `[MC:${char(stringInput)}]`
-	}
-}
-function menu(arrayInput) {
-	for (let i = 0; i++; i < arrayInput.length) {
-		arrayInput[i] = char(arrayInput[i])
-	}
-	return `[XC:${arrayInput.join("")}]`
-}
+//function menu(arrayInput){for(let i=0;i<arrayInput.length;i++){arrayInput[i]=char(arrayInput[i])}return`[XC:${arrayInput.join("")}]`}
 function swipeVerbose(hashInput) {
-	Object.entries(hashInput).forEach(([k, v]) => {
-		if (typeof v !== "number") {
-			if (
-				typeof hashInput[k] === "string"
-				&& v.length > 1
-				&& (
-					/\[\w+\]/.test(char(v))
-					|| /[^\u0000-\u007f]/.test(char(v))
-				)
-			) {
-				hashInput[k] = multi(hashInput[k])
-			} else {
-				hashInput[k] = `${hashInput[k]}`
+	Object
+		.entries(hashInput)
+		.forEach(([k, v]) => {
+			if (typeof v !== "number") {
+				if (
+					typeof hashInput[k] === "string"
+					&& v.length > 1
+					&& /\[\w+\]|[^\u0000-\u007f]/.test(char(v))
+				) {
+					hashInput[k] = multi(hashInput[k])
+				} else {
+					hashInput[k] = `${hashInput[k]}`
+				}
 			}
-		}
-	})
-	const arrayInput = []
+		})
 	"C W N E S NW NE SE SW"
 		.split(/\s+/)
 		.forEach(i => {
-			if (!hashInput.values.includes(i)) {
-				hashInput[i] = " "
-			}
+			if (
+				!Object
+					.keys(hashInput)
+					.includes(i)
+			) hashInput[i] = " "
 		})
-	const stringOutput = [
-		arrayInput.map(i => {
-			typeof i !== "number"
-				? i
-				: ""
-		})
-			.filter(Boolean)
-	]
+	const arrayInput = Object.values(hashInput)
+	const stringOutput = arrayInput
 		.join("")
 		.replace(/\s*$/, "")
-	return Key(`[4D:${stringOutput}]`)
+	console.log(stringOutput)
+	return new Key(`[4D:${stringOutput}]`)
 }
 function swipe(arrayInput) {
-	const newArray = arrayInput.slice(1)
+	const newArray = arrayInput
+		.slice(1)
+		.map(i => i ?? " ")
 	const length = newArray.length
+	let stringOutput = ""
 	switch (length) {
 		case 1:
-			stringOutput = newArray[0]
+			stringOutput = newArray[0];
+			break
 		case 2:
 			stringOutput = swipeVerbose({
 				"C": newArray[0],
 				"N": newArray[1]
-			}).value
+			}).value;
+			break
 		case 3:
 			stringOutput = swipeVerbose({
 				"C": newArray[0],
 				"N": newArray[1],
 				"S": newArray[2]
-			}).value
+			}).value;
+			break
 		case 4:
 			stringOutput = swipeVerbose({
 				"C": newArray[0],
 				"N": newArray[1],
 				"SE": newArray[2],
 				"SW": newArray[3]
-			}).value
+			}).value;
+			break
 		case 5:
 			stringOutput = swipeVerbose({
 				"C": newArray[0],
@@ -132,7 +128,8 @@ function swipe(arrayInput) {
 				"E": newArray[2],
 				"S": newArray[3],
 				"W": newArray[4]
-			}).value
+			}).value;
+			break
 		case 6:
 			stringOutput = swipeVerbose({
 				"C": newArray[0],
@@ -141,7 +138,8 @@ function swipe(arrayInput) {
 				"SE": newArray[3],
 				"SW": newArray[4],
 				"NW": newArray[5]
-			}).value
+			}).value;
+			break
 		case 7:
 			stringOutput = swipeVerbose({
 				"C": newArray[0],
@@ -151,7 +149,8 @@ function swipe(arrayInput) {
 				"SW": newArray[4],
 				"W": newArray[5],
 				"NW": newArray[6]
-			}).value
+			}).value;
+			break
 		case 8:
 			stringOutput = swipeVerbose({
 				"C": newArray[0],
@@ -162,7 +161,8 @@ function swipe(arrayInput) {
 				"SW": newArray[5],
 				"W": newArray[6],
 				"NW": newArray[7]
-			}).value
+			}).value;
+			break
 		case 9:
 			stringOutput = swipeVerbose({
 				"C": newArray[0],
@@ -174,7 +174,8 @@ function swipe(arrayInput) {
 				"SW": newArray[6],
 				"W": newArray[7],
 				"NW": newArray[8]
-			}).value
+			}).value;
+			break
 		default:
 			stringOutput = `<${newArray}>`
 	}
@@ -190,7 +191,16 @@ function key(arrayInput) {
 		swipe(arrayInput.map(i => char(i)))[0],
 		"[]".repeat(width - 1)
 	].join("")
-	return Key(stringOutput, width)
+	return new Key(stringOutput, width)
+}
+function row(arrayIn) {
+	for (let i = 0; i < arrayIn.length; i++) {
+		arrayIn[i] = key(arrayIn[i])
+	}
+	const stringOutput = arrayIn
+		.map(i => i.value)
+		.join("")
+	return stringOutput
 }
 function keyboard(hashInput) {
 	const title = hashInput.title
@@ -201,26 +211,24 @@ function keyboard(hashInput) {
 			main: []
 		}
 	}
-	function row(arrayInput) {
-		for (let i = 0; i++; i < arrayInput.length) {
-			arrayInput[i] = key(arrayInput[i])
-		}
-		const stringOutput = arrayInput
-			.map(i => i.value)
-			.join("")
+	arrayInput.forEach(r => {
 		layout
 			.onScreen
 			.main
-			.push(stringOutput)
-		return
-	}
-	arrayInput.forEach(r => row(r))
+			.push(row(r))
+	})
 	if (outputData) {
-		fs.writeFileSync(outputData, JSON.stringify(layout))
+		fs.writeFileSync(outputData,
+			JSON.stringify(layout, null, "\t")
+		)
 	}
 }
 if (inputData) {
-	keyboard(YAML.load(fs.readFileSync(inputData, {
-		encoding: "utf-8"
-	})))
+	keyboard(YAML
+		.load(fs
+			.readFileSync(inputData, {
+				encoding: "utf-8"
+			})
+		)
+	)
 }
