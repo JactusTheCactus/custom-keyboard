@@ -6,8 +6,8 @@ const diacritics = YAML.load(fs.readFileSync("diacritics.yml"))
 const args = process
 	.argv
 	.filter(i => !/node|\.js$/.test(i))
-const inputData = ["node", "data", [args[0], "yml"].join(".")].join("/")
-const outputData = ["node", "layouts", [args[0], "json"].join(".")].join("/")
+const inputData = ["WIP", "data", [args[0], "yml"].join(".")].join("/")
+const outputData = ["WIP", "layouts", [args[0], "json"].join(".")].join("/")
 "a ash b c d edh e f g h i j k l m n eng o p q r s t thorn u v w x y z"
 	.split(/\s+/)
 	.forEach(i => {
@@ -75,7 +75,6 @@ function swipeVerbose(hashInput) {
 		.values(hashInput)
 		.join("")
 		.replace(/\s*$/, "")
-	console.log(stringOutput)
 	return new Key(`[4D:${stringOutput}]`)
 }
 function swipe(arrayInput) {
