@@ -14,7 +14,8 @@ input.layout = input
 	.map(row => {
 		return row
 			.map(key => {
-				return "[4D:"
+				return (
+					"[4D:"
 					+ key
 						.map(char => {
 							return typeof char === "string"
@@ -47,6 +48,8 @@ input.layout = input
 					+ "]"
 					+ "[]"
 						.repeat(key[0] - 1)
+				)
+					.replace(/\[4D:(.|\[[A-Z]+\])\]/g, "$1")
 			})
 			.join("")
 	})
