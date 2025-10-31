@@ -1,11 +1,17 @@
 #!/usr/bin/env node
 import fs from "fs"
 import YAML from "js-yaml"
-const uni = YAML.load(fs.readFileSync("uni.yml"))
-const diacritics = YAML.load(fs.readFileSync("diacritics.yml"))
+const [
+	uni,
+	diacritics
+] = [
+	"uni",
+	"diacritics"
+]
+	.map(i => YAML.load(fs.readFileSync(`${i}.yml`)))
 const args = process.argv.filter(i => !/node|\.js$/.test(i))
-const inputFile = ["WIP", "data", [args[0], "yml"].join(".")].join("/")
-const outputFile = ["WIP", "layouts", [args[0], "json"].join(".")].join("/")
+const inputFile = ["data", [args[0], "yml"].join(".")].join("/")
+const outputFile = ["layouts", [args[0], "json"].join(".")].join("/")
 const input = YAML.load(fs.readFileSync(inputFile, { encoding: "utf-8" }))
 function menu(arrIn) {
 	return `[XK:${arrIn.map(char).join("")}]`
@@ -68,11 +74,23 @@ function row(rowIn) {
 function keyboard(boardIn) {
 	return boardIn.map(row)
 }
-const out = {
-	title: input.title,
+function titleFMT(titleIn) {
+	const titleOut = titleIn
+		.replace(/\{(.*?)\}/g, (_, m) => {
+			return m
+				.split("_")
+				.map(c => {
+					return uni[c]
+						?? diacritics[c]
+						?? c
+				})
+				.join("")
+		})
+	return titleOut
+}
+fs.writeFileSync(outputFile, JSON.stringify({
+	title: titleFMT(input.title),
 	onScreen: {
 		main: keyboard(input.layout)
 	}
-}
-fs.writeFileSync(outputFile, JSON.stringify(out, null, "\t"))
-console.log(out)
+}, null, "\t"))

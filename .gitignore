@@ -1,4 +1,2 @@
 .flags/local
-vEnv
-.flags/cloudflarenode_modules
 node_modules

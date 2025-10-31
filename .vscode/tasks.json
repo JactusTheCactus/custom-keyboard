@@ -5,7 +5,7 @@
 		"panel": "dedicated",
 		"showReuseMessage": false,
 		"clear": true,
-		//"close": true,
+		"close": true,
 		"preserveTerminalName": true
 	},
 	"tasks": [
