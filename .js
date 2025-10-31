@@ -15,7 +15,7 @@ const out = {
 }
 const test = "x a e i o u dotBelow".split(/\s+/)
 function menu(arrIn) {
-	return `[XC:${arrIn.map(char).join("")}]`
+	return `[XK:${arrIn.map(char).join("")}]`
 }
 function multi(strIn) {
 	return `[MC:${strIn}]`
