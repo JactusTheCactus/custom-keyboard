@@ -21,7 +21,7 @@ layout:
     - [1, { c: o, n: ethel, nw: acute, ne: hacek, s: dotBelow, sw: umlaut, se: commaBelow }]
     - [1, { c: p, sw: "{", se: "}" }]
   - - [1, { c: a, n: ctrlA, s: ash }]
-    - [1, s]
+    - [1, { c: s, n: longS }]
     - [1, { c: d, n: edh, s: Devin }]
     - [1, f]
     - [2, { c: g, n: up, s: down, e: right, w: left }]
