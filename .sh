@@ -6,16 +6,19 @@ flag() {
 	done
 }
 build() {
-for data in data/*; do
-	i="${data#data/}"
-	i="${i%.yml}"
-	./.js "$i"
-	jq -r ".title" "layouts/$i.json"
-	jq -r ".onScreen.main[]" "layouts/$i.json"
-	echo
-done
+	for data in data/*; do
+		i="${data#data/}"
+		i="${i%.yml}"
+		./.js "$i"
+		jq -r ".title" "layouts/$i.json"
+		jq -r ".onScreen.main[]" "layouts/$i.json"
+		echo
+	done
 	./index.sh
 }
+if ! flag local; then
+	npm ci
+fi
 WATCH=(
 	*.yml
 	*.json
