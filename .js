@@ -32,12 +32,11 @@ function char(charIn) {
 				|| [
 					...Object.keys(uni),
 					...Object.keys(diacritics)
-				]
-					.includes(charIn)
+				].includes(charIn)
 			) {
 				const arrOut = charIn.split("_")
 				if (arrOut.length > 1) {
-					return arrOut.map(char).join("")
+					return multi(arrOut.map(char).join(""))
 				} else {
 					return uni[charIn]
 						?? diacritics[charIn]
@@ -75,5 +74,5 @@ const out = {
 		main: keyboard(input.layout)
 	}
 }
-fs.writeFileSync(outputFile,JSON.stringify(out,null,"\t"))
+fs.writeFileSync(outputFile, JSON.stringify(out, null, "\t"))
 console.log(out)
