@@ -24,7 +24,7 @@ layout:
     - [1, s]
     - [1, { c: d, n: edh, s: Devin }]
     - [1, f]
-    - [1, { c: g, n: up, s: down, e: right, w: left }]
+    - [2, { c: g, n: up, s: down, e: right, w: left }]
     - [1, { c: h, n: "?", s: interrobang }]
     - [1, { c: j, n: "-", s: +, e: "=", w: _ }]
     - [1, { c: k, n: ;, s: ":" }]
