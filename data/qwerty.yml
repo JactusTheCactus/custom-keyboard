@@ -47,7 +47,7 @@ layout:
       - thorn
     - - 1
       - "y"
-      - ctrl_y
+      - ctrlY
       - "]"
       - "["
     - - 1
@@ -68,7 +68,7 @@ layout:
       - "{"
   - - - 1
       - a
-      - ctrl_a
+      - ctrlA
       - ash
     - - 1
       - s
@@ -106,19 +106,19 @@ layout:
       - tab
     - - 1
       - z
-      - ctrl_z
+      - ctrlZ
     - - 1
       - x
-      - ctrl_x
+      - ctrlX
       - ">"
       - <
     - - 1
       - c
-      - ctrl_c
+      - ctrlC
       - c_cedilla
     - - 1
       - v
-      - ctrl_v
+      - ctrlV
     - - 1
       - b
       - /
