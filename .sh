@@ -19,13 +19,9 @@ build() {
 if ! flag local; then
 	npm ci
 fi
-WATCH=(
-	*.yml
-	*.json
-)
 build
 if flag local; then
-	while inotifywait -e close_write "${WATCH[@]}"; do
+	while inotifywait -e close_write .js layouts/* data/*; do
 		build
 	done
 fi
