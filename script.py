@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import json, re, sys, yaml
 with open("uni.yml","r") as f:
 	uni = yaml.safe_load(f)
