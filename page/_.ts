@@ -10,7 +10,7 @@
 						.join("+")
 				}
 				switch (m) {
-					case "ALL": return cmd("A");
+					case "ALL": return String.fromCodePoint(0x26F6);
 					case "COPY": return String.fromCodePoint(0x2FFB);
 					case "PASTE": return String.fromCodePoint(0x1F4CB);
 					case "CUT": return String.fromCodePoint(0x2702);
