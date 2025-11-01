@@ -50,7 +50,7 @@
             const row = document.createElement("tr");
             r.forEach((k) => {
                 const key = document.createElement("td");
-                key.colSpan = r.length / 100;
+                key.colSpan = k[0];
                 key.classList.add("key");
                 const chars = k[1];
                 switch (typeof chars) {
