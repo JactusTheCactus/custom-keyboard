@@ -2,7 +2,7 @@
 @import url("https://fonts.cdnfonts.com/css/segoe-ui-4");
 @import url("https://fonts.cdnfonts.com/css/arial");
 body {
-  font: 20pt "Noto Sans", "Segoe UI", Arial, sans-serif;
+  font: 20pt "Segoe UI", Arial, sans-serif;
 }
 body table {
   width: 100%;
