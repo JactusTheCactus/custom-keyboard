@@ -11,10 +11,10 @@ fi
 style() {
 	in="$1"
 	out="$2"
-	if ! flag local; then
-		CMD="npx sass"
-	else
+	if flag local; then
 		CMD="sass"
+	else
+		CMD="npx sass"
 	fi
 	$CMD "$in" "$out"
 	echo "SCSS > $in"
