@@ -7,14 +7,19 @@ flag() {
 }
 if ! flag local; then
 	npm install
-	sass() {
-		in="$1"
-		out="$2"
-		npx sass "$in" "$out"
-		echo "SCSS > $in"
-		echo "CSS  > $out"
-	}
 fi
+style() {
+	in="$1"
+	out="$2"
+	if ! flag local; then
+		CMD="npx sass"
+	else
+		CMD="sass"
+	fi
+	$CMD "$in" "$out"
+	echo "SCSS > $in"
+	echo "CSS  > $out"
+}
 build() {
 	echo "[]" > data.json
 	for data in data/*; do
@@ -22,8 +27,9 @@ build() {
 		i="${i%.yml}"
 		./.js "$i"
 	done
-	sass page/_.scss page/_.css
+	style page/_.scss page/_.css
 	tsc
+	chmod +x page/pug.js
 	node page/pug.js
 }
 build
