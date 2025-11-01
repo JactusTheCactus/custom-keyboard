@@ -18,6 +18,10 @@
 					case "UNDO": return cmd("Z");
 					case "LB": return "["
 					case "RB": return "]"
+					case "LEFT": return String.fromCodePoint(0x2190);
+					case "UP": return String.fromCodePoint(0x2191);
+					case "RIGHT": return String.fromCodePoint(0x2192);
+					case "DOWN": return String.fromCodePoint(0x2193);
 					default: return _
 				}
 			})
