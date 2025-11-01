@@ -24,26 +24,14 @@
 				}
 			})
 			.replace(
-				new RegExp(`[${[
-					[0x0300, 0x0308],
-					[0x030A, 0x030C],
-					0x030F,
-					0x0311,
-					[0x0323, 0x0328],
-					0x0332
-				]
-					.map((d: number | Array<number>) => {
-						switch (typeof d) {
-							case "number":
-								return String.fromCodePoint(d)
-							case "object":
-								return d
-									.map(D => String.fromCodePoint(D))
-									.join("-")
-						}
-					})
-					.join("")}]`
-					, "g"),
+				new RegExp(`[${
+					[
+						0x0300,
+						0x0332
+					]
+						.map(d => String.fromCodePoint(d))
+							.join("-")
+				}]`, "g"),
 				m => `\u25CC${m}`
 			)
 			.replace(
