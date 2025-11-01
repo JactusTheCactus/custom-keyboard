@@ -6,9 +6,9 @@ flag() {
 	done
 }
 if ! flag local; then
-	#for i in sass; do
+	for i in sass; do
 		npm -g install #"$i"
-	#done
+	done
 fi
 build() {
 	echo "[]" > data.json
