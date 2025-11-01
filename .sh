@@ -7,9 +7,10 @@ flag() {
 }
 if ! flag local; then
 	npm install
-	alias sass="npx sass"
+	style() {
+		npx sass "$1" "$2"
+	}
 fi
-alias
 build() {
 	echo "[]" > data.json
 	for data in data/*; do
@@ -17,7 +18,7 @@ build() {
 		i="${i%.yml}"
 		./.js "$i"
 	done
-	npx sass page/_.scss page/_.css
+	style page/_.scss page/_.css
 	tsc
 	node page/pug.js
 }
