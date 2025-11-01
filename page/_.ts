@@ -96,7 +96,7 @@
 											.join("")
 								}</tr>`)
 									.join("")
-								}</table>`
+							}</table>`
 						}
 					} break
 					default: JSON.stringify(chars) ?? chars
