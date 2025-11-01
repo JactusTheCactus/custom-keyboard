@@ -72,7 +72,7 @@
 					case "object": {
 						if (Array.isArray(chars)) {
 							key.classList.add("hold")
-							key.innerText = chars.map(c => {
+							key.innerHTML = chars.map(c => {
 								return [
 									c === chars[0]
 										? "<b>"
