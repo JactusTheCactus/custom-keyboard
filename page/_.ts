@@ -15,18 +15,13 @@
 					case "PASTE": return cmd("V");
 					case "CUT": return cmd("X");
 					case "REDO": return cmd("Y");
-					case "UNDO": return cmd("Z");
+					case "UNDO": return String.fromCodePoint(0x238C);
 					case "LB": return "["
 					case "RB": return "]"
 					case "LEFT": return String.fromCodePoint(0x2190);
 					case "UP": return String.fromCodePoint(0x2191);
 					case "RIGHT": return String.fromCodePoint(0x2192);
 					case "DOWN": return String.fromCodePoint(0x2193);
-					case "UNDO": return String.fromCodePoint(0x238C);
-//case "": return String.fromCodePoint(0x);
-//case "": return String.fromCodePoint(0x);
-//case "": return String.fromCodePoint(0x);
-//case "": return String.fromCodePoint(0x);
 					default: return _
 				}
 			})
