@@ -11,8 +11,8 @@
 				}
 				switch (m) {
 					case "ALL": return cmd("A");
-					case "COPY": return String.fromCodePoint(0x1F4CB);
-					case "PASTE": return cmd("V");
+					case "COPY": return cmd("C");
+					case "PASTE": return String.fromCodePoint(0x1F4CB);
 					case "CUT": return String.fromCodePoint(0x2702);
 					case "REDO": return cmd("Y");
 					case "UNDO": return String.fromCodePoint(0x238C);
