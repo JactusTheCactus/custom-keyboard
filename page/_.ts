@@ -22,6 +22,7 @@
 					case "UP": return String.fromCodePoint(0x2191);
 					case "RIGHT": return String.fromCodePoint(0x2192);
 					case "DOWN": return String.fromCodePoint(0x2193);
+					case "TAB": return String.fromCodePoint(0x21E5);
 					default: return _
 				}
 			})
