@@ -17,6 +17,9 @@ body table tr td {
   text-align: center;
   padding: 0;
 }
+body table tr td abbr {
+  text-decoration: none;
+}
 body table tr td.key {
   border-radius: 5%;
   box-shadow: 0.125em 0.125em 0.125em 0 rgba(0, 0, 0, 0.2666666667);
