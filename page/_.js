@@ -72,8 +72,18 @@
                                     ["sw", "s", "se"]
                                 ]
                                     .map(a => `<tr>${a
-                                    .map(b => `<td>${FMT(chars[b]
-                                    ?? null)}<td>`)
+                                    .map(b => [
+                                    "<td>",
+                                    b === "c"
+                                        ? "<b>"
+                                        : "",
+                                    FMT(chars[b] ?? null),
+                                    b === "c"
+                                        ? "</b>"
+                                        : "",
+                                    "<td>"
+                                ]
+                                    .join(""))
                                     .join("")}</tr>`)
                                     .join("")}</table>`;
                             }
