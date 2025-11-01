@@ -5,9 +5,10 @@ flag() {
 		[[ -e ".flags/$f" ]] || return 1
 	done
 }
-chmod +x init.sh
 if ! flag local; then
-	./init.sh
+	for i in sass; do
+		npm -g install "$i"
+	done
 fi
 build() {
 	echo "[]" > data.json
