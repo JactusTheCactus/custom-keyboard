@@ -17,8 +17,6 @@ style() {
 		CMD="npx sass"
 	fi
 	$CMD "$in" "$out"
-	echo "SCSS > $in"
-	echo "CSS  > $out"
 }
 build() {
 	echo "[]" > data.json
