@@ -29,7 +29,6 @@ build() {
 	done
 	style page/_.scss page/_.css
 	tsc
-	#chmod +x page/pug.js
 	./page/pug.js
 }
 build
