@@ -19,7 +19,16 @@ body table tr td {
 }
 body table tr td.key {
   border-radius: 5%;
-  box-shadow: 0.125em 0.125em 0.125em 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0.125em 0.125em 0.125em 0 rgba(0, 0, 0, 0.2666666667);
+}
+body table tr td.key.tap {
+  color: #800;
+}
+body table tr td.key.hold {
+  color: #080;
+}
+body table tr td.key.flick {
+  color: #008;
 }
 body table tr td:not(.key) {
   background-color: transparent !important;

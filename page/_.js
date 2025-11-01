@@ -51,18 +51,21 @@
             r.forEach((k) => {
                 const key = document.createElement("td");
                 key.colSpan = r.length / 100;
-                key.className = "key";
+                key.classList.add("key");
                 const chars = k[1];
                 switch (typeof chars) {
                     case "string":
+                        key.classList.add("tap");
                         key.innerText = FMT(chars);
                         break;
                     case "object":
                         {
                             if (Array.isArray(chars)) {
+                                key.classList.add("hold");
                                 key.innerText = chars.map(FMT).join(" ");
                             }
                             else {
+                                key.classList.add("flick");
                                 key.innerHTML = `<table>${[
                                     ["nw", "n", "ne"],
                                     ["w", "c", "e"],
@@ -78,6 +81,7 @@
                         break;
                     default: JSON.stringify(chars) ?? chars;
                 }
+                key.innerHTML = `<abbr title="${String(key.classList).replace(/^key\s*/, "")}">${key.innerHTML}</abbr>`;
                 row.appendChild(key);
             });
             keyboard.appendChild(row);
