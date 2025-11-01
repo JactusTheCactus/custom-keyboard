@@ -1,0 +1,89 @@
+(async () => {
+    function FMT(strIn) {
+        return (strIn || "")
+            .replace(/\[(.*?)\]/g, (_, m) => {
+            switch (m.toLowerCase()) {
+                case "undo": return "CTRL_Z";
+                case "cut": return "CTRL_X";
+                case "copy": return "CTRL_C";
+                case "paste": return "CTRL_V";
+                case "all": return "CTRL_A";
+                case "redo": return "CTRL_Y";
+                default: return `[${m}]`;
+            }
+        })
+            .replace(new RegExp(`[${[
+            [0x0300, 0x0308],
+            [0x030A, 0x030C],
+            0x030F,
+            0x0311,
+            [0x0323, 0x0328],
+            0x0332
+        ]
+            .map((d) => {
+            switch (typeof d) {
+                case "number":
+                    return String.fromCodePoint(d);
+                case "object":
+                    return d
+                        .map(D => String.fromCodePoint(D))
+                        .join("-");
+            }
+        })
+            .join("")}]`, "g"), m => `\u25CC${m}`)
+            .replace(/([a-z])\u25CC/gi, "$1");
+    }
+    const keyboards = JSON.parse(await (await fetch("data.json")).text());
+    keyboards.forEach((data) => {
+        const title = document.createElement("th");
+        title.innerText = data.title ?? "N/A";
+        data.layout.forEach((row) => {
+            if (row.length > title.colSpan || !title.colSpan) {
+                title.colSpan = row.length;
+            }
+        });
+        const titleRow = document.createElement("tr");
+        titleRow.appendChild(title);
+        const keyboard = document.createElement("table");
+        keyboard.appendChild(titleRow);
+        data.layout.forEach((r) => {
+            const row = document.createElement("tr");
+            r.forEach((k) => {
+                const key = document.createElement("td");
+                key.colSpan = r.length / 100;
+                key.className = "key";
+                const chars = k[1];
+                switch (typeof chars) {
+                    case "string":
+                        key.innerText = FMT(chars);
+                        break;
+                    case "object":
+                        {
+                            if (Array.isArray(chars)) {
+                                key.innerText = chars.map(FMT).join(" ");
+                            }
+                            else {
+                                key.innerHTML = `<table>${[
+                                    ["nw", "n", "ne"],
+                                    ["w", "c", "e"],
+                                    ["sw", "s", "se"]
+                                ]
+                                    .map(a => `<tr>${a
+                                    .map(b => `<td>${FMT(chars[b]
+                                    ?? null)}<td>`)
+                                    .join("")}</tr>`)
+                                    .join("")}</table>`;
+                            }
+                        }
+                        break;
+                    default: JSON.stringify(chars) ?? chars;
+                }
+                row.appendChild(key);
+            });
+            keyboard.appendChild(row);
+        });
+        document.body.appendChild(keyboard);
+    });
+})();
+export {};
+//# sourceMappingURL=_.js.map

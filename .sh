@@ -6,17 +6,15 @@ flag() {
 	done
 }
 build() {
+	echo "[]" > data.json
 	for data in data/*; do
 		i="${data#data/}"
 		i="${i%.yml}"
 		./.js "$i"
-		jq -r ".title" "layouts/$i.json"
-		jq -r ".onScreen.main[]" "layouts/$i.json"
-		echo
 	done
-	sass .scss _.css
-	tsc .ts --outFile _.js
-	./index.sh
+	sass page/_.scss page/_.css
+	tsc
+	node page/pug.js
 }
 if ! flag local; then
 	npm ci
@@ -27,7 +25,7 @@ if flag local; then
 		.js
 		layouts/*
 		data/*
-		.scss
+		page/*
 	)
 	while inotifywait -e close_write "${watch[@]}"; do
 		build || :

@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
+body {
+  font: 20pt "Noto Sans", sans-serif;
+}
+body table {
+  width: 100%;
+}
+body table tr th {
+  font-size: 1.5em;
+  text-align: center;
+  columns: 100%;
+}
+body table tr td {
+  white-space: pre;
+  background-color: #ddd;
+  text-align: center;
+  padding: 0;
+}
+body table tr td.key {
+  border-radius: 5%;
+  box-shadow: 0.125em 0.125em 0.125em 0 rgba(0, 0, 0, 0.25);
+}
+body table tr td:not(.key) {
+  background-color: transparent !important;
+}
+
+/*# sourceMappingURL=_.css.map */

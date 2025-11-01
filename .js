@@ -88,9 +88,62 @@ function titleFMT(titleIn) {
 		})
 	return titleOut
 }
+function FMT(c) {
+	if (c.length > 1 || [
+		...Object.keys(uni),
+		...Object.keys(diacritics)
+	].includes(c)) {
+		const arrOut = c.split("_")
+		if (arrOut.length > 1) {
+			return multi(arrOut.map(char).join(""))
+		} else {
+			return uni[c]
+				?? diacritics[c]
+				?? multi(c)
+		}
+	} else {
+		return c
+	}
+}
+function layoutFMT(layoutIn) {
+	return layoutIn.map(r => r.map(k => k.map(c => {
+		switch (typeof c) {
+			case "number": return c
+			case "string": return FMT(c)
+			case "object": {
+				if (Array.isArray(c)) {
+					return c.map(FMT)
+				} else {
+					return Object
+						.fromEntries(
+							Object
+								.entries(c)
+								.map(([k, v]) => [
+									k,
+									FMT(v)
+										.replace(
+											/\[(?:MC):(.*?)\]/g,
+											"$1"
+										)
+								])
+						)
+				}
+			}
+		}
+	})))
+}
 fs.writeFileSync(outputFile, JSON.stringify({
 	title: titleFMT(input.title),
 	onScreen: {
 		main: keyboard(input.layout)
 	}
 }, null, "\t"))
+fs.writeFileSync("data.json",
+	JSON.stringify([
+		...JSON.parse(fs.readFileSync("data.json")),
+		{
+			title: titleFMT(input.title),
+			layout: layoutFMT(input.layout)
+		}
+	], null, "\t")
+)
