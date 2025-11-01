@@ -62,7 +62,17 @@
                         {
                             if (Array.isArray(chars)) {
                                 key.classList.add("hold");
-                                key.innerText = chars.map(FMT).join(" ");
+                                key.innerText = chars.map(c => {
+                                    return [
+                                        c === chars[0]
+                                            ? "<b>"
+                                            : "",
+                                        FMT(c),
+                                        c === chars[0]
+                                            ? "</b>"
+                                            : ""
+                                    ].join("");
+                                }).join(" ");
                             }
                             else {
                                 key.classList.add("flick");
