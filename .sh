@@ -19,7 +19,7 @@ build() {
 		i="${i%.yml}"
 		./.js "$i"
 	done
-	sass page/_.scss page/_.css
+	npx sass page/_.scss page/_.css
 	tsc
 	node page/pug.js
 }
