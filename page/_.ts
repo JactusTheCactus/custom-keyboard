@@ -47,7 +47,7 @@
 				m => `\u25CC${m}`
 			)
 			.replace(
-				/([a-z])\u25CC/gui,
+				/(\p{L})\u25CC/gu,
 				"$1"
 			)
 	}
