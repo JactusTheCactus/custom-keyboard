@@ -17,24 +17,15 @@ layout:
     - [1, { c: t, n: thorn }]
     - [1, { c: "y", n: ctrlY, sw: "[", se: "]" }]
     - [1, [u, acute, hacek, dotBelow, umlaut, commaBelow]]
-    - [1, {
-        c: i,
-        sw: (,
-        se: )
-      }]
-    - [1, { c: o, n: ethel, d: "*"} ]
+    - [1, { c: i, sw: (, se: ) }]
+    - [1, { c: o, n: ethel, s: "*"} ]
     - [1, { c: p, sw: "{", se: "}" }]
   - - [1, { c: a, n: ctrlA, s: ash }]
     - [1, { c: s, n: longS }]
     - [1, { c: d, n: edh, s: Devin }]
     - [1, f]
     - [2, { c: g, n: up, s: down, e: right, w: left }]
-    - [1, {
-        c: h,
-        n: interrobang,
-        sw: "!",
-        se: "?"
-      }]
+    - [1, { c: h, n: interrobang, sw: "!", se: "?" }]
     - [1, { c: j, n: "-", s: +, e: "=", w: _ }]
     - [1, { c: k, n: ;, s: ":" }]
     - [1, { c: l, n: "'", s: '"' }]
