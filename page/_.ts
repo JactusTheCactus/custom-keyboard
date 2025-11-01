@@ -67,7 +67,12 @@
 				switch (typeof chars) {
 					case "string":
 						key.classList.add("tap")
-						key.innerText = FMT(chars)
+						key.innerHTML = [
+							"<b>",
+							FMT(chars),
+							"</b>"
+						]
+							.join("")
 						break
 					case "object": {
 						if (Array.isArray(chars)) {
