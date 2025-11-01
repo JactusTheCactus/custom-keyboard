@@ -9,12 +9,10 @@ if ! flag local; then
 	#for i in sass; do
 		#npm -g install "$i"
 	#done
+	npm install
 	alias sass="npx sass"
 fi
 build() {
-	if ! flag local; then
-		npm ci
-	fi
 	echo "[]" > data.json
 	for data in data/*; do
 		i="${data#data/}"
