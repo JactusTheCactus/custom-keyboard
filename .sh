@@ -8,7 +8,11 @@ flag() {
 if ! flag local; then
 	npm install
 	sass() {
-		npx sass "$1" "$2"
+		in="$1"
+		out="$2"
+		npx sass "$in" "$out"
+		echo "SCSS > $in"
+		echo "CSS  > $out"
 	}
 fi
 build() {
