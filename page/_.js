@@ -26,6 +26,7 @@
                 case "ENTER": return String.fromCodePoint(0x21B3);
                 case "SHIFT": return String.fromCodePoint(0x21D1);
                 case "DEL": return String.fromCodePoint(0x232B);
+                case "SPACE": return String.fromCodePoint(0x2423);
                 default: return _;
             }
         })
