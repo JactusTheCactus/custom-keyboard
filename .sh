@@ -7,7 +7,7 @@ flag() {
 }
 if ! flag local; then
 	npm install
-	style() {
+	sass() {
 		npx sass "$1" "$2"
 	}
 fi
@@ -18,7 +18,7 @@ build() {
 		i="${i%.yml}"
 		./.js "$i"
 	done
-	style page/_.scss page/_.css
+	sass page/_.scss page/_.css
 	tsc
 	node page/pug.js
 }
