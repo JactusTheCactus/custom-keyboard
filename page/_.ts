@@ -13,7 +13,7 @@
 					case "ALL": return cmd("A");
 					case "COPY": return cmd("C");
 					case "PASTE": return cmd("V");
-					case "CUT": return cmd("X");
+					case "CUT": return String.fromCodePoint(0x2702);
 					case "REDO": return cmd("Y");
 					case "UNDO": return String.fromCodePoint(0x238C);
 					case "LB": return "["
