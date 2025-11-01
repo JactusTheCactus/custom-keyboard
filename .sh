@@ -29,8 +29,8 @@ build() {
 	done
 	style page/_.scss page/_.css
 	tsc
-	chmod +x page/pug.js
-	node page/pug.js
+	#chmod +x page/pug.js
+	./page/pug.js
 }
 build
 if flag local; then
