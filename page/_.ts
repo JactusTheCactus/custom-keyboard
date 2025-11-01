@@ -14,8 +14,8 @@
 					case "COPY": return String.fromCodePoint(0x2FFB);
 					case "PASTE": return String.fromCodePoint(0x1F4CB);
 					case "CUT": return String.fromCodePoint(0x2702);
-					case "REDO": return cmd("Y");
-					case "UNDO": return String.fromCodePoint(0x238C);
+					case "REDO": return String.fromCodePoint(0x21B7);
+					case "UNDO": return String.fromCodePoint(0x21B6);
 					case "LB": return "["
 					case "RB": return "]"
 					case "LEFT": return String.fromCodePoint(0x2190);
