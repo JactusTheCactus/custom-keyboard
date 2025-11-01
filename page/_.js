@@ -42,7 +42,7 @@
             }
         })
             .join("")}]`, "g"), m => `\u25CC${m}`)
-            .replace(/([a-z])\u25CC/gui, "$1");
+            .replace(/(\p{L})\u25CC/gu, "$1");
     }
     const keyboards = JSON.parse(await (await fetch("data.json")).text());
     keyboards.forEach((data) => {
