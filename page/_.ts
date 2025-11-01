@@ -12,7 +12,7 @@
 				switch (m) {
 					case "ALL": return cmd("A");
 					case "COPY": return cmd("C");
-					case "PASTE": return cmd("V";)
+					case "PASTE": return cmd("V");
 					case "CUT": return cmd("X");
 					case "REDO": return cmd("Y");
 					case "UNDO": return cmd("Z");
