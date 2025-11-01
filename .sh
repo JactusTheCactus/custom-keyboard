@@ -14,6 +14,8 @@ build() {
 		jq -r ".onScreen.main[]" "layouts/$i.json"
 		echo
 	done
+	sass .scss _.css
+	tsc .ts --outFile _.js
 	./index.sh
 }
 if ! flag local; then
@@ -21,7 +23,13 @@ if ! flag local; then
 fi
 build
 if flag local; then
-	while inotifywait -e close_write .js layouts/* data/*; do
-		build
+	watch=(
+		.js
+		layouts/*
+		data/*
+		.scss
+	)
+	while inotifywait -e close_write "${watch[@]}"; do
+		build || :
 	done
 fi

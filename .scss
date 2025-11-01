@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
+body {
+	font: 20pt "Inter";
+	table {
+		tr {
+			td {
+				font-family: "Fira Code";
+				border-radius: 15%;
+				background-color: #ddd;
+				box-shadow: 0.125em 0.125em 0.125em 0 rgba(0, 0, 0, 0.25);
+			}
+		}
+	}
+}
