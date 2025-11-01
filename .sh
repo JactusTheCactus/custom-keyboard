@@ -12,6 +12,9 @@ if ! flag local; then
 	alias sass="npx sass"
 fi
 build() {
+	if ! flag local; then
+		npm ci
+	fi
 	echo "[]" > data.json
 	for data in data/*; do
 		i="${data#data/}"
@@ -22,9 +25,6 @@ build() {
 	tsc
 	node page/pug.js
 }
-if ! flag local; then
-	npm ci
-fi
 build
 if flag local; then
 	watch=(
