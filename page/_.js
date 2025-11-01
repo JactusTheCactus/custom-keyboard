@@ -2,34 +2,24 @@
     function FMT(strIn) {
         return (strIn || "")
             .replace(/\[(.*?)\]/g, (_, m) => {
-            const ctrl = "CTRL+";
-            let cmd;
+            function cmd(strIn) {
+                return [
+                    "CTRL",
+                    strIn
+                ]
+                    .join("+");
+            }
             switch (m) {
-                case "ALL":
-                    cmd = "A";
-                    break;
-                case "COPY":
-                    cmd = "C";
-                    break;
-                case "PASTE":
-                    cmd = "V";
-                    break;
-                case "CUT":
-                    cmd = "X";
-                    break;
-                case "REDO":
-                    cmd = "Y";
-                    break;
-                case "UNDO":
-                    cmd = "Z";
-                    break;
+                case "ALL": return cmd("A");
+                case "COPY": return cmd("C");
+                case "PASTE": return cmd("V");
+                case "CUT": return cmd("X");
+                case "REDO": return cmd("Y");
+                case "UNDO": return cmd("Z");
+                case "LB": return "[";
+                case "RB": return "]";
                 default: return _;
             }
-            return [
-                "CTRL",
-                cmd
-            ]
-                .join("+");
         })
             .replace(new RegExp(`[${[
             [0x0300, 0x0308],
