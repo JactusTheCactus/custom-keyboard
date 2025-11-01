@@ -25,6 +25,7 @@
                 case "TAB": return String.fromCodePoint(0x21E5);
                 case "ENTER": return String.fromCodePoint(0x21B3);
                 case "SHIFT": return String.fromCodePoint(0x21D1);
+                case "DEL": return String.fromCodePoint(0x232B);
                 default: return _;
             }
         })
