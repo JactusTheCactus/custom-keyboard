@@ -7,8 +7,9 @@ flag() {
 }
 if ! flag local; then
 	#for i in sass; do
-		npm -g ci #install "$i"
+		#npm -g install "$i"
 	#done
+	alias sass="npx sass"
 fi
 build() {
 	echo "[]" > data.json
