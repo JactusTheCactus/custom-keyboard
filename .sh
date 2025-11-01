@@ -5,6 +5,10 @@ flag() {
 		[[ -e ".flags/$f" ]] || return 1
 	done
 }
+chmod +x init.sh
+if ! flag local; then
+	./init.sh
+fi
 build() {
 	echo "[]" > data.json
 	for data in data/*; do
