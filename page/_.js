@@ -2,15 +2,34 @@
     function FMT(strIn) {
         return (strIn || "")
             .replace(/\[(.*?)\]/g, (_, m) => {
-            switch (m.toLowerCase()) {
-                case "undo": return "CTRL_Z";
-                case "cut": return "CTRL_X";
-                case "copy": return "CTRL_C";
-                case "paste": return "CTRL_V";
-                case "all": return "CTRL_A";
-                case "redo": return "CTRL_Y";
+            const ctrl = "CTRL+";
+            let cmd;
+            switch (m) {
+                case "ALL":
+                    cmd = "A";
+                    break;
+                case "COPY":
+                    cmd = "C";
+                    break;
+                case "PASTE":
+                    cmd = "V";
+                    break;
+                case "CUT":
+                    cmd = "X";
+                    break;
+                case "REDO":
+                    cmd = "Y";
+                    break;
+                case "UNDO":
+                    cmd = "Z";
+                    break;
                 default: return _;
             }
+            return [
+                "CTRL",
+                cmd
+            ]
+                .join("+");
         })
             .replace(new RegExp(`[${[
             [0x0300, 0x0308],
