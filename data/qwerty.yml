@@ -1,6 +1,6 @@
 title: QWERTY
 layout:
-  - - [1, { c: "1", n: "!" }]
+  - - [1, "1"]
     - [1, { c: "2", n: "@" }]
     - [1, { c: "3", n: "#" }]
     - [1, { c: "4", n: $ }]
@@ -29,7 +29,12 @@ layout:
     - [1, { c: d, n: edh, s: Devin }]
     - [1, f]
     - [2, { c: g, n: up, s: down, e: right, w: left }]
-    - [1, { c: h, n: "?", s: interrobang }]
+    - [1, {
+        c: h,
+        n: interrobang,
+        sw: "?",
+        se: "!"
+      }]
     - [1, { c: j, n: "-", s: +, e: "=", w: _ }]
     - [1, { c: k, n: ;, s: ":" }]
     - [1, { c: l, n: "'", s: '"' }]
