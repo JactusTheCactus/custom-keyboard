@@ -9,7 +9,7 @@
                 case "paste": return "CTRL_V";
                 case "all": return "CTRL_A";
                 case "redo": return "CTRL_Y";
-                default: return `[${m}]`;
+                default: return _;
             }
         })
             .replace(new RegExp(`[${[
