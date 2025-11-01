@@ -16,8 +16,8 @@
                 case "CUT": return String.fromCodePoint(0x2702);
                 case "REDO": return String.fromCodePoint(0x21B7);
                 case "UNDO": return String.fromCodePoint(0x21B6);
-                case "LB": return "[";
-                case "RB": return "]";
+                case "LB": return String.fromCodePoint(0x5B);
+                case "RB": return String.fromCodePoint(0x5D);
                 case "LEFT": return String.fromCodePoint(0x2190);
                 case "UP": return String.fromCodePoint(0x2191);
                 case "RIGHT": return String.fromCodePoint(0x2192);
