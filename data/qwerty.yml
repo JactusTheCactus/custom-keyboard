@@ -37,7 +37,7 @@ layout:
     - [1, { c: b, n: /, s: Basaraba }]
     - [1, { c: "n", n: eng }]
     - [1, { c: m, n: ",", se: ".", sw: "..." }]
-    - [1, del]
+    - [2, del]
   - - [1, shift]
     - [3, space]
     - [1, enter]
