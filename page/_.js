@@ -23,6 +23,7 @@
                 case "RIGHT": return String.fromCodePoint(0x2192);
                 case "DOWN": return String.fromCodePoint(0x2193);
                 case "TAB": return String.fromCodePoint(0x21E5);
+                case "ENTER": return String.fromCodePoint(0x21B3);
                 default: return _;
             }
         })
