@@ -2,13 +2,6 @@
     function FMT(strIn) {
         return (strIn || "")
             .replace(/\[(.*?)\]/g, (_, m) => {
-            function cmd(strIn) {
-                return [
-                    "CTRL",
-                    strIn
-                ]
-                    .join("+");
-            }
             switch (m) {
                 case "ALL": return String.fromCodePoint(0x26F6);
                 case "COPY": return String.fromCodePoint(0x2398);
@@ -49,7 +42,7 @@
             }
         })
             .join("")}]`, "g"), m => `\u25CC${m}`)
-            .replace(/([a-z])\u25CC/gi, "$1");
+            .replace(/(.)\u25CC/gu, "$1");
     }
     const keyboards = JSON.parse(await (await fetch("data.json")).text());
     keyboards.forEach((data) => {
