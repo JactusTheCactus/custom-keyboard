@@ -2,7 +2,7 @@
 	function FMT(strIn: string) {
 		return (strIn || "")
 			.replace(/\[(.*?)\]/g, (_, m) => {
-				function cmd(strIn) {
+				function cmd(strIn:string) {
 					return [
 						"CTRL",
 						strIn
