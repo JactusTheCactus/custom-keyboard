@@ -4,7 +4,7 @@
 @function shadow($x, $y) {
 	$h: $x * 0.125em;
 	$v: $y * 0.125em;
-	@return $h $v 0.125em 0 #0004
+	@return calc($x * 0.125em) calc($y * 0.125em) 0.125em 0 #0004
 }
 body {
 	font:
