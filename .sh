@@ -16,6 +16,7 @@ style() {
 	else
 		CMD="npx sass"
 	fi
+	echo "========================="
 	$CMD "$in" "$out"
 	echo "$out"
 	cat "$out"
