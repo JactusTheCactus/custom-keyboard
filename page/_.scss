@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.cdnfonts.com/css/segoe-ui-4");
 @import url('https://fonts.cdnfonts.com/css/arial');
+@function shadow($x, $y) {
+	@return $x $y 0.125em 0 #0004
+}
 body {
 	font:
 		20pt
@@ -27,10 +30,10 @@ body {
 				&.key {
 					border-radius: 5%;
 					box-shadow:
-						0 0 0.125em 0 #0004,
-						0 0.125em 0.125em 0 #0004,
-						0.125em 0 0.125em 0 #0004,
-						0.125em 0.125em 0.125em 0 #0004;
+						@shadow(0,0),
+						@shadow(0,0.125em),
+						@shadow(0.125em,0),
+						@shadow(0.125em,0.125em);
 					&.tap {
 						color: #800;
 					}
