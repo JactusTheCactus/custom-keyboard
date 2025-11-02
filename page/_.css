@@ -23,7 +23,7 @@ body table tr td abbr {
 }
 body table tr td.key {
   border-radius: 5%;
-  box-shadow: 0 0 0.125em 0 rgba(0, 0, 0, 0.2666666667), 0 0.125em 0.125em 0 rgba(0, 0, 0, 0.2666666667), 0.125em 0 0.125em 0 rgba(0, 0, 0, 0.2666666667), 0.125em 0.125em 0.125em 0 rgba(0, 0, 0, 0.2666666667);
+  box-shadow: 0em 0em 0.125em 0 rgba(0, 0, 0, 0.2666666667), 0em 0.125em 0.125em 0 rgba(0, 0, 0, 0.2666666667), 0.125em 0em 0.125em 0 rgba(0, 0, 0, 0.2666666667), 0.125em 0.125em 0.125em 0 rgba(0, 0, 0, 0.2666666667);
 }
 body table tr td.key.tap {
   color: #800;
