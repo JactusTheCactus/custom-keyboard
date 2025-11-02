@@ -1,21 +1,50 @@
+@use "sass:list";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.cdnfonts.com/css/segoe-ui-4");
-@import url('https://fonts.cdnfonts.com/css/arial');
+@import url("https://fonts.cdnfonts.com/css/arial");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
+$debug: false;
+$unit: calc(1 / pow(2, 3));
+@function shadowCalc($n) {
+	@return calc($n * $unit * 1em);
+}
 @function shadow($x, $y) {
-	@return
-		calc($x / 8em)
-		calc($y / 8em)
-		calc(1 / 8em)
-		0
-		#0004
-};
+	$items: (
+		shadowCalc($x),
+		shadowCalc($y),
+		calc($unit * 1em),
+		0,
+		rgba(0, 0, 0, $unit)
+	);
+	$out: ();
+	@each $item in $items {
+		$out: list.append($out, $item, space);
+	}
+	@return $out;
+}
+@function shadowBox($li...) {
+	$list: $li;
+	$out: ();
+	@each $x in $list {
+		@each $y in $list {
+			@if ($x $y) != (0 0) {
+				$out: list.append($out, shadow($x, $y), comma);
+			}
+		}
+	}
+	@return $out;
+}
 body {
-	font:
-		20pt
-		"Noto Sans",
-		"Segoe UI",
-		Arial,
-		sans-serif;
+	@if $debug {
+		&::before {
+			content: "#{shadowBox(-1, 0, +1)}";
+		}
+	}
+	font: 20pt "Noto Sans", "Segoe UI", Arial, sans-serif;
+	code,
+	pre {
+		font: 1em "Fira Code";
+	}
 	table {
 		width: 100%;
 		tr {
@@ -34,23 +63,15 @@ body {
 				}
 				&.key {
 					border-radius: 5%;
-					box-shadow:
-						shadow(-1,-1),
-						shadow(-1, 0),
-						shadow(-1, 1),
-						shadow( 0,-1),
-						shadow( 0, 1),
-						shadow( 1,-1),
-						shadow( 1, 0),
-						shadow( 1, 1);
+					box-shadow: shadowBox(-1, 0, +1);
 					&.tap {
-						color: #800;
+						color: red;
 					}
 					&.hold {
-						color: #080;
+						color: green;
 					}
 					&.flick {
-						color: #008;
+						color: blue;
 					}
 				}
 				&:not(.key) {

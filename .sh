@@ -6,8 +6,16 @@ flag() {
 	done
 }
 if ! flag local; then
-	npm install
+	debug=false
+	npm ci --no-audit --no-fund
+else
+	debug=true
 fi
+cat << EOF > debug.json
+{
+	"debug": $debug
+}
+EOF
 style() {
 	in="$1"
 	out="$2"
@@ -16,10 +24,7 @@ style() {
 	else
 		CMD="npx sass"
 	fi
-	echo "========================="
 	$CMD "$in" "$out"
-	echo "$out"
-	cat "$out"
 }
 build() {
 	echo "[]" > data.json
@@ -34,12 +39,16 @@ build() {
 }
 build
 if flag local; then
-	watch=(
-		.js
-		layouts/*
-		data/*
-		page/*
-	)
+	watch=()
+	watch+=(.js)
+	li=(layouts data)
+	for i in "${li[@]}"; do
+		watch+=($i/*)
+	done
+	li=(pug ts scss)
+	for i in "${li[@]}"; do
+		watch+=(page/*.$i)
+	done
 	while inotifywait -e close_write "${watch[@]}"; do
 		build || :
 	done

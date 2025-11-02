@@ -1,27 +1,30 @@
+const debug = JSON.parse(await (await fetch("debug.json")).text()).debug;
 (async () => {
     function FMT(strIn) {
         return (strIn || "")
             .replace(/\[(.*?)\]/g, (_, m) => {
-            switch (m) {
-                case "ALL": return String.fromCodePoint(0x26F6);
-                case "COPY": return String.fromCodePoint(0x2398);
-                case "PASTE": return String.fromCodePoint(0x29C9);
-                case "CUT": return String.fromCodePoint(0x2702);
-                case "REDO": return String.fromCodePoint(0x21B7);
-                case "UNDO": return String.fromCodePoint(0x21B6);
-                case "LB": return String.fromCodePoint(0x5B);
-                case "RB": return String.fromCodePoint(0x5D);
-                case "LEFT": return String.fromCodePoint(0x2190);
-                case "UP": return String.fromCodePoint(0x2191);
-                case "RIGHT": return String.fromCodePoint(0x2192);
-                case "DOWN": return String.fromCodePoint(0x2193);
-                case "TAB": return String.fromCodePoint(0x21E5);
-                case "ENTER": return String.fromCodePoint(0x21B2);
-                case "SHIFT": return String.fromCodePoint(0x21D1);
-                case "DEL": return String.fromCodePoint(0x232B);
-                case "SPACE": return String.fromCodePoint(0x2423);
-                default: return _;
-            }
+            const point = {
+                ALL: 0x26F6,
+                COPY: 0x2398,
+                PASTE: 0x29C9,
+                CUT: 0x2702,
+                REDO: 0x21B7,
+                UNDO: 0x21B6,
+                LB: 0x5B,
+                RB: 0x5D,
+                LEFT: 0x2190,
+                UP: 0x2191,
+                RIGHT: 0x2192,
+                DOWN: 0x2193,
+                TAB: 0x21E5,
+                ENTER: 0x21B2,
+                SHIFT: 0x21D1,
+                DEL: 0x232B,
+                SPACE: 0x2423
+            }[m];
+            return point
+                ? String.fromCodePoint(point)
+                : `<code>|-${m}-|</code>`;
         })
             .replace(new RegExp(`[${[
             0x0300,
@@ -32,6 +35,10 @@
             .replace(/(.)\u25CC/gu, "$1");
     }
     const keyboards = JSON.parse(await (await fetch("data.json")).text());
+    if (debug) {
+        keyboards.shift();
+        keyboards.pop();
+    }
     keyboards.forEach((data) => {
         const title = document.createElement("th");
         title.innerText = data.title ?? "N/A";
@@ -65,46 +72,46 @@
                         {
                             if (Array.isArray(chars)) {
                                 key.classList.add("hold");
-                                key.innerHTML = chars.map(c => {
-                                    return [
-                                        c === chars[0]
-                                            ? "<b>"
-                                            : "",
-                                        FMT(c),
-                                        c === chars[0]
-                                            ? "</b>"
-                                            : ""
-                                    ].join("");
-                                }).join(" ");
+                                key.innerHTML = chars.map(c => `<${c === chars[0]
+                                    ? "b"
+                                    : "i"}>`
+                                    + FMT(c)
+                                    + `</${c === chars[0]
+                                        ? "b"
+                                        : "i"}>`).join(" ");
                             }
                             else {
                                 key.classList.add("flick");
-                                key.innerHTML = `<table>${[
-                                    ["nw", "n", "ne"],
-                                    ["w", "c", "e"],
-                                    ["sw", "s", "se"]
-                                ]
-                                    .map(a => `<tr>${a
-                                    .map(b => [
-                                    "<td>",
-                                    b === "c"
-                                        ? "<b>"
-                                        : "",
-                                    FMT(chars[b] ?? null),
-                                    b === "c"
-                                        ? "</b>"
-                                        : "",
-                                    "<td>"
-                                ]
-                                    .join(""))
-                                    .join("")}</tr>`)
-                                    .join("")}</table>`;
+                                key.innerHTML = "<table>"
+                                    + [
+                                        ["nw", "n", "ne"],
+                                        ["w", "c", "e"],
+                                        ["sw", "s", "se"]
+                                    ]
+                                        .map(a => "<tr>"
+                                        + a
+                                            .map(b => "<td>"
+                                            + `<${b === "c"
+                                                ? "b"
+                                                : "i"}>`
+                                            + FMT(chars[b] ?? null)
+                                            + `</${(b === "c"
+                                                ? "b"
+                                                : "i")}>`
+                                            + "<td>")
+                                            .join("")
+                                        + "</tr>")
+                                        .join("")
+                                    + "</table>";
                             }
                         }
                         break;
-                    default: JSON.stringify(chars) ?? chars;
+                    default: key.innerText = JSON.stringify(chars)
+                        ?? chars;
                 }
-                key.innerHTML = `<abbr title="${String(key.classList).replace(/^key\s*/, "")}">${key.innerHTML}</abbr>`;
+                key.innerHTML = "<abbr title=\""
+                    + String(key.classList).replace(/^key\s*/, "")
+                    + `\">${key.innerHTML}</abbr>`;
                 row.appendChild(key);
             });
             keyboard.appendChild(row);
