@@ -2,7 +2,12 @@
 @import url("https://fonts.cdnfonts.com/css/segoe-ui-4");
 @import url('https://fonts.cdnfonts.com/css/arial');
 @function shadow($x, $y) {
-	@return calc($x * 0.125em) calc($y * 0.125em) 0.125em 0 #0004
+	@return
+		calc($x * 0.125em)
+		calc($y * 0.125em)
+		0.125em
+		0
+		#0004
 }
 body {
 	font:
