@@ -30,10 +30,14 @@ body {
 				&.key {
 					border-radius: 5%;
 					box-shadow:
-						shadow(0,0),
-						shadow(0,1),
-						shadow(1,0),
-						shadow(1,1);
+						shadow(-1,-1),
+						shadow(-1, 0),
+						shadow(-1, 1),
+						shadow( 0,-1)
+						shadow( 0, 1),
+						shadow( 1,-1),
+						shadow( 1, 0),
+						shadow( 1, 1);
 					&.tap {
 						color: #800;
 					}
