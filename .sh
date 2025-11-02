@@ -17,6 +17,8 @@ style() {
 		CMD="npx sass"
 	fi
 	$CMD "$in" "$out"
+	echo "$out"
+	cat "$out"
 }
 build() {
 	echo "[]" > data.json
