@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import fs from "fs"
 import YAML from "js-yaml"
-function capitalize(str,strict=false) {
+function capitalize(str, strict = false) {
 	return str[0].toUpperCase()
 		+ (strict
 			? str.slice(1).toLowerCase()
@@ -93,7 +93,7 @@ function titleFMT(titleIn) {
 				})
 				.join("")
 		})
-	return capitalize(titleOut,true)
+	return capitalize(titleOut, true)
 }
 function FMT(c) {
 	if (c.length > 1 || [
