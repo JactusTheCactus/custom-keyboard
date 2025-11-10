@@ -74,11 +74,11 @@ const debug = JSON.parse(await (await fetch("debug.json")).text()).debug;
                                 key.classList.add("hold");
                                 key.innerHTML = chars.map(c => `<${c === chars[0]
                                     ? "b"
-                                    : "i"}>`
+                                    : "span"}>`
                                     + FMT(c)
                                     + `</${c === chars[0]
                                         ? "b"
-                                        : "i"}>`).join(" ");
+                                        : "span"}>`).join(" ");
                             }
                             else {
                                 key.classList.add("flick");
@@ -93,11 +93,11 @@ const debug = JSON.parse(await (await fetch("debug.json")).text()).debug;
                                             .map(b => "<td>"
                                             + `<${b === "c"
                                                 ? "b"
-                                                : "i"}>`
+                                                : "span"}>`
                                             + FMT(chars[b] ?? null)
                                             + `</${(b === "c"
                                                 ? "b"
-                                                : "i")}>`
+                                                : "span")}>`
                                             + "<td>")
                                             .join("")
                                         + "</tr>")
