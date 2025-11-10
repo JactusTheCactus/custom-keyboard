@@ -12,10 +12,7 @@ if ! flag local; then
 fi
 cat << EOF > debug.json
 {
-	"debug": $(flag local
-		&& echo "true"
-		|| echo "false"
-	)
+	"debug": $(flag local && echo "true" || echo "false")
 }
 EOF
 style() {
