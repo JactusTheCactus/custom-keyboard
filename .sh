@@ -6,14 +6,11 @@ flag() {
 	done
 }
 if ! flag local; then
-	debug=false
 	npm ci --no-audit --no-fund
-else
-	debug=true
 fi
 cat << EOF > debug.json
 {
-	"debug": $debug
+	"debug": $(flag local && echo "true" || echo "false")
 }
 EOF
 style() {
