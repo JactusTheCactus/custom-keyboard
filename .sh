@@ -6,7 +6,9 @@ flag() {
 	done
 }
 if ! flag local; then
-	npm ci --no-audit --no-fund
+	npm ci \
+		--no-audit \
+		--no-fund
 fi
 cat << EOF > debug.json
 {
