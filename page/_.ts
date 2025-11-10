@@ -111,12 +111,12 @@ const debug: Boolean = JSON.parse(
 							key.innerHTML = chars.map(c =>
 								`<${c === chars[0]
 									? "b"
-									: "i"
+									: "span"
 								}>`
 								+ FMT(c)
 								+ `</${c === chars[0]
 									? "b"
-									: "i"
+									: "span"
 								}>`
 							).join(" ")
 						} else {
@@ -132,12 +132,12 @@ const debug: Boolean = JSON.parse(
 											.map(b => "<td>"
 												+ `<${b === "c"
 													? "b"
-													: "i"
+													: "span"
 												}>`
 												+ FMT(chars[b] ?? null)
 												+ `</${(b === "c"
 													? "b"
-													: "i"
+													: "span"
 												)}>`
 												+ "<td>"
 											)
