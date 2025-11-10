@@ -130,7 +130,7 @@ function layoutFMT(layoutIn) {
 									FMT(v)
 										.replace(
 											/\[(?:MC):(.*?)\]/g,
-											"$1"
+											(_, m) => m
 										)
 								])
 						)
