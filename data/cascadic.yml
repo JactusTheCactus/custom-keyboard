@@ -4,7 +4,7 @@ layout:
     - [1, { c: e, n: e_acute }]
     - [1, { c: i, n: i_acute }]
     - [1, { c: o, n: o_acute }]
-    - [1, { c: schwa, n: u_acute, s: ethel }]
+    - [1, { c: schwa, n: u, s: ethel }]
   - - [1, { c: c, n: j }]
     - [1, { c: f, n: v }]
     - [1, h]
