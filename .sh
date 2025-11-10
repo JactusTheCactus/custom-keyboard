@@ -11,6 +11,11 @@ if ! flag local; then
 else
 	debug=true
 fi
+find . \
+	-type f \
+	-name "*.css" \
+	-exec "rm -rf {}" \
+\;
 cat << EOF > debug.json
 {
 	"debug": $debug
