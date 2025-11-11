@@ -21,7 +21,7 @@ layout:
     - [1, { c: o, nw: omega, ne: ethel, s: "*"} ]
     - [1, { c: p, sw: "{", se: "}" }]
   - - [1, { c: a, n: ctrlA, s: ash }]
-    - [1, { c: s, n: longS }]
+    - [1, { c: s, n: esh }]
     - [1, { c: d, n: edh, s: Devin }]
     - [1, { c: f, n: ^, sw: "@", se: "&" }]
     - [2, { c: g, nw: gamma, n: up, s: down, e: right, w: left }]
