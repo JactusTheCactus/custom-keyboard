@@ -1,12 +1,12 @@
 title: "{esh}r{a_acute}tik"
 layout:
-  - - [1, x]
+  - - [1, { c: x, n: acute }]
     - [1, a]
     - [1, { c: e, n: e_dotBelow }]
-    - [1, { c: i, n: y }]
+    - [1, i]
     - [1, { c: o, n: omega }]
     - [1, { c: u, n: schwa }]
-    - [1, dotBelow]
+    - [1, y]
   - - [1, { c: t_esh, n: d_zhed }]
     - [1, { c: f, n: v }]
     - [1, h]
