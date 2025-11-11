@@ -16,7 +16,7 @@ layout:
     - [1, { c: r, n: \ }]
     - [1, { c: t, n: thorn }]
     - [1, { c: "y", n: ctrlY, sw: "[", se: "]" }]
-    - [1, [u, acute, umlaut, dotBelow]]
+    - [1, [u, acute, grave, umlaut, dotBelow]]
     - [1, { c: i, sw: (, se: ) }]
     - [1, { c: o, nw: omega, ne: ethel, s: "*"} ]
     - [1, { c: p, sw: "{", se: "}" }]
