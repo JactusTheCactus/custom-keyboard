@@ -1,12 +1,12 @@
 {
-	"title": "Kæſkadik",
+	"title": "Kæskadik",
 	"onScreen": {
 		"main": [
-			"[4D:a æ][4D:e [MC:é]][4D:i [MC:í]][4D:o [MC:ó] œ][4D:u ə]",
-			"[4D:[MC:tſ́] [MC:dʒ]][4D:f v]h[4D:k γ]l",
+			"[4D:a æ][4D:e [MC:ẹ]][4D:i y][4D:o ω œ][4D:u ə]",
+			"[4D:[MC:tʃ] [MC:dʒ]][4D:f v]h[4D:k g]l",
 			"mnŋ[4D:p b]r",
-			"[4D:ſ z][4D:[MC:ſ́] ʒ][4D:t d][4D:þ ð][DEL]",
-			"[4D:[TAB][LEFT][UP][RIGHT][DOWN]][]ƿj[4D:. …]",
+			"[4D:s z][4D:ʃ ʒ][4D:t d][4D:þ ð][DEL]",
+			"[4D:[TAB][LEFT][UP][RIGHT][DOWN]][]wj[4D:. …]",
 			"[SHIFT][],?-",
 			"[4D:[ALL][COPY][UNDO][CUT][PASTE]][SPACE][][][ENTER]"
 		]
