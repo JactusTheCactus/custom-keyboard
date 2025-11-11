@@ -32,7 +32,7 @@ layout:
   - - [1, tab]
     - [1, { c: z, n: ctrlZ, s: zhed }]
     - [1, { c: x, n: ctrlX, sw: <, se: ">" }]
-    - [1, { c: c, n: ctrlC, s: c_cedilla }]
+    - [1, { c: c, n: ctrlC }]
     - [1, { c: v, n: ctrlV }]
     - [1, { c: b, n: /, s: Basaraba }]
     - [1, { c: "n", n: eng }]
