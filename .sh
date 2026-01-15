@@ -27,7 +27,6 @@ c++() {
 	chmod +x "$BIN"
 	"./$BIN"
 }
-#npm install -D @types/node
 flag local || npm ci --no-audit --no-fund
 tsc
 flag local && c++ || ts
