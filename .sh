@@ -12,7 +12,7 @@ ts() {
 		> config.json
 	jq -n '[]' > data.json
 	while read -r i
-		do node build.js "`perl -pe 's|data/(.*?)\.yml|$1|g' <<< "$i"`"
+		do node build.js "`echo "$i" | perl -pe 's|data/(.*?)\.yml|$1|g'`"
 	done < <(find data -type f)
 }
 c++() {
