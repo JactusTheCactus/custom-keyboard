@@ -1,4 +1,4 @@
-const debug = (await import("../config.json", { with: { type: "json" } })).default.debug;
+const config = (await import("../config.json", { with: { type: "json" } })).default;
 (async () => {
     function FMT(strIn) {
         return (strIn || "")
@@ -32,7 +32,7 @@ const debug = (await import("../config.json", { with: { type: "json" } })).defau
             .replace(/(.)\u25CC/gu, "$1");
     }
     const keyboards = JSON.parse(await (await fetch("data.json")).text());
-    if (debug) {
+    if (config["debug"]) {
         keyboards.shift();
         keyboards.pop();
     }
@@ -65,45 +65,35 @@ const debug = (await import("../config.json", { with: { type: "json" } })).defau
                             if (Array.isArray(chars)) {
                                 key.classList.add("hold");
                                 key.innerHTML = chars
-                                    .map((c) => `<${c === chars[0] ? "b" : "span"}>` +
-                                    FMT(c) +
-                                    `</${c === chars[0] ? "b" : "span"}>`)
+                                    .map((c) => {
+                                    const tag = c === chars[0] ? "b" : "span";
+                                    return `<${tag}>${FMT(c)}</${tag}>`;
+                                })
                                     .join(" ");
                             }
                             else {
                                 key.classList.add("flick");
-                                key.innerHTML =
-                                    "<table>" +
-                                        [
-                                            ["nw", "n", "ne"],
-                                            ["w", "c", "e"],
-                                            ["sw", "s", "se"],
-                                        ]
-                                            .map((a) => "<tr>" +
-                                            a
-                                                .map((b) => "<td>" +
-                                                `<${b === "c"
-                                                    ? "b"
-                                                    : "span"}>` +
-                                                FMT(chars[b] ?? null) +
-                                                `</${b === "c"
-                                                    ? "b"
-                                                    : "span"}>` +
-                                                "<td>")
-                                                .join("") +
-                                            "</tr>")
-                                            .join("") +
-                                        "</table>";
+                                key.innerHTML = `<table>${[
+                                    ["nw", "n", "ne"],
+                                    ["w", "c", "e"],
+                                    ["sw", "s", "se"],
+                                ]
+                                    .map((a) => `<tr>${a
+                                    .map((b) => {
+                                    const tag = b === "c"
+                                        ? "b"
+                                        : "span";
+                                    return `<td><${tag}>${FMT(chars[b] ?? null)}</${tag}><td>`;
+                                })
+                                    .join("")}</tr>`)
+                                    .join("")}</table>`;
                             }
                         }
                         break;
                     default:
                         key.innerText = JSON.stringify(chars) ?? chars;
                 }
-                key.innerHTML =
-                    '<abbr title="' +
-                        String(key.classList).replace(/^key\s*/, "") +
-                        `\">${key.innerHTML}</abbr>`;
+                key.innerHTML = `<abbr title="${String(key.classList).replace(/^key\s*/, "")}">${key.innerHTML}</abbr>`;
                 row.appendChild(key);
             });
             keyboard.appendChild(row);

@@ -1,4 +1,4 @@
-title: "k{ash}skadik"
+title: k{ash}skadik
 layout:
   - - [1, { c: a, n: ash }]
     - [1, { c: e, n: e_dotBelow }]
@@ -11,7 +11,7 @@ layout:
     - [1, { c: k, n: g }]
     - [1, l]
   - - [1, m]
-    - [1, "n"]
+    - [1, n]
     - [1, eng]
     - [1, { c: p, n: b }]
     - [1, r]
@@ -23,7 +23,7 @@ layout:
   - - [2, { c: tab, n: up, e: right, s: down, w: left }]
     - [1, w]
     - [1, j]
-    - [1, { c: ".", n: "..." }]
+    - [1, { c: ., n: ... }]
   - - [2, shift]
     - [1, ","]
     - [1, "?"]

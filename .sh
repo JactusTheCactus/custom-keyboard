@@ -10,8 +10,10 @@ if ! flag local
 		--no-audit \
 		--no-fund
 fi
-printf '{"debug":%s}' \
-	"`flag local && echo true || echo false`" \
+jq \
+	-nc '.debug=$d' \
+	--argjson d \
+		`flag local && echo true || echo false` \
 	> config.json
 echo "[]" > data.json
 tsc

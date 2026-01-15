@@ -11,17 +11,15 @@ const inputFile = ["data", [args[0], "yml"].join(".")].join("/");
 const outputFile = ["layouts", [args[0], "json"].join(".")].join("/");
 const input = YAML.load(fs.readFileSync(inputFile, { encoding: "utf-8" }));
 function menu(arrIn) {
-    return `[XK:${arrIn.map(char).join("")}]`;
+    return `[XK:${arrIn.map((c) => char(c)).join("")}]`;
 }
 function multi(strIn) {
     return `[MC:${strIn}]`;
 }
 function swipe(objIn) {
-    return `[4D:${"C W N E S NW NE SE SW"
+    return `[4D:${"c w n e s nw ne se sw"
         .split(/\s+/)
-        .map((k) => char(objIn[k.toUpperCase()]) ??
-        char(objIn[k.toLowerCase()]) ??
-        " ")
+        .map((k) => char(objIn[k]) ?? " ")
         .join("")
         .replace(/\s*$/, "")}]`;
 }
@@ -54,7 +52,10 @@ function char(charIn) {
     }
 }
 function key(keyIn) {
-    return keyIn.map(char).slice(1).join("") + "[]".repeat(keyIn[0] - 1);
+    return (keyIn
+        .map((c) => char(c))
+        .slice(1)
+        .join("") + "[]".repeat(keyIn[0] - 1));
 }
 function row(rowIn) {
     return rowIn.map(key).join("");
