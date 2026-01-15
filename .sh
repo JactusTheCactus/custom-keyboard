@@ -15,7 +15,7 @@ ts() {
 		i="${i#data/}"
 		i="${i%.yml}"
 		node build.js "$i"
-	done < <(find data -type f)
+	done < <(find data -type f -name "*.yml")
 }
 c++() {
 	BIN=bin/main
