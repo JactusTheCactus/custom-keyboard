@@ -6,7 +6,7 @@ flag() {
 	done
 }
 ts() {
-	flag local || npm ci --no-audit --no-fund
+	flag local || npm ci #--no-audit --no-fund
 	jq -nc '.debug=$d' \
 		--argjson d `flag local && echo true || echo false` \
 		> config.json
