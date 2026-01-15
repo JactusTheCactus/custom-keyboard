@@ -1,11 +1,15 @@
 import fs from "fs";
 import YAML from "js-yaml";
-type Char = string;
-type CharObjKey = "c" | "w" | "n" | "e" | "s" | "nw" | "ne" | "se" | "sw";
-type CharObj = { [K in CharObjKey]: Char };
-type Key = [number, ...(Char | CharObj)[]];
+type CharKey = "c" | "w" | "n" | "e" | "s" | "nw" | "ne" | "se" | "sw";
+type Char = { [K in CharKey]: string };
+type CharType = string | Char;
+type Key = [number, ...CharType[]];
 type Row = Key[];
 type Keyboard = Row[];
+type KeyboardConfig = {
+	title: string;
+	layout: Keyboard;
+};
 function capitalize(str: string, strict = false) {
 	return (
 		str[0]!.toUpperCase() +
@@ -23,24 +27,23 @@ const diacritics = YAML.load(
 const args = process.argv.filter((i) => !/node|\.js$/.test(i));
 const inputFile = ["data", [args[0], "yml"].join(".")].join("/");
 const outputFile = ["layouts", [args[0], "json"].join(".")].join("/");
-const input = YAML.load(fs.readFileSync(inputFile, { encoding: "utf-8" })) as {
-	title: string;
-	layout: Keyboard;
-};
+const input = YAML.load(
+	fs.readFileSync(inputFile, { encoding: "utf-8" })
+) as KeyboardConfig;
 function menu(arrIn: Key): string {
-	return `[XK:${arrIn.map((c) => char(c as Char)).join("")}]`;
+	return `[XK:${arrIn.map((c) => char(c as string)).join("")}]`;
 }
-function multi(strIn: Char): string {
+function multi(strIn: string): string {
 	return `[MC:${strIn}]`;
 }
-function swipe(objIn: CharObj): string {
+function swipe(objIn: Char): string {
 	return `[4D:${"c w n e s nw ne se sw"
 		.split(/\s+/)
-		.map((k) => char(objIn[k as CharObjKey]!) ?? " ")
+		.map((k) => char(objIn[k as CharKey]!) ?? " ")
 		.join("")
 		.replace(/\s*$/, "")}]`;
 }
-function char(charIn: Char): string {
+function char(charIn: string): string {
 	switch (typeof charIn) {
 		case "string":
 			if (
@@ -48,12 +51,12 @@ function char(charIn: Char): string {
 				[
 					...Object.keys(
 						uni as {
-							[s in string]: Char;
+							[s in string]: string;
 						}
 					),
 					...Object.keys(
 						diacritics as {
-							[s in string]: Char;
+							[s in string]: string;
 						}
 					),
 				].includes(charIn)
@@ -78,7 +81,7 @@ function char(charIn: Char): string {
 function key(keyIn: Key) {
 	return (
 		keyIn
-			.map((c) => char(c as Char))
+			.map((c) => char(c as string))
 			.slice(1)
 			.join("") + "[]".repeat(keyIn[0] - 1)
 	);
@@ -100,7 +103,7 @@ function titleFMT(titleIn: string) {
 	});
 	return capitalize(titleOut, true);
 }
-function FMT(c: Char) {
+function FMT(c: string) {
 	if (
 		c.length > 1 ||
 		[...Object.keys(uni), ...Object.keys(diacritics)].includes(c)
@@ -118,7 +121,7 @@ function FMT(c: Char) {
 function layoutFMT(layoutIn: Keyboard) {
 	return layoutIn.map((r: Row) =>
 		r.map((k: Key) =>
-			(k as Char[]).map((c: Char | number | CharObj) => {
+			(k as string[]).map((c: number | CharType) => {
 				switch (typeof c) {
 					case "number":
 						return c;
@@ -133,7 +136,7 @@ function layoutFMT(layoutIn: Keyboard) {
 									([k, v]: [string, string]) => [
 										k,
 										FMT(v).replace(
-											/\[(?:MC):(.*?)\]/g,
+											/\[MC:(.*?)\]/g,
 											(_, m) => m
 										),
 									]
