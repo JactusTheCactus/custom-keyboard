@@ -11,8 +11,10 @@ ts() {
 		--argjson d `flag local && echo true || echo false` \
 		> config.json
 	jq -n '[]' > data.json
-	while read -r i
-		do node build.js "`echo "$i" | perl -pe 's|data/(.*?)\.yml|$1|g'`"
+	while read -r i; do
+		i="${i#data/}"
+		i="${i%.yml}"
+		node build.js "$i"
 	done < <(find data -type f)
 }
 c++() {
