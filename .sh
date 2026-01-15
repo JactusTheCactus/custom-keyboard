@@ -26,8 +26,8 @@ c++() {
 	chmod +x "$BIN"
 	"./$BIN"
 }
-tsc
 npm install -D node/@types
+tsc
 flag local && c++ || ts
 npx sass \
 	page/style.scss \
