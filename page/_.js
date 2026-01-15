@@ -1,37 +1,35 @@
-const debug = JSON.parse(await (await fetch("debug.json")).text()).debug;
+// const data = (await import("./../data.json", { with: { type: "json" } })).default;
+const debug = (await import("./../config.json", { with: { type: "json" } })).default.debug;
 (async () => {
     function FMT(strIn) {
         return (strIn || "")
             .replace(/\[(.*?)\]/g, (_, m) => {
             const point = {
-                ALL: 0x26F6,
+                ALL: 0x26f6,
                 COPY: 0x2398,
-                PASTE: 0x29C9,
+                PASTE: 0x29c9,
                 CUT: 0x2702,
-                REDO: 0x21B7,
-                UNDO: 0x21B6,
-                LB: 0x5B,
-                RB: 0x5D,
+                REDO: 0x21b7,
+                UNDO: 0x21b6,
+                LB: 0x5b,
+                RB: 0x5d,
                 LEFT: 0x2190,
                 UP: 0x2191,
                 RIGHT: 0x2192,
                 DOWN: 0x2193,
-                TAB: 0x21E5,
-                ENTER: 0x21B2,
-                SHIFT: 0x21D1,
-                DEL: 0x232B,
-                SPACE: 0x2423
+                TAB: 0x21e5,
+                ENTER: 0x21b2,
+                SHIFT: 0x21d1,
+                DEL: 0x232b,
+                SPACE: 0x2423,
             }[m];
             return point
                 ? String.fromCodePoint(point)
                 : `<code>|-${m}-|</code>`;
         })
-            .replace(new RegExp(`[${[
-            0x0300,
-            0x0332
-        ]
-            .map(d => String.fromCodePoint(d))
-            .join("-")}]`, "g"), m => `\u25CC${m}`)
+            .replace(new RegExp(`[${[0x0300, 0x0332]
+            .map((d) => String.fromCodePoint(d))
+            .join("-")}]`, "g"), (m) => `\u25CC${m}`)
             .replace(/(.)\u25CC/gu, "$1");
     }
     const keyboards = JSON.parse(await (await fetch("data.json")).text());
@@ -41,8 +39,8 @@ const debug = JSON.parse(await (await fetch("debug.json")).text()).debug;
     }
     keyboards.forEach((data) => {
         const title = document.createElement("th");
-        title.innerText = data.title ?? "N/A";
-        data.layout.forEach((row) => {
+        title.innerText = data["title"] ?? "N/A";
+        data["layout"].forEach((row) => {
             if (row.length > title.colSpan || !title.colSpan) {
                 title.colSpan = row.length;
             }
@@ -51,7 +49,7 @@ const debug = JSON.parse(await (await fetch("debug.json")).text()).debug;
         titleRow.appendChild(title);
         const keyboard = document.createElement("table");
         keyboard.appendChild(titleRow);
-        data.layout.forEach((r) => {
+        data["layout"].forEach((r) => {
             const row = document.createElement("tr");
             r.forEach((k) => {
                 const key = document.createElement("td");
@@ -61,57 +59,52 @@ const debug = JSON.parse(await (await fetch("debug.json")).text()).debug;
                 switch (typeof chars) {
                     case "string":
                         key.classList.add("tap");
-                        key.innerHTML = [
-                            "<b>",
-                            FMT(chars),
-                            "</b>"
-                        ]
-                            .join("");
+                        key.innerHTML = ["<b>", FMT(chars), "</b>"].join("");
                         break;
                     case "object":
                         {
                             if (Array.isArray(chars)) {
                                 key.classList.add("hold");
-                                key.innerHTML = chars.map(c => `<${c === chars[0]
-                                    ? "b"
-                                    : "span"}>`
-                                    + FMT(c)
-                                    + `</${c === chars[0]
-                                        ? "b"
-                                        : "span"}>`).join(" ");
+                                key.innerHTML = chars
+                                    .map((c) => `<${c === chars[0] ? "b" : "span"}>` +
+                                    FMT(c) +
+                                    `</${c === chars[0] ? "b" : "span"}>`)
+                                    .join(" ");
                             }
                             else {
                                 key.classList.add("flick");
-                                key.innerHTML = "<table>"
-                                    + [
-                                        ["nw", "n", "ne"],
-                                        ["w", "c", "e"],
-                                        ["sw", "s", "se"]
-                                    ]
-                                        .map(a => "<tr>"
-                                        + a
-                                            .map(b => "<td>"
-                                            + `<${b === "c"
-                                                ? "b"
-                                                : "span"}>`
-                                            + FMT(chars[b] ?? null)
-                                            + `</${(b === "c"
-                                                ? "b"
-                                                : "span")}>`
-                                            + "<td>")
-                                            .join("")
-                                        + "</tr>")
-                                        .join("")
-                                    + "</table>";
+                                key.innerHTML =
+                                    "<table>" +
+                                        [
+                                            ["nw", "n", "ne"],
+                                            ["w", "c", "e"],
+                                            ["sw", "s", "se"],
+                                        ]
+                                            .map((a) => "<tr>" +
+                                            a
+                                                .map((b) => "<td>" +
+                                                `<${b === "c"
+                                                    ? "b"
+                                                    : "span"}>` +
+                                                FMT(chars[b] ?? null) +
+                                                `</${b === "c"
+                                                    ? "b"
+                                                    : "span"}>` +
+                                                "<td>")
+                                                .join("") +
+                                            "</tr>")
+                                            .join("") +
+                                        "</table>";
                             }
                         }
                         break;
-                    default: key.innerText = JSON.stringify(chars)
-                        ?? chars;
+                    default:
+                        key.innerText = JSON.stringify(chars) ?? chars;
                 }
-                key.innerHTML = "<abbr title=\""
-                    + String(key.classList).replace(/^key\s*/, "")
-                    + `\">${key.innerHTML}</abbr>`;
+                key.innerHTML =
+                    '<abbr title="' +
+                        String(key.classList).replace(/^key\s*/, "") +
+                        `\">${key.innerHTML}</abbr>`;
                 row.appendChild(key);
             });
             keyboard.appendChild(row);
@@ -120,4 +113,3 @@ const debug = JSON.parse(await (await fetch("debug.json")).text()).debug;
     });
 })();
 export {};
-//# sourceMappingURL=_.js.map
