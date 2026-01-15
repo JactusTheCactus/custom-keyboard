@@ -27,6 +27,7 @@ c++() {
 	"./$BIN"
 }
 tsc
+npm install -D node/@types
 flag local && c++ || ts
 npx sass \
 	page/style.scss \
