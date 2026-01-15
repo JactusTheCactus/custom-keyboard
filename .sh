@@ -16,8 +16,15 @@ ts() {
 	done < <(find data -type f)
 }
 c++() {
+	BIN=bin/main
 	rm -rf bin
 	mkdir -p bin
+	while read -r i
+		do yq "$i" -o=json | jq -c '.' > "${i%.yml}.json"
+	done < <(find . -name "*.yml" ! \( -path "*/node_modules/*" -o -path "*/.github/*" \))
+	g++ `find src -name "*.[ch]pp"` -o "$BIN" -std=c++14
+	chmod +x "$BIN"
+	"./$BIN"
 }
 tsc
 flag local && c++ || ts
