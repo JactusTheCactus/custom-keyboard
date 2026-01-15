@@ -1,6 +1,5 @@
-// const data = (await import("./../data.json", { with: { type: "json" } })).default;
 const debug: Boolean = (
-	await import("./../config.json", { with: { type: "json" } })
+	await import("../config.json", { with: { type: "json" } })
 ).default.debug;
 (async () => {
 	function FMT(strIn: string) {

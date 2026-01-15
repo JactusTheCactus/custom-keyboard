@@ -18,11 +18,11 @@ tsc
 for data in data/*; do
 	i="${data#data/}"
 	i="${i%.yml}"
-	node .js "$i"
+	node build.js "$i"
 done
 npx sass \
-	page/_.scss \
-	page/_.css \
+	page/style.scss \
+	page/style.css \
 	--no-source-map \
 	--style=compressed
 node page/pug.js

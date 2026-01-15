@@ -1,5 +1,4 @@
-// const data = (await import("./../data.json", { with: { type: "json" } })).default;
-const debug = (await import("./../config.json", { with: { type: "json" } })).default.debug;
+const debug = (await import("../config.json", { with: { type: "json" } })).default.debug;
 (async () => {
     function FMT(strIn) {
         return (strIn || "")

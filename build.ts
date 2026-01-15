@@ -1,44 +1,51 @@
 import fs from "fs";
 import YAML from "js-yaml";
-function capitalize(str, strict = false) {
+function capitalize(str: any, strict = false) {
 	return (
 		str[0].toUpperCase() +
 		(strict ? str.slice(1).toLowerCase() : str.slice(1))
 	);
 }
-const [uni, diacritics] = ["uni", "diacritics"].map((i) =>
-	YAML.load(fs.readFileSync(`${i}.yml`))
-);
+const uni = YAML.load(
+	fs.readFileSync("uni.yml", { encoding: "utf-8" })
+) as Record<string, string>;
+const diacritics = YAML.load(
+	fs.readFileSync("diacritics.yml", { encoding: "utf-8" })
+) as Record<string, string>;
 const args = process.argv.filter((i) => !/node|\.js$/.test(i));
 const inputFile = ["data", [args[0], "yml"].join(".")].join("/");
 const outputFile = ["layouts", [args[0], "json"].join(".")].join("/");
-const input = YAML.load(fs.readFileSync(inputFile, { encoding: "utf-8" }));
-function menu(arrIn) {
+const input = YAML.load(fs.readFileSync(inputFile, { encoding: "utf-8" })) as {
+	title: string;
+	layout: any;
+};
+function menu(arrIn: Array<string>): string {
 	return `[XK:${arrIn.map(char).join("")}]`;
 }
-function multi(strIn) {
+function multi(strIn: string): string {
 	return `[MC:${strIn}]`;
 }
-function swipe(objIn) {
+function swipe(objIn: Record<string, string>): string {
 	return `[4D:${"C W N E S NW NE SE SW"
 		.split(/\s+/)
 		.map(
-			(k) =>
-				char(objIn[k.toUpperCase()]) ??
-				char(objIn[k.toLowerCase()]) ??
+			(k: string) =>
+				char(objIn[k.toUpperCase()]!) ??
+				char(objIn[k.toLowerCase()]!) ??
 				" "
 		)
 		.join("")
 		.replace(/\s*$/, "")}]`;
 }
-function char(charIn) {
+function char(charIn: string): string {
 	switch (typeof charIn) {
 		case "string":
 			if (
 				charIn.length > 1 ||
-				[...Object.keys(uni), ...Object.keys(diacritics)].includes(
-					charIn
-				)
+				[
+					...Object.keys(uni as Record<string, string>),
+					...Object.keys(diacritics as Record<string, string>),
+				].includes(charIn)
 			) {
 				const arrOut = charIn.split("_");
 				if (arrOut.length > 1) {
@@ -57,27 +64,27 @@ function char(charIn) {
 			}
 	}
 }
-function key(keyIn) {
+function key(keyIn: Array<any>) {
 	return keyIn.map(char).slice(1).join("") + "[]".repeat(keyIn[0] - 1);
 }
-function row(rowIn) {
+function row(rowIn: Array<any>) {
 	return rowIn.map(key).join("");
 }
-function keyboard(boardIn) {
+function keyboard(boardIn: Array<any>) {
 	return boardIn.map(row);
 }
-function titleFMT(titleIn) {
+function titleFMT(titleIn: string) {
 	const titleOut = titleIn.replace(/\{(.*?)\}/g, (_, m) => {
 		return m
 			.split("_")
-			.map((c) => {
+			.map((c: string) => {
 				return uni[c] ?? diacritics[c] ?? c;
 			})
 			.join("");
 	});
 	return capitalize(titleOut, true);
 }
-function FMT(c) {
+function FMT(c: string) {
 	if (
 		c.length > 1 ||
 		[...Object.keys(uni), ...Object.keys(diacritics)].includes(c)
@@ -92,7 +99,7 @@ function FMT(c) {
 		return c;
 	}
 }
-function layoutFMT(layoutIn) {
+function layoutFMT(layoutIn: Array<Array<Array<Array<string>>>>) {
 	return layoutIn.map((r) =>
 		r.map((k) =>
 			k.map((c) => {
@@ -106,13 +113,15 @@ function layoutFMT(layoutIn) {
 							return c.map(FMT);
 						} else {
 							return Object.fromEntries(
-								Object.entries(c).map(([k, v]) => [
-									k,
-									FMT(v).replace(
-										/\[(?:MC):(.*?)\]/g,
-										(_, m) => m
-									),
-								])
+								Object.entries(c).map(
+									([k, v]: [string, any]) => [
+										k,
+										FMT(v).replace(
+											/\[(?:MC):(.*?)\]/g,
+											(_, m) => m
+										),
+									]
+								)
 							);
 						}
 					}
@@ -138,7 +147,7 @@ fs.writeFileSync(
 	"data.json",
 	JSON.stringify(
 		[
-			...JSON.parse(fs.readFileSync("data.json")),
+			...JSON.parse(fs.readFileSync("data.json", { encoding: "utf-8" })),
 			{
 				title: titleFMT(input.title),
 				layout: layoutFMT(input.layout),
