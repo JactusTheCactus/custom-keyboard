@@ -4,7 +4,7 @@ json read_json(const std::string &filepath)
 	std::ifstream file(filepath);
 	if (!file.is_open())
 	{
-		std::cerr << "Error: Could not open the file '" << filepath << "'" << std::endl;
+		std::cerr << "Error: Could not open the file '" << filepath << '\'' << std::endl;
 		return json::parse("{}");
 	}
 	std::stringstream buffer;

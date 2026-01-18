@@ -9,5 +9,5 @@ public:
 	std::string type;
 	int size;
 	Key(json j);
-	std::string to_string();
+	std::string to_string() const;
 };

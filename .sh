@@ -24,10 +24,17 @@ c++() {
 		do yq "$i" -o=json | jq -c '.' > "${i%.yml}.json"
 	done < <(find . -name "*.yml" ! \( -path "*/node_modules/*" -o -path "*/.github/*" \))
 	grep -rn "auto" src > logs/auto.log || true
+	SOURCE=`find src -name "*.cpp"`
 	g++ \
-		`find src -name "*.cpp"` \
+		$SOURCE \
+		-g -O0 \
+		-fsanitize=address,undefined \
 		-o "$BIN" \
 		-std=c++17 \
+		-I/usr/lib/x86_64-linux-gnu \
+		-licuuc \
+		-licui18n \
+		-licudata \
 		&> logs/main.log
 	chmod +x "$BIN"
 	while read -r i; do
