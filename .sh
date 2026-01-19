@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
-flag() {
-	for f in "$@"; do
-		[[ -e ".flags/$f" ]] || return 1
-	done
-}
+flag() { for f in "$@"; do [[ -e ".flags/$f" ]] || return 1; done; }
 ts() {
 	jq -nc '.debug=$d' \
 		--argjson d `flag local && echo true || echo false` \
@@ -20,8 +16,11 @@ c++() {
 	rm -rf bin logs
 	mkdir -p bin logs/keyboard
 	BIN=bin/main
-	while read -r i
-		do yq "$i" -o=json | jq -c '.' > "${i%.yml}.json"
+	TMP=()
+	while read -r i; do
+		json="${i%.yml}.json"
+		yq "$i" -o=json | jq -c '.' > "$json"
+		TMP+=("$json")
 	done < <(find . -name "*.yml" ! \( -path "*/node_modules/*" -o -path "*/.github/*" \))
 	grep -rn "auto" src > logs/auto.log || true
 	SOURCE=`find src -name "*.cpp"`
@@ -42,13 +41,18 @@ c++() {
 		i="${i#data/}"
 		i="${i%.json}"
 		log="logs/keyboard/$i.log"
-		"./$BIN" &> "$log" \
-		|| cp logs/main.log "$log"
+		"./$BIN" &> "$log" || cp logs/main.log "$log"
 	done < <(find data -name "*.json")
+	rm "${TMP[@]}"
 }
-flag local || npm ci --no-audit --no-fund
+flag local \
+	|| npm ci \
+		--no-audit \
+		--no-fund
 tsc
-flag local && c++ || ts
+flag local \
+	&& c++ \
+	|| ts
 npx sass \
 	page/style.scss \
 	page/style.css \
