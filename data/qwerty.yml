@@ -19,7 +19,7 @@ layout:
     - [1, [u, acute, grave, umlaut, dotBelow]]
     - [1, { c: i, sw: (, se: ) }]
     - [1, { c: o, nw: omega, ne: ethel, s: "*" }]
-    - [1, { c: p, s: 🩷💜💙, sw: "{", se: "}" }]
+    - [1, { c: p, n: 🩷💜💙, sw: "{", se: "}" }]
   - - [1, { c: a, n: ctrlA, s: ash }]
     - [1, { c: s, n: esh }]
     - [1, { c: d, n: edh, s: Devin }]
