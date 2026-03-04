@@ -21,7 +21,7 @@ function swipe(objIn) {
         .split(/\s+/)
         .map((k) => char(objIn[k]) ?? " ")
         .join("")
-        .replace(/\s*$/, "")}]`;
+        .replace(/\s+$/, "")}]`;
 }
 function char(charIn) {
     switch (typeof charIn) {
@@ -116,10 +116,12 @@ fs.writeFileSync(outputFile, JSON.stringify({
         main: keyboard(input.layout),
     },
 }, null, "\t"));
-fs.writeFileSync("data.json", JSON.stringify([
+const d = JSON.stringify([
     ...JSON.parse(fs.readFileSync("data.json", { encoding: "utf-8" })),
     {
         title: titleFMT(input.title),
         layout: layoutFMT(input.layout),
     },
-], null, "\t"));
+], null, "\t");
+// console.log(d)
+fs.writeFileSync("data.json", d);
