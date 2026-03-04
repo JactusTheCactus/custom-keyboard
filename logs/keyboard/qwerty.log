@@ -1,1 +1,3 @@
-{"onScreen":{"main":["1234567890","[4D:q ` ~][4D:w |][4D:e#ə%$][4D:r \\][4D:t þ][4D:y [REDO]    [RB][LB]][XK:ụ́̀̈][4D:i      )(][4D:o   *ωœ][4D:p      }{]","[4D:a [ALL] æ][4D:s ʃ][4D:d ð [MC:Devin]][4D:f ^    &@][4D:g[LEFT][UP][RIGHT][DOWN]][][4D:h ‽    ?!][4D:j_-=+][4D:k ; :][4D:l ' \"]","[TAB][4D:z [UNDO] ʒ][4D:x [CUT]    ><][4D:c [COPY]][4D:v [PASTE]][4D:b / [MC:Basaraba]][4D:n ŋ][4D:m ,    .…][DEL][]","[SHIFT][][SPACE][][][][][][ENTER][]"]},"title":"Qwerty"}
+/usr/bin/ld: /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o: in function `_start':
+(.text+0x1b): undefined reference to `main'
+collect2: error: ld returned 1 exit status

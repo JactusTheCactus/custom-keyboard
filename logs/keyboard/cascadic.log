@@ -1,1 +1,3 @@
-{"onScreen":{"main":["[4D:a æ][4D:e [MC:ẹ]][4D:i y][4D:o ω œ][4D:u ə]","[4D:[MC:tʃ] [MC:dʒ]][4D:f v]h[4D:k g]l","mnŋ[4D:p b]r","[4D:s z][4D:ʃ ʒ][4D:t d][4D:þ ð][DEL]","[4D:[TAB][LEFT][UP][RIGHT][DOWN]][]wj[4D:. …]","[SHIFT][],?-","[4D:[ALL][COPY][UNDO][CUT][PASTE]][SPACE][][][ENTER]"]},"title":"Kæskadik"}
+/usr/bin/ld: /usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu/Scrt1.o: in function `_start':
+(.text+0x1b): undefined reference to `main'
+collect2: error: ld returned 1 exit status
