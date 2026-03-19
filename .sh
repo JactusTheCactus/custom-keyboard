@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 flag() { 
-	for f in "$@"; 
-		do if ! [[ -e ".flags/$f" ]]
-			then return 1
+	for f in "$@"; do
+		if ! [[ -e ".flags/$f" ]]; then
+			return 1
 		fi
 	done
 }
