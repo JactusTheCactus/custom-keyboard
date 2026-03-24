@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -euo pipefail
+set -uo pipefail
 flag() { 
 	for f in "$@"; do
 		if ! [[ -e ".flags/$f" ]]; then
