@@ -33,10 +33,6 @@ function FMT(strIn) {
 (async () => {
     const keyboards = JSON.parse(await (await fetch("data.json")).text());
     console.log(keyboards);
-    if (config["debug"]) {
-        keyboards.shift();
-        keyboards.pop();
-    }
     keyboards.forEach((data) => {
         const title = document.createElement("th");
         title.innerText = data["title"] ?? "N/A";
