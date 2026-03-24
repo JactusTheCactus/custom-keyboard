@@ -1,4 +1,6 @@
-const config = (await import("../config.json", { with: { type: "json" } })).default;
+/*const config: { debug: Boolean } = (
+    await import("../config.json", { with: { type: "json" } })
+).default;*/
 function FMT(strIn) {
     return (strIn || "")
         .replace(/\[(.*?)\]/g, (_, m) => {
