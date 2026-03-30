@@ -7,7 +7,7 @@ flag() {
 		fi
 	done
 }
-rm -rf logs .vscode
+rm -rf logs
 mkdir -p logs
 exec > logs/main.log
 if ! flag local 
