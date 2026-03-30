@@ -8,7 +8,7 @@
 			"[4D:s z][4D:ʃ ʒ][4D:t d][4D:þ ð][DEL]",
 			"[4D:[TAB][LEFT][UP][RIGHT][DOWN]][]wj[4D:. …]",
 			"[SHIFT][],?-",
-			"[4D:[ALL][COPY][UNDO][CUT][PASTE]][SPACE][][][ENTER]"
+			"[4D:[MC:ctrlA][MC:ctrlC][MC:ctrlZ][MC:ctrlX][MC:ctrlV]][SPACE][][][ENTER]"
 		]
 	}
 }

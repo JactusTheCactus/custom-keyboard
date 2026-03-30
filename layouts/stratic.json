@@ -7,7 +7,7 @@
 			"ŋ[4D:p b]r[4D:s z][4D:ʃ ʒ][4D:t d][4D:þ ð]",
 			"[4D:[TAB][LEFT][UP][RIGHT][DOWN]][]wj[4D:. …][DEL][]",
 			"[SHIFT][],?-[ENTER][]",
-			"[4D:[ALL][COPY][UNDO][CUT][PASTE]][][SPACE][][][][]"
+			"[4D:[MC:ctrlA][MC:ctrlC][MC:ctrlZ][MC:ctrlX][MC:ctrlV]][][SPACE][][][][]"
 		]
 	}
 }
