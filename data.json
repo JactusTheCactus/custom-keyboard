@@ -669,11 +669,11 @@
 				[
 					1,
 					{
-						"c": "ctrlA",
-						"w": "ctrlC",
-						"e": "ctrlX",
-						"s": "ctrlV",
-						"n": "ctrlZ"
+						"c": "[ALL]",
+						"w": "[COPY]",
+						"e": "[CUT]",
+						"s": "[PASTE]",
+						"n": "[UNDO]"
 					}
 				],
 				[
