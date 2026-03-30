@@ -31,5 +31,5 @@ layout:
     - [1, "?"]
     - [1, "-"]
     - [2, enter]
-  - - [2, { c: ctrlA, w: ctrlC, e: ctrlX, s: ctrlV, n: ctrlZ }]
+  - - [2, { c: ^a, w: ^c, e: ^x, s: ^v, n: ^z }]
     - [5, space]
