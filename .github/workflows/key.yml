@@ -1,8 +1,7 @@
 name: Run
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   workflow_dispatch:
 jobs:
   run:
@@ -11,7 +10,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Build Keyboards
-        run: ./.sh
+        run: mv .sh build.sh && ./build.sh
       - name: Configure Git & Commit Changes
         run: |
           git config --global user.name "github-actions[bot]"
