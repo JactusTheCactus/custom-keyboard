@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 set -uo pipefail
 flag() { 
-	for f in "$@"; do
-		if ! [[ -e ".flags/$f" ]]; then
-			return 1
-		fi
+	for f in "$@"
+		do [[ -e ".flags/$f" ]] || return 1
 	done
 }
 rm -rf logs
