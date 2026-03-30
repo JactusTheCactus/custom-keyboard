@@ -15,7 +15,7 @@ while read -r i; do
 	i=${i#data/}
 	i=${i%.yml}
 	node build.js "$i"
-done < <(find data -type f -name '*.yml')
+done < <(find data -name '*.yml')
 npx sass \
 	page/style.{s,}css \
 	--no-source-map \
