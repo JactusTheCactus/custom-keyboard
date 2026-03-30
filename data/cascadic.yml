@@ -28,6 +28,6 @@ layout:
     - [1, ","]
     - [1, "?"]
     - [1, "-"]
-  - - [1, { c: ctrlA, w: ctrlC, e: ctrlX, s: ctrlV, n: ctrlZ }]
+  - - [1, { c: ^a, w: ^c, e: ^x, s: ^v, n: ^z }]
     - [3, space]
     - [1, enter]
