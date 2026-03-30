@@ -7,19 +7,13 @@ flag() {
 		fi
 	done
 }
-rm -rf logs
+rm -rf logs config.json
 mkdir -p logs
 exec > logs/main.log
 if ! flag local 
 	then npm ci --no-audit --no-fund
 fi
 tsc
-jq -nc '.debug=$d' \
-	--argjson d "$(if flag local
-		then echo true 
-		else echo false
-	fi)" \
-	> config.json
 jq -n '[]' > data.json
 while read -r i; do
 	i=${i#data/}
