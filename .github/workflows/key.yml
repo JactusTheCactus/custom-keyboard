@@ -10,7 +10,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Build Keyboards
-        run: mv .sh build.sh && ./build.sh
+        run: ./build.sh
       - name: Configure Git & Commit Changes
         run: |
           git config --global user.name "github-actions[bot]"
