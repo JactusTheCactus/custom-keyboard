@@ -7,12 +7,10 @@ flag() {
 		fi
 	done
 }
-rm -rf logs config.json
+rm -rf logs
 mkdir -p logs
 exec > logs/main.log
-if ! flag local 
-	then npm ci --no-audit --no-fund
-fi
+flag local || npm ci --no-audit --no-fund
 tsc
 jq -n '[]' > data.json
 while read -r i; do
