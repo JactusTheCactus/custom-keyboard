@@ -3,9 +3,9 @@
 	"onScreen": {
 		"main": [
 			"1234567890",
-			"[4D:q ` ~][4D:w |][4D:e#ə%$][4D:r \\][4D:t þ][4D:y [MC:ctrlY]    [RB][LB]][XK:ụ́̀̈̄][4D:i      )(][4D:o   *ωœ][4D:p [MC:🩷💜💙]    }{]",
-			"[4D:a [MC:ctrlA] æ][4D:s ʃ][4D:d ð [MC:Devin]][4D:f ^    &@][4D:g[LEFT][UP][RIGHT][DOWN]][][4D:h [MC:interrobang]    ?!][4D:j_-=+][4D:k ; :][4D:l ' \"]",
-			"[TAB][4D:z [MC:ctrlZ] ʒ][4D:x [MC:ctrlX]    ><][4D:c [MC:ctrlC]][4D:v [MC:ctrlV]][4D:b / [MC:Basaraba]][4D:n ŋ][4D:m ,    .…][DEL][]",
+			"[4D:q ` ~][4D:w |][4D:e#ə%$][4D:r \\][4D:t þ][4D:y [REDO]    [RB][LB]][XK:ụ́̀̈̄][4D:i      )(][4D:o   *ωœ][4D:p [MC:🩷💜💙]    }{]",
+			"[4D:a [ALL] æ][4D:s ʃ][4D:d ð [MC:Devin]][4D:f ^    &@][4D:g[LEFT][UP][RIGHT][DOWN]][][4D:h ‽    ?!][4D:j_-=+][4D:k ; :][4D:l ' \"]",
+			"[TAB][4D:z [UNDO] ʒ][4D:x [CUT]    ><][4D:c [COPY]][4D:v [PASTE]][4D:b / [MC:Basaraba]][4D:n ŋ][4D:m ,    .…][DEL][]",
 			"[SHIFT][][SPACE][][][][][][ENTER][]"
 		]
 	}
