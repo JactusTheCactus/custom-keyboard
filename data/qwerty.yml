@@ -17,11 +17,12 @@ layout:
     - [1, { c: t, n: thorn }]
     - [1, { c: y, n: ^y, sw: "[", se: "]" }]
     - - 1
-      - u
-      - acute
-      - barAbove
-      - grave
-      - umlaut
+      - - u
+        - acute
+        - barAbove
+        - circumflex
+        - grave
+        - umlaut
     - [1, { c: i, sw: (, se: ) }]
     - [1, { c: o, nw: omega, ne: ethel, s: "*" }]
     - [1, { c: p, n: 🩷💜💙, sw: "{", se: "}" }]
