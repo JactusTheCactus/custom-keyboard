@@ -20,7 +20,6 @@ layout:
       - u
       - acute
       - barAbove
-      - circumflex
       - grave
       - umlaut
     - [1, { c: i, sw: (, se: ) }]
