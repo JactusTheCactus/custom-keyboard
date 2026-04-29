@@ -20,6 +20,7 @@ layout:
       - - u
         - acute
         - barAbove
+        - cedilla
         - circumflex
         - grave
         - umlaut
