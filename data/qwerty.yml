@@ -21,7 +21,6 @@ layout:
       - acute
       - barAbove
       - circumflex
-      - dotBelow
       - grave
       - umlaut
     - [1, { c: i, sw: (, se: ) }]
