@@ -1,1 +1,1 @@
-1. Rewrite in `Rust` __:3__
+1. Rewrite in __`Rust` :3__
