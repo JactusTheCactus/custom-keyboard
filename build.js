@@ -92,7 +92,7 @@ function FMT(c) {
 }
 function layoutFMT(layoutIn) {
     const fmt = (to_format) => {
-        FMT(to_format).replace(/\[MC:(.*?)\]/g, (_, m) => m);
+        return FMT(to_format).replace(/\[MC:(.*?)\]/g, (_, m) => m);
     };
     return layoutIn.map((r) => r.map((k) => k.map((c) => {
         switch (typeof c) {
@@ -118,5 +118,5 @@ const d = JSON.stringify([
         layout: layoutFMT(input.layout),
     },
 ], null, "\t");
-console.log(d);
+// console.log(d)
 fs.writeFileSync("data.json", d);
