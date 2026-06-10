@@ -1,5 +1,7 @@
 title: qwerty
 layout:
+  - - [1, 🩷💛💙]
+    - [1, 🩷💜🤍💙🤎]
   - - [1, !!str 1]
     - [1, !!str 2]
     - [1, !!str 3]
@@ -26,7 +28,7 @@ layout:
         - umlaut
     - [1, { c: i, sw: (, se: ) }]
     - [1, { c: o, nw: omega, ne: ethel, s: "*" }]
-    - [1, { c: p, n: 🩷💛💙, s: 🩷💜🤍💙🤎, sw: "{", se: "}" }]
+    - [1, { c: p, sw: "{", se: "}" }]
   - - [1, { c: a, n: ^a, s: ash }]
     - [1, { c: s, n: esh }]
     - [1, { c: d, n: edh, s: Devin }]
