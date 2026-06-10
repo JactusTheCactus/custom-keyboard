@@ -22,7 +22,7 @@ function FMT(strIn) {
         }[m];
         return point
             ? String.fromCodePoint(point)
-            : `<code>|-${m}-|</code>`;
+            : m;
     })
         .replace(new RegExp(`([${[0x0300, 0x0332]
         .map((d) => String.fromCodePoint(d))
