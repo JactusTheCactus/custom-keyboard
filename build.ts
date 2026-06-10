@@ -11,9 +11,10 @@ type KeyboardConfig = {
 	layout: Keyboard;
 };
 function capitalize(str: string, strict = false) {
+	const slice = str.slice(1);
 	return (
 		str[0]!.toUpperCase() +
-		(strict ? str.slice(1).toLowerCase() : str.slice(1))
+		(strict ? slice.toLowerCase() : slice)
 	);
 }
 const uni = YAML.load(fs.readFileSync("uni.yml", { encoding: "utf-8" })) as {
