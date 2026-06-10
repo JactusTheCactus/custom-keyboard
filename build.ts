@@ -122,8 +122,8 @@ function FMT(c: string) {
 	}
 }
 function layoutFMT(layoutIn: Keyboard) {
-	const fmt = (to_format) => {
-		FMT(to_format).replace(
+	const fmt = (to_format: string) => {
+		return FMT(to_format).replace(
 			/\[MC:(.*?)\]/g,
 			(_, m) => m
 		)
@@ -163,5 +163,5 @@ const d = JSON.stringify([
 		layout: layoutFMT(input.layout),
 	},
 ], null, "\t");
-console.log(d)
+// console.log(d)
 fs.writeFileSync("data.json", d);

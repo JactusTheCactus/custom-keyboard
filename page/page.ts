@@ -22,18 +22,19 @@ function FMT(strIn: string) {
 			}[m];
 			return point
 				? String.fromCodePoint(point)
-				: `<code>${m}</code>`;
+				: `<code>[[${m}]]</code>`;
 		})
 		.replace(
 			new RegExp(
 				`([${[0x0300, 0x0332]
 					.map((d) => String.fromCodePoint(d))
-					.join("-")}])`,
+					.join("-")
+				}])`,
 				"g"
 			),
 			`\u25CC$1`
 		)
-		.replace(/(.)\u25CC/gu, "$1");
+		.replace(/(.)\u25CC/gu, (_, m) => m);
 }
 (async () => {
 	const keyboards: Array<{
@@ -47,7 +48,7 @@ function FMT(strIn: string) {
 			)
 		];
 	}> = JSON.parse(await (await fetch("data.json")).text());
-	console.log(keyboards)
+	// console.log(keyboards)
 	keyboards.forEach((data: Record<string, any>) => {
 		const title = document.createElement("th");
 		title.innerText = data["title"] ?? "N/A";
@@ -74,12 +75,16 @@ function FMT(strIn: string) {
 						break;
 					case "object":
 						{
-							if (Array.isArray(chars)) {
+							if (chars === null) {
+								key.innerText = "[[null]]"
+								break
+							} else if (Array.isArray(chars)) {
 								key.classList.add("hold");
 								key.innerHTML = chars
 									.map((c) => {
-										const tag =
-											c === chars[0] ? "b" : "span";
+										const tag = c === chars[0]
+											? "b"
+											: "span";
 										return `<${tag}>${FMT(c)}</${tag}>`;
 									})
 									.join(" ");
@@ -90,26 +95,23 @@ function FMT(strIn: string) {
 									["w", "c", "e"],
 									["sw", "s", "se"],
 								]
-									.map(
-										(a) =>
-											`<tr>${a
-												.map((b) => {
-													const tag =
-														b === "c"
-															? "b"
-															: "span";
-													return `<td><${tag}>${FMT(
-														chars[b] ?? null
-													)}</${tag}><td>`;
-												})
-												.join("")}</tr>`
+									.map((a) =>
+										`<tr>${a
+											.map((b) => {
+												const tag = b === "c"
+													? "b"
+													: "span";
+												return `<td><${tag}>${FMT(
+													chars[b] ?? null
+												)}</${tag}><td>`;
+											})
+											.join("")}</tr>`
 									)
 									.join("")}</table>`;
 							}
 						}
 						break;
-					default:
-						key.innerText = JSON.stringify(chars) ?? chars;
+					default: key.innerText = JSON.stringify(chars) ?? chars;
 				}
 				key.innerHTML = `<abbr title="${String(key.classList).replace(
 					/^key\s*/,
