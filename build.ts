@@ -1,6 +1,9 @@
 import fs from "fs";
 import YAML from "js-yaml";
-type CharKey = "c" | "w" | "n" | "e" | "s" | "nw" | "ne" | "se" | "sw";
+type CharKey =
+	"c"  | "w"  | "n"  |
+	"e"  | "s"  | "nw" |
+	"ne" | "se" | "sw";
 type Char = { [K in CharKey]: string };
 type CharType = string | Char;
 type Key = [number, ...CharType[]];
@@ -80,11 +83,10 @@ function char(charIn: string): string {
 	}
 }
 function key(keyIn: Key) {
-	return (
-		keyIn
-			.map((c) => char(c as string))
-			.slice(1)
-			.join("") + "[]".repeat(keyIn[0] - 1)
+	return (keyIn
+		.map((c) => char(c as string))
+		.slice(1)
+		.join("") + "[]".repeat(keyIn[0] - 1)
 	);
 }
 function row(rowIn: Row) {
@@ -97,9 +99,7 @@ function titleFMT(titleIn: string) {
 	const titleOut = titleIn.replace(/\{(.*?)\}/g, (_, m) => {
 		return m
 			.split("_")
-			.map((c: string) => {
-				return uni[c] ?? diacritics[c] ?? c;
-			})
+			.map((c: string) => { return uni[c] ?? diacritics[c] ?? c })
 			.join("");
 	});
 	return capitalize(titleOut, true);
@@ -113,40 +113,33 @@ function FMT(c: string) {
 		if (arrOut.length > 1) {
 			return multi(arrOut.map(char).join(""));
 		} else {
-			return uni[c] ?? diacritics[c] ?? multi(c);
+			return uni[c]
+				?? diacritics[c]
+				?? multi(c);
 		}
 	} else {
 		return c;
 	}
 }
 function layoutFMT(layoutIn: Keyboard) {
+	const fmt = (to_format) => {
+		FMT(to_format).replace(
+			/\[MC:(.*?)\]/g,
+			(_, m) => m
+		)
+	}
 	return layoutIn.map((r: Row) =>
-		r.map((k: Key) =>
-			(k as string[]).map((c: number | CharType) => {
-				switch (typeof c) {
-					case "number":
-						return c;
-					case "string":
-						return FMT(c);
-					case "object": {
-						if (Array.isArray(c)) {
-							return c.map(FMT);
-						} else {
-							return Object.fromEntries(
-								Object.entries(c).map(
-									([k, v]: [string, string]) => [
-										k,
-										FMT(v).replace(
-											/\[MC:(.*?)\]/g,
-											(_, m) => m
-										),
-									]
-								)
-							);
-						}
-					}
-				}
-			})
+		r.map((k: Key) => (k as string[]).map((c: number | CharType) => {
+			switch (typeof c) {
+				case "number": return c;
+				case "string": return fmt(c);
+				case "object":
+					return Array.isArray(c)
+						? c.map(fmt)
+						: Object.fromEntries(Object.entries(c).map(
+								([k, v]: [string, string]) => [k, fmt(v)]
+						));
+			}})
 		)
 	);
 }
@@ -170,5 +163,5 @@ const d = JSON.stringify([
 		layout: layoutFMT(input.layout),
 	},
 ], null, "\t");
-// console.log(d)
+console.log(d)
 fs.writeFileSync("data.json", d);
