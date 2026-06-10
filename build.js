@@ -68,9 +68,7 @@ function titleFMT(titleIn) {
     const titleOut = titleIn.replace(/\{(.*?)\}/g, (_, m) => {
         return m
             .split("_")
-            .map((c) => {
-            return uni[c] ?? diacritics[c] ?? c;
-        })
+            .map((c) => { return uni[c] ?? diacritics[c] ?? c; })
             .join("");
     });
     return capitalize(titleOut, true);
@@ -83,7 +81,9 @@ function FMT(c) {
             return multi(arrOut.map(char).join(""));
         }
         else {
-            return uni[c] ?? diacritics[c] ?? multi(c);
+            return uni[c]
+                ?? diacritics[c]
+                ?? multi(c);
         }
     }
     else {
@@ -91,23 +91,17 @@ function FMT(c) {
     }
 }
 function layoutFMT(layoutIn) {
+    const fmt = (to_format) => {
+        FMT(to_format).replace(/\[MC:(.*?)\]/g, (_, m) => m);
+    };
     return layoutIn.map((r) => r.map((k) => k.map((c) => {
         switch (typeof c) {
-            case "number":
-                return c;
-            case "string":
-                return FMT(c);
-            case "object": {
-                if (Array.isArray(c)) {
-                    return c.map(FMT);
-                }
-                else {
-                    return Object.fromEntries(Object.entries(c).map(([k, v]) => [
-                        k,
-                        FMT(v).replace(/\[MC:(.*?)\]/g, (_, m) => m),
-                    ]));
-                }
-            }
+            case "number": return c;
+            case "string": return fmt(c);
+            case "object":
+                return Array.isArray(c)
+                    ? c.map(fmt)
+                    : Object.fromEntries(Object.entries(c).map(([k, v]) => [k, fmt(v)]));
         }
     })));
 }
@@ -124,5 +118,5 @@ const d = JSON.stringify([
         layout: layoutFMT(input.layout),
     },
 ], null, "\t");
-// console.log(d)
+console.log(d);
 fs.writeFileSync("data.json", d);
