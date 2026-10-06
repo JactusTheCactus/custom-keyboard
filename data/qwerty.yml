@@ -22,6 +22,7 @@ layout:
       - - u
         - acute
         - barAbove
+        - breve
         - cedilla
         - circumflex
         - grave
