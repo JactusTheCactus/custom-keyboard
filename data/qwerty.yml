@@ -25,6 +25,7 @@ layout:
         - breve
         - cedilla
         - circumflex
+        - commaBelow
         - grave
         - umlaut
     - [1, { c: i, sw: (, se: ) }]
